@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Really big files
+./MocsClinic/Library/PackageCache/com.unity.burst@1.6.5/.Runtime/

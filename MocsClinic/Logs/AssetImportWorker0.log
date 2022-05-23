@@ -1,0 +1,1694 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.2f1 (d6360bedb9a0) revision 14038539'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16215 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/OneDrive/Mocs VR Clinic/MocsClinic
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+6577
+Successfully changed project path to: D:/OneDrive/Mocs VR Clinic/MocsClinic
+D:/OneDrive/Mocs VR Clinic/MocsClinic
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 134.03 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.2f1 (d6360bedb9a0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/OneDrive/Mocs VR Clinic/MocsClinic/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Vendor:   NVIDIA
+    VRAM:     5980 MB
+    Driver:   30.0.15.1259
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.014230 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 141.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.967 seconds
+Domain Reload Profiling:
+	ReloadAssembly (968ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (703ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (169ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (428ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (91ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (142ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (134ms)
+				ProcessInitializeOnLoadMethodAttributes (59ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.012439 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\OneDrive\Mocs VR Clinic\MocsClinic\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\OneDrive\Mocs VR Clinic\MocsClinic\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 145.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.832 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1833ms)
+		BeginReloadAssembly (248ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (122ms)
+		EndReloadAssembly (1421ms)
+			LoadAssemblies (122ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (397ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (767ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (146ms)
+				BeforeProcessingInitializeOnLoad (134ms)
+				ProcessInitializeOnLoadAttributes (335ms)
+				ProcessInitializeOnLoadMethodAttributes (117ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5024 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (0.7 MB). Loaded Objects now: 5482.
+Memory consumption went from 198.1 MB to 197.4 MB.
+Total: 4.470500 ms (FindLiveObjects: 0.506000 ms CreateObjectMapping: 0.536800 ms MarkObjects: 3.105400 ms  DeleteObjects: 0.321200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 63962.855549 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_02d.FBX
+  artifactKey: Guid(d3d7fe0d56cf46b4993fea871e64ba2e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_02d.FBX using Guid(d3d7fe0d56cf46b4993fea871e64ba2e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7979d2c95d415925ee3eda00461275ab') in 0.271955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01l.FBX
+  artifactKey: Guid(2f4ad5ab803508047b26fd1f9ddbbb05) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01l.FBX using Guid(2f4ad5ab803508047b26fd1f9ddbbb05) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6d381ba5c562124c6f2ef1c73e12dc36') in 0.043839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01e.FBX
+  artifactKey: Guid(1c8e6e914bf40fd49ac84fc82f2ca6e1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01e.FBX using Guid(1c8e6e914bf40fd49ac84fc82f2ca6e1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '63eddd4549d466869a15b1bb8b43a56e') in 0.038809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04f.FBX
+  artifactKey: Guid(6a156ed48c75cb24591fd679fdf404ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04f.FBX using Guid(6a156ed48c75cb24591fd679fdf404ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7ced1d2c7ec9a29293822ca0b9886401') in 0.061881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_Toolkit_01c.FBX
+  artifactKey: Guid(21e4b376733b09e408589bd1e21cf59c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_Toolkit_01c.FBX using Guid(21e4b376733b09e408589bd1e21cf59c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ece9cb4157c42de6a7f7958b319a340c') in 0.044964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01h.FBX
+  artifactKey: Guid(c134d2136400963489c3787cfd89e924) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01h.FBX using Guid(c134d2136400963489c3787cfd89e924) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '84d408006e04731cb13f8793c8637863') in 0.040599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_NeedleDeposit_01e.FBX
+  artifactKey: Guid(f342d4f639ba6164a9848f450210259a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_NeedleDeposit_01e.FBX using Guid(f342d4f639ba6164a9848f450210259a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8c9b7017afdc64a99c91c211e75e967c') in 0.045739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01g.FBX
+  artifactKey: Guid(d0e1a2004a1f6b04dbc69d8844a2d507) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01g.FBX using Guid(d0e1a2004a1f6b04dbc69d8844a2d507) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '73cf5d16e3c8aae5905899f79ca03561') in 0.045723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01b.FBX
+  artifactKey: Guid(05c6cc9a58cb2e44385bfffa735e762d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01b.FBX using Guid(05c6cc9a58cb2e44385bfffa735e762d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ed04ac293ca12ea6b2cd754b8f4a4c8d') in 0.029546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01a.FBX
+  artifactKey: Guid(b0d646c62e09e564eab30338082228e5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01a.FBX using Guid(b0d646c62e09e564eab30338082228e5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '00e38593f4c83278a544efd01d9f2200') in 0.050417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_SurgicalStandAndTools_01a.mat
+  artifactKey: Guid(90ee9a022da0e45498ac188555ec8906) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_SurgicalStandAndTools_01a.mat using Guid(90ee9a022da0e45498ac188555ec8906) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '14f6c87a8020d91a1b93096fe5b96590') in 0.062595 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01b.FBX
+  artifactKey: Guid(8a8fa190b4a155344b2dbb3e61a2b480) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01b.FBX using Guid(8a8fa190b4a155344b2dbb3e61a2b480) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '89b0a2dc0c3f9530d08b6d22f632b841') in 0.050701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04a.FBX
+  artifactKey: Guid(09798447a26ff9f4ba0714d821b983b1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04a.FBX using Guid(09798447a26ff9f4ba0714d821b983b1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cc6ed8af56c1275089fbfc212b0f3278') in 0.037556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01d.FBX
+  artifactKey: Guid(795a2add08c709a4092affd0d9674476) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01d.FBX using Guid(795a2add08c709a4092affd0d9674476) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'be82d7822d9b7c30f5a53c8f58d4fb28') in 0.037041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01r.FBX
+  artifactKey: Guid(b69d5ec8b23b2944eb2c8da49a707258) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01r.FBX using Guid(b69d5ec8b23b2944eb2c8da49a707258) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a7491957d247b1dfc8d3abc6eafab53c') in 0.038197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Settings/SampleSceneProfile.asset
+  artifactKey: Guid(a6560a915ef98420e9faacc1c7438823) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Settings/SampleSceneProfile.asset using Guid(a6560a915ef98420e9faacc1c7438823) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a7b852f032b99159a696c5fbd181fac4') in 0.031789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01b.FBX
+  artifactKey: Guid(57e6de5346698da479292852fa040778) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_Set_01b.FBX using Guid(57e6de5346698da479292852fa040778) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'eec07eba854f90fb04ebfbde59bca4bd') in 0.040472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04c.FBX
+  artifactKey: Guid(cee74cc1e99cc2f49a8e2ff9c2a9efe2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_04c.FBX using Guid(cee74cc1e99cc2f49a8e2ff9c2a9efe2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7da794d57b34ab9b7caf3cfe17f6c90a') in 0.036128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02d.FBX
+  artifactKey: Guid(9e806e557fb362844abfbebf2163daca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02d.FBX using Guid(9e806e557fb362844abfbebf2163daca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7704593cd7b11e31a19d129695d6e871') in 0.055748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03a.FBX
+  artifactKey: Guid(6a83ad5184b8eef41879fdecf5d0da76) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03a.FBX using Guid(6a83ad5184b8eef41879fdecf5d0da76) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dc01ce2b566387decd949ac851a12665') in 0.042963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_02c.FBX
+  artifactKey: Guid(aa90ddbfbc450c941a82eb2c8ff5d2e8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_02c.FBX using Guid(aa90ddbfbc450c941a82eb2c8ff5d2e8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8566b69daa313cc9c5b98a671a4d0cbf') in 0.034952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_Toolkit_01b.FBX
+  artifactKey: Guid(c194fecfba352a945bfa077c6eca2b0a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_Toolkit_01b.FBX using Guid(c194fecfba352a945bfa077c6eca2b0a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0a95276c33e2a76fed0a0448f5d813c2') in 0.043800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03c.FBX
+  artifactKey: Guid(c65a2267bde365d4990807fb18eb6d20) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03c.FBX using Guid(c65a2267bde365d4990807fb18eb6d20) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'face108f18612fee4ee07ea4de1ce044') in 0.042223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_Toolkit_01a.prefab
+  artifactKey: Guid(ef07cee1f31733c40858dd41215b014b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_Toolkit_01a.prefab using Guid(ef07cee1f31733c40858dd41215b014b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '72116d3316f097703fb7d7be5a5a2fe2') in 0.047657 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_03e.prefab
+  artifactKey: Guid(d068341cef6e3944c8852cc2e8e10047) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_03e.prefab using Guid(d068341cef6e3944c8852cc2e8e10047) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e8583f5d1da9ec2d9d53cd005ac9286e') in 0.049840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02c.prefab
+  artifactKey: Guid(4fd119e9c9ca4694690023b2da5973a5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02c.prefab using Guid(4fd119e9c9ca4694690023b2da5973a5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bb12f2d60b0dae19573f141f5e76dbe1') in 0.026604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_03b.prefab
+  artifactKey: Guid(c2062382a5cec9349b867bf3c487905d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_03b.prefab using Guid(c2062382a5cec9349b867bf3c487905d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '45d5a3f104e8b83e455d4f3a6da406e3') in 0.043341 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04c.prefab
+  artifactKey: Guid(141faf80ba8761145b7c667ea37c2d5c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04c.prefab using Guid(141faf80ba8761145b7c667ea37c2d5c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8ba3d007364471c7561ad0c8201b8fc6') in 0.038301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_02f.prefab
+  artifactKey: Guid(3c88f4fb66d2d49438bf767d0b852057) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_02f.prefab using Guid(3c88f4fb66d2d49438bf767d0b852057) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cdf426096db27364cfa42a7f6f240c12') in 0.049200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04b.prefab
+  artifactKey: Guid(346fc96aad0ec3544b730b8f784df225) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04b.prefab using Guid(346fc96aad0ec3544b730b8f784df225) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9ca932d690d5f144e1da11a9c171bda4') in 0.059577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SurgicalStandAndTools_01c.prefab
+  artifactKey: Guid(4c9b11dca0ad9ae4ab1b4c3d85f0c384) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SurgicalStandAndTools_01c.prefab using Guid(4c9b11dca0ad9ae4ab1b4c3d85f0c384) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '13ed82e7452632c30b30675c464b5ee1') in 0.049861 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04d.prefab
+  artifactKey: Guid(04a7f3b4a5a01e0429dd05b4e60b60cb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04d.prefab using Guid(04a7f3b4a5a01e0429dd05b4e60b60cb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '58d77a3761e3d9c79a715893afdebaf1') in 0.037124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_Toolkit_01c.prefab
+  artifactKey: Guid(b9d7101e52ed8a849a955effb1959948) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_Toolkit_01c.prefab using Guid(b9d7101e52ed8a849a955effb1959948) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9a0ab2de7b6aa9e5833e78a5a46d6091') in 0.048773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SurgicalStandAndTools_01a.prefab
+  artifactKey: Guid(512431c3c03350e48907755549899f06) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SurgicalStandAndTools_01a.prefab using Guid(512431c3c03350e48907755549899f06) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4e3c6fd74455030ab1a289a689d81063') in 0.040698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_Toolkit_01a.mat
+  artifactKey: Guid(43a03c0d0be4b934daf7d9a90ee6aaff) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_Toolkit_01a.mat using Guid(43a03c0d0be4b934daf7d9a90ee6aaff) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '57bf43e97b477d0bf2f87721948d60af') in 0.036088 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04a.prefab
+  artifactKey: Guid(8e0eb46af563d2345ae8dcf65ba25dca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_04a.prefab using Guid(8e0eb46af563d2345ae8dcf65ba25dca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4c3efec91c163e3060d690fcf4ff351e') in 0.037869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_NeedleDeposit_01a.mat
+  artifactKey: Guid(392f498a9bb55434495b225991691a5a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Materials/Ml_NeedleDeposit_01a.mat using Guid(392f498a9bb55434495b225991691a5a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0106dd8ea57991eb0164a26d9ab461ea') in 0.037704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03f.FBX
+  artifactKey: Guid(70bc9522a622be5448d9ecbacb5965a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_03f.FBX using Guid(70bc9522a622be5448d9ecbacb5965a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e6f7dc98a785dd99df07d3ab600f6c43') in 0.044538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02e.FBX
+  artifactKey: Guid(167441d7c515a9c4d9dc1b5b360f7340) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02e.FBX using Guid(167441d7c515a9c4d9dc1b5b360f7340) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '505dd64dbf968be9709cb67837c60c8d') in 0.036670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02b.FBX
+  artifactKey: Guid(e81aff62e1970e647b3464a088c7cb29) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02b.FBX using Guid(e81aff62e1970e647b3464a088c7cb29) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '63464d72d16d55e23a34b74befe4e1f3') in 0.028276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02i.FBX
+  artifactKey: Guid(6c2852df213ae4349abcc92539eda630) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02i.FBX using Guid(6c2852df213ae4349abcc92539eda630) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a4180613c3be83d374a25a3b0b93eeb2') in 0.048118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_Set_01a.prefab
+  artifactKey: Guid(8a5171b18248b4148bcc2a61aa0e51a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_Set_01a.prefab using Guid(8a5171b18248b4148bcc2a61aa0e51a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6598a20d6500cfe022b186e8fbe100c0') in 0.044386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Medical Screen.fbx
+  artifactKey: Guid(62c14aeed53ce444cad7dee31eef1db2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Medical Screen.fbx using Guid(62c14aeed53ce444cad7dee31eef1db2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '07b7cf2ceda97ec7f1c0d0414df3d4a1') in 0.055499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_NRM.tga
+  artifactKey: Guid(5894803de4ec14548ba166af7dddb10c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_NRM.tga using Guid(5894803de4ec14548ba166af7dddb10c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '218b35dde088f02e3f24f4ee819a8c7c') in 0.061832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Equipment_MD_02.fbx
+  artifactKey: Guid(456cb0c3cab4ae0429dbbfab943b7758) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Equipment_MD_02.fbx using Guid(456cb0c3cab4ae0429dbbfab943b7758) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5525f7b5ce2138e39d1aad16b3668c0e') in 0.070383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SurgicalStandAndTools_01a_AO.tga
+  artifactKey: Guid(8566f00512ad7c64ea249290cd0107ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SurgicalStandAndTools_01a_AO.tga using Guid(8566f00512ad7c64ea249290cd0107ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4ce14a44bd4a066be512dcf1728516da') in 0.025881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_AO.tga
+  artifactKey: Guid(68ede3af6f660a7459334e4a59a8fe0d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_AO.tga using Guid(68ede3af6f660a7459334e4a59a8fe0d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2750255d5db7f2959dd85949f13ac9bb') in 0.030182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Lights_MD_02.fbx
+  artifactKey: Guid(f72153497cdc8c94f8357df8e6c261db) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Lights_MD_02.fbx using Guid(f72153497cdc8c94f8357df8e6c261db) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '728c5683ea7d914f0b68225fe7ce87e7') in 0.038638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Equipment_MD_01.fbx
+  artifactKey: Guid(7e01c3c130ef8a5409f3858bf9bf4236) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Equipment_MD_01.fbx using Guid(7e01c3c130ef8a5409f3858bf9bf4236) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '599280b5d75e9701d17514e98d7c6c5b') in 0.178884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01m.prefab
+  artifactKey: Guid(1a607469c2d0e7e44aa6ba1eab46516d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01m.prefab using Guid(1a607469c2d0e7e44aa6ba1eab46516d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5a2fe762f2a3dd58c3675cc009636b89') in 0.036052 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SurgicalStandAndTools_01a_NRM.tga
+  artifactKey: Guid(947706d3ca8964f4d9a6552c217b646b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SurgicalStandAndTools_01a_NRM.tga using Guid(947706d3ca8964f4d9a6552c217b646b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7d10f0e650395624176a3ac992b0eef7') in 0.032990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_PillBottles_01a_ALB.tga
+  artifactKey: Guid(69c589f69ae0cf545a58f61d72503114) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_PillBottles_01a_ALB.tga using Guid(69c589f69ae0cf545a58f61d72503114) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a3df66e02d9e146456c60bb8b9fc3818') in 0.028546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01q.prefab
+  artifactKey: Guid(adbd5879034912842b717651f0c49f4e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01q.prefab using Guid(adbd5879034912842b717651f0c49f4e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ade3b5c2a7011b3c31177b1647766c74') in 0.035600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_UtilitiesTray_01a_NRM.tga
+  artifactKey: Guid(6aa5055c92d9e6f46a412ba188226daf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_UtilitiesTray_01a_NRM.tga using Guid(6aa5055c92d9e6f46a412ba188226daf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c74e004deb67ac56fed3cdc6c698d849') in 0.023171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_Toolkit_01a_AO.tga
+  artifactKey: Guid(1498639193d93244ca31928e4a6b4c31) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_Toolkit_01a_AO.tga using Guid(1498639193d93244ca31928e4a6b4c31) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '904d0dc6838810e4b06d7fdccf824e43') in 0.025236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01b.prefab
+  artifactKey: Guid(dd36ea75e06dc794b8bbb8b2de396960) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01b.prefab using Guid(dd36ea75e06dc794b8bbb8b2de396960) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '01b271b5e8aca8e92d6fb0c8256594c9') in 0.032768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Hospital Medical Office Lighting Settings.lighting
+  artifactKey: Guid(a69cd7dffb619a34d99b84d65f8104b4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Hospital Medical Office Lighting Settings.lighting using Guid(a69cd7dffb619a34d99b84d65f8104b4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '189c7737e7609f9b1a08cba04ccc579c') in 0.025459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Molding_MD_01.fbx
+  artifactKey: Guid(e0cd19f7dca525549814cdb78cbfdfcc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Molding_MD_01.fbx using Guid(e0cd19f7dca525549814cdb78cbfdfcc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '92d5947a2bd41d82a0fb5cbc94e0cb34') in 0.065671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/Stretcher_collapse.controller
+  artifactKey: Guid(23a4fe04b6ccaff42a9a6b7c02cff655) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/Stretcher_collapse.controller using Guid(23a4fe04b6ccaff42a9a6b7c02cff655) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ef477a382bb7e3da7a64e6cccb7fbb7f') in 0.017062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Materials/Brick 02.mat
+  artifactKey: Guid(3d1a06be464c4f34a858b507405a7bb5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Materials/Brick 02.mat using Guid(3d1a06be464c4f34a858b507405a7bb5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '226174f562100c6281b24023338b2ef9') in 0.074158 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/H_Curtain_Close.anim
+  artifactKey: Guid(a5f1524577dbb21448737260f6228575) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/H_Curtain_Close.anim using Guid(a5f1524577dbb21448737260f6228575) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8f9a387737723cc4724b9ed2e5c77d31') in 0.015495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Materials/Building Floor Tile.mat
+  artifactKey: Guid(b65d6f1427086d84f91a3153f6f82ffc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Materials/Building Floor Tile.mat using Guid(b65d6f1427086d84f91a3153f6f82ffc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7d915b90f15a176a93d6f122c7269d02') in 0.035667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/ddclose.anim
+  artifactKey: Guid(3d2bf86a3206bf9409f714dc0ff98b61) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/ddclose.anim using Guid(3d2bf86a3206bf9409f714dc0ff98b61) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3cb7fca96a8953241028bb154f2fa1f3') in 0.011942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Props_MD_02.fbx
+  artifactKey: Guid(218e68caea70abc45803acb387555931) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Props_MD_02.fbx using Guid(218e68caea70abc45803acb387555931) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '584964de93043cfe2fa9593ca5d4a973') in 0.207547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/H_Curtain_Open.anim
+  artifactKey: Guid(bf7bc4b7e87adad4292a850a57584151) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scripts & Animations/H_Curtain_Open.anim using Guid(bf7bc4b7e87adad4292a850a57584151) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '34c3227bd98028e78a90d242ebfe683e') in 0.012510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03.unity
+  artifactKey: Guid(67b178a964ac5ba409f73e854a4ab161) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03.unity using Guid(67b178a964ac5ba409f73e854a4ab161) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Opening scene 'Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03.unity additively'
+Loaded scene 'Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03.unity'
+	Deserialize:            83.511 ms
+	Integration:            232.455 ms
+	Integration of assets:  0.098 ms
+	Thread Wait Time:       -0.064 ms
+	Total Operation Time:   316.001 ms
+Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8fa5e4953c810c2149f5a13066bc381e') in 14.044492 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/ReflectionProbe-0.png
+  artifactKey: Guid(6cbd400f46f2f6e49a392f2ac704f8b0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/ReflectionProbe-0.png using Guid(6cbd400f46f2f6e49a392f2ac704f8b0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5ed80c1f2f3ee94072601d26c2fd72be') in 0.025015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/ReflectionProbe-1.exr
+  artifactKey: Guid(27d30730ac7672e41b723a5613785984) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/ReflectionProbe-1.exr using Guid(27d30730ac7672e41b723a5613785984) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4c4e3c5f991bc97c1d6847123f8f150f') in 0.022002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/Lightmap-1_comp_dir.png
+  artifactKey: Guid(8935e1105aca6f948ad781287d7dcc88) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/Lightmap-1_comp_dir.png using Guid(8935e1105aca6f948ad781287d7dcc88) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d0ffde3758d668f316da9f6370b627d') in 0.024655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_04.mat
+  artifactKey: Guid(db3698140b8269e4e835728e29d71aea) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_04.mat using Guid(db3698140b8269e4e835728e29d71aea) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '14a23cc3b998460de3ac1dafd95ba83f') in 0.022517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_08.mat
+  artifactKey: Guid(60a9ef966bf53f949b772545fc752312) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_08.mat using Guid(60a9ef966bf53f949b772545fc752312) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '130b5da12baaca53453cabf76de1a596') in 0.019891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/Lightmap-1_comp_light.exr
+  artifactKey: Guid(ed545ed51bc31044c88e2097f6fc3972) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Scene/Hospital_VOL_02/Lightmap-1_comp_light.exr using Guid(ed545ed51bc31044c88e2097f6fc3972) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '00e94ccba9dc5fb73422d22cd362d313') in 0.023388 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_03.mat
+  artifactKey: Guid(0920ea862cf0d4e4d9da83fd69c0121e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_03.mat using Guid(0920ea862cf0d4e4d9da83fd69c0121e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5c98b95658e6ecd96077881906339f7f') in 0.026466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_01.mat
+  artifactKey: Guid(9244f8538f4470f43b9706ea3f7614b2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_01.mat using Guid(9244f8538f4470f43b9706ea3f7614b2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bd1eab535694b291ff665af340644611') in 0.026132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_01.mat
+  artifactKey: Guid(fda227a81cfd40e409627335b639954b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_01.mat using Guid(fda227a81cfd40e409627335b639954b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5f890aa6e7f810512648be8a88c98160') in 0.022701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_04.mat
+  artifactKey: Guid(94371d4caa087d6468829a013c584832) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Curtain_MD_04.mat using Guid(94371d4caa087d6468829a013c584832) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '32df431e78b8795f607bb8ba55a1ba91') in 0.030772 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_11.mat
+  artifactKey: Guid(2d63e5d476c4ec041bcf4dd8b3946b2a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_11.mat using Guid(2d63e5d476c4ec041bcf4dd8b3946b2a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ffa5f366d794ef13781a835f977e4d99') in 0.024326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Lamp Shade_MD_03.mat
+  artifactKey: Guid(4f4b90debcbd3e54dab30ec5ac569f79) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Lamp Shade_MD_03.mat using Guid(4f4b90debcbd3e54dab30ec5ac569f79) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5a8daede4ed55fcda0a349b1ca397bf6') in 0.050320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Textures/Brick 02 Texture.png
+  artifactKey: Guid(91e6f6bf45b72bd478b59dcf22714424) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Textures/Brick 02 Texture.png using Guid(91e6f6bf45b72bd478b59dcf22714424) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8f9225e34f580191890aa9ca77d3a539') in 0.017085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01s.prefab
+  artifactKey: Guid(49aa5b1f44549cb4fb9c682bbb80c8f0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01s.prefab using Guid(49aa5b1f44549cb4fb9c682bbb80c8f0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4b386a34725b49c73f9db51dd3958bde') in 0.049870 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_MS.tga
+  artifactKey: Guid(fa179c3c8765a57499900a78f4eeda2a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_SupplyCart_02a_MS.tga using Guid(fa179c3c8765a57499900a78f4eeda2a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '94b6c5dfc24445c8d2a04d8fda9b774f') in 0.033717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Models/Enviro_MD_01.fbx
+  artifactKey: Guid(c6569002799da4044ba37a78975afe60) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Models/Enviro_MD_01.fbx using Guid(c6569002799da4044ba37a78975afe60) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ca1d6f96bdee1b6435fe35fc92f679e2') in 0.140472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02h.prefab
+  artifactKey: Guid(1e7b89792f80b9942ad54d39241bbacd) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02h.prefab using Guid(1e7b89792f80b9942ad54d39241bbacd) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '26f9560b5baff75eae3e47ee3ceabe27') in 0.043423 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01g.FBX
+  artifactKey: Guid(c4a7fce484d3b75468839abeba729450) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_UtilitiesTray_01g.FBX using Guid(c4a7fce484d3b75468839abeba729450) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '475cde7cb84314a77af7c67e1fd12036') in 0.037858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_05.mat
+  artifactKey: Guid(794ee53cf0934e64bb4727490964dc3f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_05.mat using Guid(794ee53cf0934e64bb4727490964dc3f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '71e6e538b675f6819bed09ba4b0e9729') in 0.022923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_01.unity
+  artifactKey: Guid(0c99ea74f8af1b049b03987bcd45a41c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_01.unity using Guid(0c99ea74f8af1b049b03987bcd45a41c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Opening scene 'Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_01.unity additively'
+Loaded scene 'Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_01.unity'
+	Deserialize:            5.105 ms
+	Integration:            296.556 ms
+	Integration of assets:  0.007 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   301.675 ms
+Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '55f99d1ec185c51e246d697f8e515822') in 20.760378 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Magazine Rack/Magazine Wall Rack_MD_01_02.prefab
+  artifactKey: Guid(e5fa9bba7b17b554b9004e40293ca7ba) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Magazine Rack/Magazine Wall Rack_MD_01_02.prefab using Guid(e5fa9bba7b17b554b9004e40293ca7ba) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'acdcbb4b4d7f6712975cb820d2d4e271') in 0.056257 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/First Person Player/PlayerMovement.cs
+  artifactKey: Guid(c84cdf898723e1a4b9e4954eb5a76a33) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/First Person Player/PlayerMovement.cs using Guid(c84cdf898723e1a4b9e4954eb5a76a33) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5af75c38f293aac5f377b28339d8f244') in 0.013999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Tables/Room Table_MD_01_02.prefab
+  artifactKey: Guid(bee5b66a959584547a8bbe36d74be64b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Tables/Room Table_MD_01_02.prefab using Guid(bee5b66a959584547a8bbe36d74be64b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f7ce0198cb6d697203bbe4a08c4893dc') in 0.017704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Models/Build Kits/Build Kit Interior - 01 - Tall.fbx
+  artifactKey: Guid(fe9f9e2afa91b4a4f94dac29ac57a6ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Models/Build Kits/Build Kit Interior - 01 - Tall.fbx using Guid(fe9f9e2afa91b4a4f94dac29ac57a6ab) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '03b2617eb4fd6a16a00e31ff1e9d88ef') in 0.043134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Meds/MedBox_MD_01_03.mat
+  artifactKey: Guid(18c5ee75dd6ec344e8b2691115a74119) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Meds/MedBox_MD_01_03.mat using Guid(18c5ee75dd6ec344e8b2691115a74119) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c8666d4d317f40b6197111502700f7fe') in 0.012628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_03.mat
+  artifactKey: Guid(a8d6336a39e3abc479c8adcdf2e212d6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_03.mat using Guid(a8d6336a39e3abc479c8adcdf2e212d6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ebc011d70984136e32641dc3186eaafd') in 0.026770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_10.mat
+  artifactKey: Guid(ec27c5c7604e20649aadb675a9a3ba70) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_10.mat using Guid(ec27c5c7604e20649aadb675a9a3ba70) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cc1393f97abda6960a24957847b98091') in 0.023546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Tables/Side Table_MD_02_02.prefab
+  artifactKey: Guid(b3602b28df22e3745af5954b826a8c41) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Tables/Side Table_MD_02_02.prefab using Guid(b3602b28df22e3745af5954b826a8c41) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b443110a84d1d3966776391e6c6735f5') in 0.016918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Collection Tubes/Sample Collection Container_MD_02_02.prefab
+  artifactKey: Guid(148a38be65cb6d443ad261630c23ea87) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Collection Tubes/Sample Collection Container_MD_02_02.prefab using Guid(148a38be65cb6d443ad261630c23ea87) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a762f29a376e83b2fc6830bcc7de00dc') in 0.380311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Ceiling Lamp_MD_01.prefab
+  artifactKey: Guid(fdc23263704e84a48b1d1e1b7480d48e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Ceiling Lamp_MD_01.prefab using Guid(fdc23263704e84a48b1d1e1b7480d48e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3e52949680d9cfecb729e0f8ffce79db') in 0.022852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Bottles/Soap Bottle_MD_02.prefab
+  artifactKey: Guid(e616fbc19d502804eb74695f84f15682) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Bottles/Soap Bottle_MD_02.prefab using Guid(e616fbc19d502804eb74695f84f15682) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '41830bcf5834705414efd2f5c11b3093') in 0.026745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Table Lamp_MD_01_02.prefab
+  artifactKey: Guid(d0bd904f95a21134b8dba902b4083a39) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Table Lamp_MD_01_02.prefab using Guid(d0bd904f95a21134b8dba902b4083a39) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '854a7d6ba97b70dd813eb0d47309eab2') in 0.028306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Table Lamp_MD_01_01.prefab
+  artifactKey: Guid(9242b9e646bde0e48b3c656e6ac8c9bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Lighting/Table Lamp_MD_01_01.prefab using Guid(9242b9e646bde0e48b3c656e6ac8c9bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fef445aa3a042157ea8bacabb32a5de4') in 0.028672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_06.prefab
+  artifactKey: Guid(f93225aaccafde5409f74ca774731650) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_06.prefab using Guid(f93225aaccafde5409f74ca774731650) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f51cc579fe83160e568f586d2e984171') in 0.017796 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_14.prefab
+  artifactKey: Guid(a80e8bbc4fa8de64682aebc583c41643) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_14.prefab using Guid(a80e8bbc4fa8de64682aebc583c41643) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '00e24d23f5d5cd072043cba68fe1f660') in 0.016059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_03_02.prefab
+  artifactKey: Guid(573fbb8e459577f45bda7cc4e53fb1d2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_03_02.prefab using Guid(573fbb8e459577f45bda7cc4e53fb1d2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '633ad6af4defaa0e8bf622b1aaa52699') in 0.018575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_07.prefab
+  artifactKey: Guid(184b66c1eceeff745b0b268f9392c3cf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_07.prefab using Guid(184b66c1eceeff745b0b268f9392c3cf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a629c685de1b3224a5547cd16900910e') in 0.016479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_02_01.prefab
+  artifactKey: Guid(66f411be2f9d19747aa0590c19bdcbf4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_02_01.prefab using Guid(66f411be2f9d19747aa0590c19bdcbf4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9fe4ba48857c088afa0efb7b9231a2dd') in 0.017561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_10.prefab
+  artifactKey: Guid(d43381fdb82a31946984f6dabfd38da6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_10.prefab using Guid(d43381fdb82a31946984f6dabfd38da6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '71a44c9de38ccb4bb2891aaf0d6e83da') in 0.015456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_01_02.prefab
+  artifactKey: Guid(1d21ddb923d721d40a7de63761b78481) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/MedBox_01_02.prefab using Guid(1d21ddb923d721d40a7de63761b78481) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e449ac36c71985748629c3604600d827') in 0.016327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_01.prefab
+  artifactKey: Guid(5d1adcfc70770de4a84417afacae88cb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Magazines/Magazine_01.prefab using Guid(5d1adcfc70770de4a84417afacae88cb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '962516c271acd0e5ddf15ce8633ca106') in 0.022112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Bottles/Soap Bottle_MD_01.prefab
+  artifactKey: Guid(8cfdc8872b8ec4f46a1a44bc5876529f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Bottles/Soap Bottle_MD_01.prefab using Guid(8cfdc8872b8ec4f46a1a44bc5876529f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2ff17ba99b178e4e9e8dac544de5804f') in 0.021454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Pamphlet/Pamphlet_09.mat
+  artifactKey: Guid(826a4bef4ff95f14aa11dca131502c10) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Pamphlet/Pamphlet_09.mat using Guid(826a4bef4ff95f14aa11dca131502c10) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f91ca4c78f69d2ab20bd98598b45c860') in 0.017607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/SprayBottle_MD_01.mat
+  artifactKey: Guid(d3fcecfd99682624e8fcd9316bd08135) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/SprayBottle_MD_01.mat using Guid(d3fcecfd99682624e8fcd9316bd08135) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ebe88dd6d59992a590c10a2abe4d8db1') in 0.020072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/Metal_MD_02_Normal.png
+  artifactKey: Guid(955dfda359b770e46b38c59c119810a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/Metal_MD_02_Normal.png using Guid(955dfda359b770e46b38c59c119810a3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '81e0669e5802f325baa9756e5daa5d4c') in 0.027732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01a.prefab
+  artifactKey: Guid(3cfb814c4f5a2a44dbb6d2a1ad03723b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_UtilitiesTray_01a.prefab using Guid(3cfb814c4f5a2a44dbb6d2a1ad03723b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2901266ba06c010da026df0326dcb2f8') in 0.044210 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Ext Int/EXT_MD_01_Height.png
+  artifactKey: Guid(c920e67bc9494d6428c921edf7a2264a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Ext Int/EXT_MD_01_Height.png using Guid(c920e67bc9494d6428c921edf7a2264a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b703bab9b32f4ba442fbfa274f5d35b2') in 0.022217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_NeedleDeposit_01a_NRM.tga
+  artifactKey: Guid(12fc281013b60b146825cdb614c4df89) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_NeedleDeposit_01a_NRM.tga using Guid(12fc281013b60b146825cdb614c4df89) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e3d81a4f4ac7cdd9130e4da029286b53') in 0.026504 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02a.prefab
+  artifactKey: Guid(de1deebba4bcdab4f80d4058aa29b079) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_SupplyCart_02a.prefab using Guid(de1deebba4bcdab4f80d4058aa29b079) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '174369c19c7b73c2020c58b665ecc8f9') in 0.049338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Tissue Boxes/TissueBox_MD_01_02.prefab
+  artifactKey: Guid(be7151ef1416c9f4f832540758df1f2b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Tissue Boxes/TissueBox_MD_01_02.prefab using Guid(be7151ef1416c9f4f832540758df1f2b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '05f2a89ec447fb1a9e8f49a97dc3997a') in 0.017044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/E-Pad_MD_01.prefab
+  artifactKey: Guid(bc98a9dd5d3731b459646832fd4e5abc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/E-Pad_MD_01.prefab using Guid(bc98a9dd5d3731b459646832fd4e5abc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c1f08a4fe0b4b3f60d494241e72ff4be') in 0.028824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_04.prefab
+  artifactKey: Guid(5cb3ed0d84859ae46a1aee18e1fc3ffb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_04.prefab using Guid(5cb3ed0d84859ae46a1aee18e1fc3ffb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e00024252d1d8c9937f2d319540687ae') in 0.016364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_03.prefab
+  artifactKey: Guid(7e5cf0078a28d8f4fb63ed830dd2620c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_03.prefab using Guid(7e5cf0078a28d8f4fb63ed830dd2620c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '37d42c5b99febb5b0b65de18bfad25fa') in 0.016064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Diploma.prefab
+  artifactKey: Guid(823c562c009da3645bac94505f2b444d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Diploma.prefab using Guid(823c562c009da3645bac94505f2b444d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd0058fc8c4c05fbbe804758a628a3cb3') in 0.027555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Phone_MD_01_01.prefab
+  artifactKey: Guid(259ea655b09091c4ea9f649a6917bd0d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Phone_MD_01_01.prefab using Guid(259ea655b09091c4ea9f649a6917bd0d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '48dbdebe23227991d1e7d49ee12d6186') in 0.024862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Ceiling Fan_MD_01_01.prefab
+  artifactKey: Guid(758b1a4f1861d68429bdbc8e9e6f7f89) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Ceiling Fan_MD_01_01.prefab using Guid(758b1a4f1861d68429bdbc8e9e6f7f89) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c9b9dcd03fd4be7d500d2dccb80e738e') in 0.016767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/PillBottle_MD_04.prefab
+  artifactKey: Guid(d42d1cd12673b7847911d22984f2529b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/PillBottle_MD_04.prefab using Guid(d42d1cd12673b7847911d22984f2529b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f9fd3cfc3ef10763bb59594e41d0caef') in 0.025884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Sanitizer Dispenser_MD_02.prefab
+  artifactKey: Guid(b3b9c6f50590e254ea7377679a60f977) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/Sanitizer Dispenser_MD_02.prefab using Guid(b3b9c6f50590e254ea7377679a60f977) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '71ed6caf1f4c74302d882e5d759ae1ae') in 0.018740 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_01_03.prefab
+  artifactKey: Guid(3db2e056f3ec0994bb4164f5e3450f36) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_01_03.prefab using Guid(3db2e056f3ec0994bb4164f5e3450f36) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2c77f69eb8b5402d5a6bd9aa8ce94e6d') in 0.022653 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Posters/Poster_05.prefab
+  artifactKey: Guid(5a425eb963d198b4a88546e4f8a2d7a4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Posters/Poster_05.prefab using Guid(5a425eb963d198b4a88546e4f8a2d7a4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4e53b3c0e1e83db766fcebe2ac563304') in 0.021021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/E-Pad_MD_02.prefab
+  artifactKey: Guid(35c055044b210b64c9c3270257fbda6e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/E-Pad_MD_02.prefab using Guid(35c055044b210b64c9c3270257fbda6e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd957e3aa20dec9381219adaa90ff2c9b') in 0.029417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_01_01.prefab
+  artifactKey: Guid(9f80b3f6d9cbe4049b1c8d17339b0940) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_01_01.prefab using Guid(9f80b3f6d9cbe4049b1c8d17339b0940) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2b9248fbc16add0b5e5c197511606809') in 0.019049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Posters/Poster_04.prefab
+  artifactKey: Guid(111a42151b3849045b81167b862781ff) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Posters/Poster_04.prefab using Guid(111a42151b3849045b81167b862781ff) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '572eac2c551fecf747ab05d9cd7c53c5') in 0.019120 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_07.prefab
+  artifactKey: Guid(5b441e08c58ab3d4a92e0d45aa03ac56) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Paintings/Picture Frame_MD_02_07.prefab using Guid(5b441e08c58ab3d4a92e0d45aa03ac56) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '777933cfca332332fa7e1fb00b82cfde') in 0.020341 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/PillBottle_MD_03.prefab
+  artifactKey: Guid(6269770d63856014f946c6b5463a95e1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Meds/PillBottle_MD_03.prefab using Guid(6269770d63856014f946c6b5463a95e1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd82bbb490cdf37317316a09b837cbb7f') in 0.029351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Pamphlet/Pamphlet_02.png
+  artifactKey: Guid(a4bd0b65d45173a47a604496b393f2ca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Pamphlet/Pamphlet_02.png using Guid(a4bd0b65d45173a47a604496b393f2ca) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1efead9d60983c5f0debf98ea545eede') in 0.018078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Round/CounterRound_MD_01_01.prefab
+  artifactKey: Guid(9ae17b6072ef8ba45b6a33100d5aa2e4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Round/CounterRound_MD_01_01.prefab using Guid(9ae17b6072ef8ba45b6a33100d5aa2e4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5250e7d2213ec1fc9cc7d0247f7f371') in 0.020945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_02_01.prefab
+  artifactKey: Guid(c8f8ae986fead7347a31c030b9244324) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_02_01.prefab using Guid(c8f8ae986fead7347a31c030b9244324) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '95959046e574bb32a57afeb4ab6003ff') in 0.077776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_02_01.R.prefab
+  artifactKey: Guid(a9b15d75911d13d47b6ed9128a14687f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_02_01.R.prefab using Guid(a9b15d75911d13d47b6ed9128a14687f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '024faf67da44ece49284205ab182650d') in 0.025907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_04.prefab
+  artifactKey: Guid(2434dbd1ca62aa548b2d9b40ceee9969) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_04.prefab using Guid(2434dbd1ca62aa548b2d9b40ceee9969) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd560399f3aab38391acda356c8e58d6b') in 0.034131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_04_01.L.prefab
+  artifactKey: Guid(785c5cc5266f14b4ea313f1274aa0ecb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_04_01.L.prefab using Guid(785c5cc5266f14b4ea313f1274aa0ecb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1bbadf3a371c11c82adb8c8b5108237c') in 0.023439 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_01_03.prefab
+  artifactKey: Guid(dce9b9dc2b9af3e4395fea5d6adcf4f0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_01_03.prefab using Guid(dce9b9dc2b9af3e4395fea5d6adcf4f0) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd91b39fe1e7854de39f99b9e4b4d61df') in 0.019205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_01_02.prefab
+  artifactKey: Guid(029a454345287e44eb17e4bb3bb68df1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Basic/Chair_MD_01_02.prefab using Guid(029a454345287e44eb17e4bb3bb68df1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f207c757db1089b3ba24a8cd03e353fc') in 0.022244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_01_01.L.prefab
+  artifactKey: Guid(514dad136c3f1fc43891dac77c1abc9f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Base Stairs Rail/Ext_MD_Fence_01_01.L.prefab using Guid(514dad136c3f1fc43891dac77c1abc9f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b02cd01b100c9b2856a6870291c8cab9') in 0.021251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/X Axis/closepush_01.anim
+  artifactKey: Guid(7b9d5a8930e7cf4478b9e7be6ca056b3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/X Axis/closepush_01.anim using Guid(7b9d5a8930e7cf4478b9e7be6ca056b3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5d25e6dc586159f4fcd9049e70f96ba2') in 0.013308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/Z Axis/openpull.anim
+  artifactKey: Guid(fcf0213085e88bd4d80d1d47f3cd2174) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/Z Axis/openpull.anim using Guid(fcf0213085e88bd4d80d1d47f3cd2174) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '28de655307fadab5ddbbcbe4e7fccd83') in 0.013549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_03.prefab
+  artifactKey: Guid(06e4ba71c25f317438af608552c50cd4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_03.prefab using Guid(06e4ba71c25f317438af608552c50cd4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7acc0372e1a94bb3de91f09b7e7ea5d7') in 0.021917 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Ext Into Int/Windows/IntExt_MD_Window_02_01.prefab
+  artifactKey: Guid(bcd658bad8bcea845a8dd514f3c9cc42) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Ext Into Int/Windows/IntExt_MD_Window_02_01.prefab using Guid(bcd658bad8bcea845a8dd514f3c9cc42) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '22034e8055433822a4976b4b1d9450ca') in 0.017283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_01_02.prefab
+  artifactKey: Guid(cbad15946fdfa454eb26f122acbb3d7e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_01_02.prefab using Guid(cbad15946fdfa454eb26f122acbb3d7e) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7748b568a4399a99a247b7b9d24a510c') in 0.024767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/X Axis/pull_01.controller
+  artifactKey: Guid(670045c46abca0544a34a6d8647b08bb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/Drawer/X Axis/pull_01.controller using Guid(670045c46abca0544a34a6d8647b08bb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ce0049614257fc8937c653dd26028227') in 0.012045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding Base_MD_01_03.prefab
+  artifactKey: Guid(2d6b8f0252c42ff488e19ef385c7d44a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding Base_MD_01_03.prefab using Guid(2d6b8f0252c42ff488e19ef385c7d44a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '64b0cf3d2edf6b1f825039dfa395d309') in 0.016354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_03_Ceiling_01.prefab
+  artifactKey: Guid(b2841be7a9f5e984781a57a370ea2731) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_03_Ceiling_01.prefab using Guid(b2841be7a9f5e984781a57a370ea2731) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '59423611c57c3c48e69efbd0de3baf58') in 0.021366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof/Ext_MD_01_RoofEdge_01.prefab
+  artifactKey: Guid(07e5e6e0cd85abc429b09b440f7c829f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof/Ext_MD_01_RoofEdge_01.prefab using Guid(07e5e6e0cd85abc429b09b440f7c829f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '02deeefa4a6e3ddfbca9d6312b7651a1') in 0.018888 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Ceiling_01.prefab
+  artifactKey: Guid(68124812ca4f91b4198234b0a889356a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Ceiling_01.prefab using Guid(68124812ca4f91b4198234b0a889356a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a086a4dd0bb83732fa65ad3e779a7b64') in 0.016773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_02_Ceiling_02.prefab
+  artifactKey: Guid(27451c0010ac3214189e051e19571143) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_02_Ceiling_02.prefab using Guid(27451c0010ac3214189e051e19571143) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3ab8372de4d85b0e46e66444ffabbb04') in 0.041309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding Crown_MD_01_01.prefab
+  artifactKey: Guid(852b9069e269d1e4d87dbb84af5366b6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding Crown_MD_01_01.prefab using Guid(852b9069e269d1e4d87dbb84af5366b6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dfe0bfc0d581ade1fbca05251e3439cf') in 0.019815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Floor_01.prefab
+  artifactKey: Guid(cf662b63134ae2f4e9872caf7917a830) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Floor_01.prefab using Guid(cf662b63134ae2f4e9872caf7917a830) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e2da2460a7b010fa734e975a4a50e4ae') in 0.023276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Stairs Rail/Stair Rail_MD_01_01.R.prefab
+  artifactKey: Guid(df6bdd4c86aa0a24786bc7e9be12727c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Stairs Rail/Stair Rail_MD_01_01.R.prefab using Guid(df6bdd4c86aa0a24786bc7e9be12727c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8c6bdb82fff3c54fd91ca387756a64bf') in 0.019511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding_MD_03_01.prefab
+  artifactKey: Guid(0934230faa22b7f459c6b39cc3876b9a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding_MD_03_01.prefab using Guid(0934230faa22b7f459c6b39cc3876b9a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4aede527690a5e8d75869e6b7a5cfd10') in 0.024714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof Trim/Ext_MD_01_Edge_03.prefab
+  artifactKey: Guid(4238270a60c07af4eab954b453608db5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof Trim/Ext_MD_01_Edge_03.prefab using Guid(4238270a60c07af4eab954b453608db5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd6b7ce1618e7f50d3d925bbe07b8a229') in 0.018834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof Trim/Ext_MD_01_Edge_01.prefab
+  artifactKey: Guid(8cb4ca744924ca148bc7e8c5cd1eabe8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof Trim/Ext_MD_01_Edge_01.prefab using Guid(8cb4ca744924ca148bc7e8c5cd1eabe8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '08a61af005708b20f6da245d7d86a26e') in 0.017672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof/Ext_MD_01_Roof_01.prefab
+  artifactKey: Guid(a45200ce7fed6b74286a03364edefbb5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Roof/Ext_MD_01_Roof_01.prefab using Guid(a45200ce7fed6b74286a03364edefbb5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8f8eeb8faafb4a8d006a365eebfe985b') in 0.025275 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding_MD_02_01.prefab
+  artifactKey: Guid(f6a7bbc1a963fde4abf7d0454b2f8c50) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Filler Misc/Moulding_MD_02_01.prefab using Guid(f6a7bbc1a963fde4abf7d0454b2f8c50) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '08459a33315bd6412c3d5ec922f82ad1') in 0.021224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Ceiling_03.prefab
+  artifactKey: Guid(f50cf96ba9a5fbb4b872d64c4ba18e1d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Flooring Ceiling/Int_MD_01_Ceiling_03.prefab using Guid(f50cf96ba9a5fbb4b872d64c4ba18e1d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fed11ad0041d56eb8b05d70ffcdb869d') in 0.031291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Ext Into Int/Windows/IntExt_MD_Window_01_01.prefab
+  artifactKey: Guid(9eddc93df8bfe394abd211a526fe91c5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Ext Into Int/Windows/IntExt_MD_Window_01_01.prefab using Guid(9eddc93df8bfe394abd211a526fe91c5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '71c19dfddc72d8b0cdd60aa0f6426dbe') in 0.019355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_03.prefab
+  artifactKey: Guid(8cb4b649fede4b8439cc25062a198178) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_03.prefab using Guid(8cb4b649fede4b8439cc25062a198178) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dd7cd2ffcdcb87c9ce196c8573c9ab54') in 0.036637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_11.prefab
+  artifactKey: Guid(d04d540695c2b724686d84a922831bae) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_11.prefab using Guid(d04d540695c2b724686d84a922831bae) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a3fffd81731c45866f4f64b29149a90a') in 0.016581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_03.prefab
+  artifactKey: Guid(7cc9394a7883dd0459a5d0737b75e619) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_03.prefab using Guid(7cc9394a7883dd0459a5d0737b75e619) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dd1b4ed6b1beaf0c826030392a2a2888') in 0.025068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Wall/Pamphlet Wall Multiple_01_01.prefab
+  artifactKey: Guid(b2489f39807d5784189f684db842adbf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Wall/Pamphlet Wall Multiple_01_01.prefab using Guid(b2489f39807d5784189f684db842adbf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '32396c855113553bfa598b85b0a7f68b') in 0.023633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_06.prefab
+  artifactKey: Guid(4e52544b0a7eefe499e7c18ae8b253c1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_06.prefab using Guid(4e52544b0a7eefe499e7c18ae8b253c1) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6ee9a687cb3b1570a0fea10ecc72d451') in 0.016227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Drawer Underdesk_MD_01_01.prefab
+  artifactKey: Guid(a4c1dc89075f75b42a117b38c0b6aa24) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Drawer Underdesk_MD_01_01.prefab using Guid(a4c1dc89075f75b42a117b38c0b6aa24) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '55d0254872c4dae593a8a7d79384f68a') in 0.031898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Wall/Pamphlet Wall Multiple_02_01.prefab
+  artifactKey: Guid(96284e6715b8d6a458f97c2f3256394b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Wall/Pamphlet Wall Multiple_02_01.prefab using Guid(96284e6715b8d6a458f97c2f3256394b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8de3a05e7a00435b06e27295ac2851b4') in 0.017418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_01/Counter_MD_01_03.prefab
+  artifactKey: Guid(19ffc060afb99ea4f8d880126ee4b01f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_01/Counter_MD_01_03.prefab using Guid(19ffc060afb99ea4f8d880126ee4b01f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c27d46b33f1dee45dea81045de6dd129') in 0.018406 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_06.prefab
+  artifactKey: Guid(ab880337cbf0f414589bb18e6017b99c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_06.prefab using Guid(ab880337cbf0f414589bb18e6017b99c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4da3f8dab5ffa2b36a04ae581de13da1') in 0.027482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_02.prefab
+  artifactKey: Guid(17ca227b7ce7d774684b18428d9f574d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Counters/Angled/Counters_MD_02/Counter_MD_02_02.prefab using Guid(17ca227b7ce7d774684b18428d9f574d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b43665b69aef54610959991ad1c31ddc') in 0.020578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_11.prefab
+  artifactKey: Guid(37c8e8ccd06fd9e4c9a2ddf693c5d418) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_11.prefab using Guid(37c8e8ccd06fd9e4c9a2ddf693c5d418) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8be6ad36fe216b083b0616e0fb6c4798') in 0.033792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_07.prefab
+  artifactKey: Guid(be801e92fbb803140aade293a965b403) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_07.prefab using Guid(be801e92fbb803140aade293a965b403) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5b449926da0048d63b85bf8f888f0b8') in 0.017656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_10.prefab
+  artifactKey: Guid(7cf6a07e2af2770409e3078990d5421f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Loose/Pamphlet_10.prefab using Guid(7cf6a07e2af2770409e3078990d5421f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6a8cd20d18dcbdfa81eff7e4cee58692') in 0.015179 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Walls/Ext_01/Ext_MD_01_Corner_02.prefab
+  artifactKey: Guid(cfb347428ce0d9442ab5660c1f9a69ed) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Walls/Ext_01/Ext_MD_01_Corner_02.prefab using Guid(cfb347428ce0d9442ab5660c1f9a69ed) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9c7ba117570c59cc28d74b0772d56514') in 0.026193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_12.prefab
+  artifactKey: Guid(7449eea7478d77641a6148f5a733d7fc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Pamphlets/Pamphlet Stand/Pamphlet Single_MD_01_12.prefab using Guid(7449eea7478d77641a6148f5a733d7fc) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4414aad989d1384014c55376b9fda6d7') in 0.033161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_Double_01.prefab
+  artifactKey: Guid(6f38e9d9707690b4092506e78323e35c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_Double_01.prefab using Guid(6f38e9d9707690b4092506e78323e35c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '49e1c4ef236d9789c88007f6ff87aa98') in 0.029576 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_MD_03_Wall_03.prefab
+  artifactKey: Guid(0ba561e4695648c42862ff77f468ca7d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_MD_03_Wall_03.prefab using Guid(0ba561e4695648c42862ff77f468ca7d) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e8399b723dea9132cf5550526323b280') in 0.028401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_01.prefab
+  artifactKey: Guid(746c7fe79fa2b6544805d12c2d0773f9) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_01.prefab using Guid(746c7fe79fa2b6544805d12c2d0773f9) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f78bfa8194c47a0a37542bd6b3469604') in 0.018117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Int_Window_01_01.prefab
+  artifactKey: Guid(39a1c1863dc5a0b4d8a1e2de5e82f938) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Int_Window_01_01.prefab using Guid(39a1c1863dc5a0b4d8a1e2de5e82f938) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '40b71a39e5af3517424b552b9a9ab399') in 0.022187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Door Frame_MD_01_02.prefab
+  artifactKey: Guid(f7dcd775ae2dd8d4da47e736c8fe6cd8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Door Frame_MD_01_02.prefab using Guid(f7dcd775ae2dd8d4da47e736c8fe6cd8) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'acdab2901a141c897a7cbc3b7b9861ce') in 0.030623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_03.prefab
+  artifactKey: Guid(2dae8553623b514468a041197a18912b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_03.prefab using Guid(2dae8553623b514468a041197a18912b) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f49c2f959b531eb7b3e9ff92d99e55de') in 0.024150 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_3x3.prefab
+  artifactKey: Guid(57cfb382faf23f64b8e56050e8a749f2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_3x3.prefab using Guid(57cfb382faf23f64b8e56050e8a749f2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3f8f7a3d964c0559e51e59cbd28dd0aa') in 0.017218 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_02/Int_Pillar_4x4.prefab
+  artifactKey: Guid(a0a4720cc89b90c46b224f5b44ca7978) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_02/Int_Pillar_4x4.prefab using Guid(a0a4720cc89b90c46b224f5b44ca7978) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5c8994a7a39726304212725cd3df3e2c') in 0.023518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Door Frame_MD_02.prefab
+  artifactKey: Guid(3d934a4e6ce8fd0488017e4ea320fca2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Door Frame_MD_02.prefab using Guid(3d934a4e6ce8fd0488017e4ea320fca2) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '22cb4167cba8b26cbb29310b72e8dbc2') in 0.052931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_1x1.prefab
+  artifactKey: Guid(639d424acb6924e4fb29f2065fe68d09) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_1x1.prefab using Guid(639d424acb6924e4fb29f2065fe68d09) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9cf288d4b965bf394c219b7d7407c214') in 0.019989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_02/Int_MD_01_Wall_Double_02.prefab
+  artifactKey: Guid(7a488881717862d4383514f59f6c2844) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_02/Int_MD_01_Wall_Double_02.prefab using Guid(7a488881717862d4383514f59f6c2844) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6a5070e9e68d87e67b654c2d592c572f') in 0.016913 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Frame_MD_01_01.prefab
+  artifactKey: Guid(b1f5aef6ddec78f41addb05024710028) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Doors Windows Frames/Frame_MD_01_01.prefab using Guid(b1f5aef6ddec78f41addb05024710028) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c52b0754f26d64af6e92d0d9d5af72f1') in 0.022411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_05.prefab
+  artifactKey: Guid(e64893b041027794ba2fe5a947fa104c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_MD_01_Wall_05.prefab using Guid(e64893b041027794ba2fe5a947fa104c) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9ed6907d848592ecb91ff9d12b8386d5') in 0.019105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_MD_03_Wall_Double_01.prefab
+  artifactKey: Guid(4bd4eab4925472f48b3958e6f62076d6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_MD_03_Wall_Double_01.prefab using Guid(4bd4eab4925472f48b3958e6f62076d6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5230d988db0cce9889c7517bd990b587') in 0.018169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_Pillar_3x3.prefab
+  artifactKey: Guid(87ed345418c39954590eeb343bedc8da) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_03/Int_Pillar_3x3.prefab using Guid(87ed345418c39954590eeb343bedc8da) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '926c2cfc0630f8b656ec0e90ef02bc5b') in 0.021736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Walls/Ext_01/Ext_MD_01_Pillar_01.prefab
+  artifactKey: Guid(34ff869023b376a4f94a76973319a9fe) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Exteriors/Walls/Ext_01/Ext_MD_01_Pillar_01.prefab using Guid(34ff869023b376a4f94a76973319a9fe) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'afe26c3fc075baf1047f315a18ee7e2c') in 0.015677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_01.prefab
+  artifactKey: Guid(fa639fee951ffd044bca05ef8c777088) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Furniture/Seating/Lobby Chair/Chair_MD_02_01.prefab using Guid(fa639fee951ffd044bca05ef8c777088) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a72d8198acaa399300927ac419cd007a') in 0.022095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_4x4.prefab
+  artifactKey: Guid(a839b767d6485364b8e8e0c988d1135f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/MD Build Kit/Interiors/Walls Frames and Doors/Walls/Int_01/Int_Pillar_4x4.prefab using Guid(a839b767d6485364b8e8e0c988d1135f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5ce389e222ed5841633e138d52b7e509') in 0.017473 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_02.mat
+  artifactKey: Guid(e7cab7f7e668dee4db7530b6b5061fe6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Fabric_MD_02.mat using Guid(e7cab7f7e668dee4db7530b6b5061fe6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1ad24330163605e3bd6ad0d19e88110e') in 0.023013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Lamp Shade_MD_01.mat
+  artifactKey: Guid(43816c60a5ff9a04dbeb12f110cbda18) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Fabric/Lamp Shade_MD_01.mat using Guid(43816c60a5ff9a04dbeb12f110cbda18) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5909440c93186000f9045b16411c3d7') in 0.029485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02f.FBX
+  artifactKey: Guid(8ca8c2b35ca94034f9d0664e7e21f8fb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_SupplyCart_02f.FBX using Guid(8ca8c2b35ca94034f9d0664e7e21f8fb) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '60abd398f37b6c9ef90d8eaa3566d613') in 0.029439 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/Screen_MD_01.png
+  artifactKey: Guid(8c8c3e4af04257a44befbff1c9d69f1f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/Screen_MD_01.png using Guid(8c8c3e4af04257a44befbff1c9d69f1f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e9666c8be8c8a9705f986ea2810f12a4') in 0.025242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Meds/MedBox_MD_02_01.mat
+  artifactKey: Guid(134265199fe261f46945e14bdbbdead3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Meds/MedBox_MD_02_01.mat using Guid(134265199fe261f46945e14bdbbdead3) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '99a5cc9d1d64315cf593f0bcff65e494') in 0.014871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/Tissue Box_MD_01_01.mat
+  artifactKey: Guid(667ad9ffd7cf14442bc3d045e74df72a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/Tissue Box_MD_01_01.mat using Guid(667ad9ffd7cf14442bc3d045e74df72a) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2b97d2f278562803570994ab58bcb216') in 0.012572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/First Aid Kit.prefab
+  artifactKey: Guid(93705266dcb312044af5f8e639b49b39) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Prefabs/Props/Misc/First Aid Kit.prefab using Guid(93705266dcb312044af5f8e639b49b39) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '917eb88d1b98917b53db01434edf276a') in 0.029672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Paintings/Painting_01_01.mat
+  artifactKey: Guid(907b5c28951c49d4d84b55852ad3d27f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Paintings/Painting_01_01.mat using Guid(907b5c28951c49d4d84b55852ad3d27f) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3ecd5b5c1a6a8684dde081f2eff87d23') in 0.014441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Prefabs/Table.prefab
+  artifactKey: Guid(02d1152fb6869da41a6849d5dd239667) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/SE Basic Assets/Prefabs/Table.prefab using Guid(02d1152fb6869da41a6849d5dd239667) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1e50ccc83c5892b7b22a193c6aae1713') in 0.032683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_NeedleDeposit_01a_AO.tga
+  artifactKey: Guid(29389306854f0fa4289c40d3e7880df5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Textures/TX_NeedleDeposit_01a_AO.tga using Guid(29389306854f0fa4289c40d3e7880df5) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ba61d148ba6c5cd08ffd01d06fd17d9b') in 0.019199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/First Aid Kit.mat
+  artifactKey: Guid(1ccc830896538bc4bbc5e699ef2006b4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/First Aid Kit.mat using Guid(1ccc830896538bc4bbc5e699ef2006b4) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '194723ec4086a1bfa430318c4557bcab') in 0.014448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Mag/Mag_12.mat
+  artifactKey: Guid(9c5f910ebb9599d4aadfbb3f186665bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Mag/Mag_12.mat using Guid(9c5f910ebb9599d4aadfbb3f186665bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8d6120c50d95484d25debb491dc8eacb') in 0.025323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/_RI_02.png
+  artifactKey: Guid(cfe298295a761724c98134a8a9e9b0ce) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Textures/Misc/_RI_02.png using Guid(cfe298295a761724c98134a8a9e9b0ce) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae8046fcdcd5e3fdc8075e1947aa47fc') in 0.022666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TutorialInfo/Layout.wlt
+  artifactKey: Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/TutorialInfo/Layout.wlt using Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '10c293197e23bdd5f8188fc302b10802') in 0.012092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/Grey_MD.mat
+  artifactKey: Guid(8756ce807087a7449bb3b2a6919ffad9) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Materials/Misc/Grey_MD.mat using Guid(8756ce807087a7449bb3b2a6919ffad9) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cafc0f98ea86f1e57f0ffd4b39c90d7b') in 0.020064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01h.FBX
+  artifactKey: Guid(97a5a6c499a71a045bc88b3742ec0052) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Meshes/SM_PillBottles_01h.FBX using Guid(97a5a6c499a71a045bc88b3742ec0052) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '57ddb2eda6e1157759639d3894e8ca22') in 0.032854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_01e.prefab
+  artifactKey: Guid(8960f310120d42d49b70db080a9783bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe)
+Start importing Assets/Hospital_Package/Hospital_Vol_02/Prefabs/SM_PillBottles_01e.prefab using Guid(8960f310120d42d49b70db080a9783bf) Importer(2089858483,c653a7c40615fbf8c82c05b109e42dfe) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd0bf5fa9c26e386bf4c3decbfcbfc088') in 0.047520 seconds 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 18.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (0.7 MB). Loaded Objects now: 5497.
+Memory consumption went from 103.9 MB to 103.2 MB.
+Total: 10.441900 ms (FindLiveObjects: 0.693100 ms CreateObjectMapping: 0.590100 ms MarkObjects: 8.675100 ms  DeleteObjects: 0.482400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 472.691694 seconds.
+  path: Assets/Soja Exiles/SE Basic Assets/Models/office chair.fbx
+  artifactKey: Guid(0156872a951ba6e44a3a8596040789c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Soja Exiles/SE Basic Assets/Models/office chair.fbx using Guid(0156872a951ba6e44a3a8596040789c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6967b66e0b3075113b551aecf6e2173b') in 3.053796 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.383370 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/New Post-processing Profile.asset
+  artifactKey: Guid(faadfda628bfd8a47b2a90c577f4ef7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/New Post-processing Profile.asset using Guid(faadfda628bfd8a47b2a90c577f4ef7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33943d3bb8f9d1b37b844954d12804b9') in 0.008454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.797558 seconds.
+  path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03/OcclusionCullingData.asset
+  artifactKey: Guid(39ad8d0751de9d24391a3446b583d46b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_03/OcclusionCullingData.asset using Guid(39ad8d0751de9d24391a3446b583d46b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38b544b761b608e39adbc724da691270') in 0.004984 seconds 

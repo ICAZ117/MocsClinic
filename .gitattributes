@@ -1,0 +1,14 @@
+.git/lfs/objects/9e/00/9e00dcdd2a2896baa9c8fd78415e5cb0f89ae8522eef453e54eba1b3f4db7a49 filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-06ab938484e425dad730201495f9af9c26238def.pack filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-bf3c1706fe9d1abeac574ba57ffbdef5d845a187.pack filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Builds/MocsClinic_v0.1.0.apk filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/merged_assets/release/out/bin/Data/data.unity3d filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/outputs/apk/release/launcher-release.apk filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/library_assets/release/out/bin/Data/data.unity3d filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/artifacts/Android/d8kzr/libil2cpp.so filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/libil2cpp.dbg.so filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/Bee/artifacts/objcopy_5lmi/libil2cpp.dbg.so filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/PackageCache/com.unity.burst@1.6.5/.Runtime/hostmac/lld filter=lfs diff=lfs merge=lfs -text
+MocsClinic/Library/PlayerDataCache/Android/Data/data.unity3d filter=lfs diff=lfs merge=lfs -text

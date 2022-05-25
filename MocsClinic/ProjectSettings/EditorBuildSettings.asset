@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExamRoom.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c14dc6cc6e665c243ba18837a5a20266,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 32faf46b6b77be84cb0785be0bca63e0,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 459976777b397384b9264a31485088c3,
+      type: 2}

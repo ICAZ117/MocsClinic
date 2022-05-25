@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Soja Exiles/Hospital Medical Office Modular/Scenes/Structure_04.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0

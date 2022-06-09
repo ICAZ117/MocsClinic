@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 
 public class ThermometerController : MonoBehaviour {
+    #pragma warning disable 0618
     public InputActionReference aButton;
     public InputActionReference xButton;
     public InputActionReference rightTrigger;
@@ -148,4 +149,5 @@ public class ThermometerController : MonoBehaviour {
             Debug.Log("After: " + thermometer.transform.localRotation);
         }
     }
+    #pragma warning restore 0618
 }

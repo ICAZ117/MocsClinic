@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 
 public class PulseOxController : MonoBehaviour {
+#pragma warning disable 0618
     public InputActionReference aButton;
     public InputActionReference xButton;
     public GameObject rightHand;
@@ -16,7 +17,6 @@ public class PulseOxController : MonoBehaviour {
     public TMP_Text pulseOxO2;
     private XRDirectInteractor rightInteractor;
     private XRDirectInteractor leftInteractor;
-    private bool coroutineRunning = false;
     private bool pulseOxPower = false;
 
     // Start is called before the first frame update
@@ -25,11 +25,11 @@ public class PulseOxController : MonoBehaviour {
         xButton.action.started += togglePowerLeft;
         rightInteractor = rightHand.GetComponent<XRDirectInteractor>();
         leftInteractor = leftHand.GetComponent<XRDirectInteractor>();
-    } 
+    }
 
     // Update is called once per frame
     void Update() {
-     
+
     }
 
     private void togglePowerRight(InputAction.CallbackContext context) {
@@ -75,5 +75,5 @@ public class PulseOxController : MonoBehaviour {
     private bool isLeftHandHolding() {
         return leftInteractor.selectTarget != null && leftInteractor.selectTarget.name == "PulseOximeter";
     }
-
+    #pragma warning restore 0618
 }

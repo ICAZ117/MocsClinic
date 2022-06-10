@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
+using Autohand;
 
 public class ThermometerController : MonoBehaviour {
     #pragma warning disable 0618
@@ -14,9 +15,10 @@ public class ThermometerController : MonoBehaviour {
     public InputActionReference leftTrigger;
     public InputActionReference rightGrip;
     public InputActionReference leftGrip;
-    public GameObject rightHand;
-    public GameObject leftHand;
+    public Hand rightHand;
+    public Hand leftHand;
     public GameObject thermometer;
+    public Grabbable thermometerGrabbable;
     public TMP_Text thermometerText;
     public AudioSource beep;
     private XRDirectInteractor rightInteractor;
@@ -32,13 +34,10 @@ public class ThermometerController : MonoBehaviour {
         leftTrigger.action.started += getTempLeft;
         rightGrip.action.started += rightHold;
         leftGrip.action.started += leftHold;
-        rightInteractor = rightHand.GetComponent<XRDirectInteractor>();
-        leftInteractor = leftHand.GetComponent<XRDirectInteractor>();
     } 
 
     // Update is called once per frame
     void Update() {
-     
     }
 
     private void getTempRight(InputAction.CallbackContext context) {
@@ -65,7 +64,7 @@ public class ThermometerController : MonoBehaviour {
             thermometerPower = !thermometerPower;
 
             if (thermometerPower) {
-                thermometerText.text = "00.0° F";
+                thermometerText.text = "00.0Â° F";
             }
             else {
                 thermometerText.text = "";
@@ -80,7 +79,7 @@ public class ThermometerController : MonoBehaviour {
             thermometerPower = !thermometerPower;
 
             if (thermometerPower) {
-                thermometerText.text = "00.0° F";
+                thermometerText.text = "00.0Â° F";
             }
             else {
                 thermometerText.text = "";
@@ -107,15 +106,17 @@ public class ThermometerController : MonoBehaviour {
         double temp = 95.5 + (rnd.NextDouble() * 8.5);
 
         // Set the text to 37 C
-        thermometerText.text = Math.Round(temp, 1) + " °F";
+        thermometerText.text = Math.Round(temp, 1) + " Â°F";
     }
 
     private bool isRightHandHolding() {
-        return rightInteractor.selectTarget != null && rightInteractor.selectTarget.name == "TympanicThermometer";
+        Hand[] hands = thermometerGrabbable.GetHeldBy().ToArray();
+        return hands.Length > 0 && hands[0] == rightHand;
     }
 
     private bool isLeftHandHolding() {
-        return leftInteractor.selectTarget != null && leftInteractor.selectTarget.name == "TympanicThermometer";
+        Hand[] hands = thermometerGrabbable.GetHeldBy().ToArray();
+        return hands.Length > 0 && hands[0] == leftHand;
     }
 
     private void rightHold(InputAction.CallbackContext context) {

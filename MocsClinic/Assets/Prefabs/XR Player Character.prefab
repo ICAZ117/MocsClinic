@@ -7310,24 +7310,9 @@ PrefabInstance:
       objectReference: {fileID: 6306249147323910565}
     - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
         type: 3}
-      propertyPath: maxMoveSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
-        type: 3}
-      propertyPath: allowClimbing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
-        type: 3}
       propertyPath: forwardFollow
       value: 
       objectReference: {fileID: 6306249147323910561}
-    - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
-        type: 3}
-      propertyPath: allowPlatforms
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
         type: 3}
       propertyPath: trackingContainer
@@ -7401,77 +7386,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5396917911759902541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3493803445632894685 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5396917911759902541}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3493803445632894687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a35128610d1b34892726ec96e587d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &3493803445632894687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8834320319295017362, guid: fdc3ba53f4e81a040b0471bbbafbb10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5396917911759902541}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1353770478086423825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3493803445632894687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c2299af165ef2148b128cb7c00383bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3493803445632894685}
-  moveAxis:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Move Axis
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: d3d76a6c-9306-4d99-9c03-04a87b7c1fa6
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 2c06d4ce-8668-463d-bb7a-c283ba38f481
-        m_Path: <XRController>{LeftHand}/thumbstick
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Move Axis
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  turnAxis:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Turn Axis
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e4b206ab-e05f-4905-8b5a-1a4a826b6cda
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 663407a9-8a2b-40e6-9305-52ce6f595fb3
-        m_Path: <XRController>{RightHand}/thumbstick
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Turn Axis
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!1001 &6306249147596317237
 PrefabInstance:
   m_ObjectHideFlags: 0

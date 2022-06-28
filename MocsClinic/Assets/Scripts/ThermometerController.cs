@@ -41,7 +41,6 @@ public class ThermometerController : MonoBehaviour {
     }
 
     private void getTempRight(InputAction.CallbackContext context) {
-        Debug.Log("Right trigger");
         if (thermometerPower && isRightHandHolding()) {
             if (!coroutineRunning) {
                 StartCoroutine(getTemp());
@@ -50,7 +49,6 @@ public class ThermometerController : MonoBehaviour {
     }
 
     private void getTempLeft(InputAction.CallbackContext context) {
-        Debug.Log("Left trigger");
         if (thermometerPower && isLeftHandHolding()) {
             if (!coroutineRunning) {
                 StartCoroutine(getTemp());
@@ -69,7 +67,6 @@ public class ThermometerController : MonoBehaviour {
             else {
                 thermometerText.text = "";
             }
-            Debug.Log((thermometerPower) ? "Right on" : "Right off");
         }
     }
 
@@ -84,19 +81,12 @@ public class ThermometerController : MonoBehaviour {
             else {
                 thermometerText.text = "";
             }
-            Debug.Log((thermometerPower) ? "Left on" : "Left off");
         }
     }
 
     private IEnumerator getTemp() {
-        // Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
         // Yield on a new YieldInstruction that waits for 2 seconds.
         yield return new WaitForSeconds(2);
-
-        // After we have waited 2 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
 
         // Play a beep sound
         beep.Play();
@@ -127,11 +117,8 @@ public class ThermometerController : MonoBehaviour {
         yield return 0;
         yield return 0;
 
-        Debug.Log("Right hold" + isRightHandHolding());
         if (isRightHandHolding()) {
-            Debug.Log("Before: " + thermometer.transform.localRotation);
             thermometer.transform.localRotation = Quaternion.Euler(51, 19, 96);
-            Debug.Log("After: " + thermometer.transform.localRotation);
         }
     }
 
@@ -143,11 +130,8 @@ public class ThermometerController : MonoBehaviour {
         yield return 0;
         yield return 0;
 
-        Debug.Log("Left hold" + isLeftHandHolding());
         if (isLeftHandHolding()) {
-            Debug.Log("Before: " + thermometer.transform.localRotation);
             thermometer.transform.localRotation = Quaternion.Euler(-42, -153, 64);
-            Debug.Log("After: " + thermometer.transform.localRotation);
         }
     }
     #pragma warning restore 0618

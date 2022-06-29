@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07980883, g: 0.10320754, b: 0.14529672, a: 1}
+  m_IndirectSpecularColor: {r: 0.07980086, g: 0.10320063, b: 0.14529516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -513,6 +513,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3100311144611435707, guid: 7e95b1dc615d4ea4c8f0a9a7c0b8c02e, type: 3}
+--- !u!4 &129908315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6306249147323910561, guid: 330022ba83b2ac54299eed27df10ee36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8350241463930330672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &142264163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3400779905769426425, guid: 3030f6642327f034ba8311332d465d4f,
@@ -923,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7dcd241799b55e842b2bb5deb2379601,
         type: 3}
       propertyPath: m_Name
-      value: DECIMATED_STETHOSCOPE
+      value: Stethoscope
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dcd241799b55e842b2bb5deb2379601, type: 3}
@@ -1802,6 +1808,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4920456094116661427}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &560969355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560969356}
+  m_Layer: 0
+  m_Name: Leg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &560969356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560969355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1602305181}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &563940356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8602174847553184762, guid: f04a94812dc87de4585c1c90753a3904,
@@ -3560,6 +3597,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1876997806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1189223086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189223087}
+  m_Layer: 31
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1189223087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189223086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 129908315}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1206877236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6150291947576191594, guid: fd130985cb9add549aac50240bdc37d2,
@@ -4166,8 +4234,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8284d5deec80cc243b30d10fd8275e92, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 19de010bf48fa064fb8e6e23cc10da1c, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -4936,55 +5004,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea854bad7528c154881cfcd16f9d8671, type: 3}
---- !u!1 &1602305173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3493803445632894687, guid: 330022ba83b2ac54299eed27df10ee36,
+--- !u!4 &1602305181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493803445632894674, guid: 330022ba83b2ac54299eed27df10ee36,
     type: 3}
   m_PrefabInstance: {fileID: 8350241463930330672}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1602305180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602305173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9c288aa20513c4aafa0228d4cfd80e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ignoreMe: 0
-  matchTarget: {fileID: 280970460}
-  placeNames: []
-  placeRadius: 0.25
-  forcePlace: 1
-  forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
-  destroyObjectOnPlace: 0
-  makePlacedKinematic: 1
-  placedJointLink: {fileID: 0}
-  jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 280970460}
-  placedOffset: {fileID: 0}
-  parentOnPlace: 1
-  heldPlaceOnly: 1
-  blacklistNames: []
-  showEvents: 1
-  OnPlace:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRemove:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStopHighlight:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1622175866
 GameObject:
   m_ObjectHideFlags: 0

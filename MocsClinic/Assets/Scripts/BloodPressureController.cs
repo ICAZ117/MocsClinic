@@ -77,6 +77,7 @@ public class BloodPressureController : MonoBehaviour {
             if ((isRightHandHolding() && AButtonHeld) || (isLeftHandHolding() && XButtonHeld)) {
                 isNeedleRunning = true;
                 releaseSound.Play();
+                Debug.Log("Sound go brr");
                 resetCoroutine = StartCoroutine(resetNeedle(needle.transform));
             }
         }   

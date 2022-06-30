@@ -21,10 +21,12 @@ public class ThermometerController : MonoBehaviour {
     public Grabbable thermometerGrabbable;
     public TMP_Text thermometerText;
     public AudioSource beep;
+    public GameObject gameController;
     private XRDirectInteractor rightInteractor;
     private XRDirectInteractor leftInteractor;
     private bool coroutineRunning = false;
     private bool thermometerPower = false;
+    private float temperature;
 
     // Start is called before the first frame update
     void Start() {
@@ -32,12 +34,16 @@ public class ThermometerController : MonoBehaviour {
         xButton.action.started += togglePowerLeft;
         rightTrigger.action.started += getTempRight;
         leftTrigger.action.started += getTempLeft;
-        rightGrip.action.started += rightHold;
-        leftGrip.action.started += leftHold;
+        StartCoroutine(init());
     } 
 
     // Update is called once per frame
     void Update() {
+    }
+
+    private IEnumerator init() {
+        yield return null;
+        temperature = gameController.GetComponent<GameValues>().temperature;
     }
 
     private void getTempRight(InputAction.CallbackContext context) {
@@ -62,7 +68,7 @@ public class ThermometerController : MonoBehaviour {
             thermometerPower = !thermometerPower;
 
             if (thermometerPower) {
-                thermometerText.text = "00.0° F";
+                thermometerText.text = "00.0° C";
             }
             else {
                 thermometerText.text = "";
@@ -76,7 +82,7 @@ public class ThermometerController : MonoBehaviour {
             thermometerPower = !thermometerPower;
 
             if (thermometerPower) {
-                thermometerText.text = "00.0° F";
+                thermometerText.text = "00.0° C";
             }
             else {
                 thermometerText.text = "";
@@ -91,12 +97,8 @@ public class ThermometerController : MonoBehaviour {
         // Play a beep sound
         beep.Play();
 
-        // Generate a random number
-        System.Random rnd = new System.Random();
-        double temp = 95.5 + (rnd.NextDouble() * 8.5);
-
-        // Set the text to 37 C
-        thermometerText.text = Math.Round(temp, 1) + " °F";
+        // Set the text to the imported temperature
+        thermometerText.text = Math.Round(temperature, 1) + " °C";
     }
 
     private bool isRightHandHolding() {
@@ -109,30 +111,6 @@ public class ThermometerController : MonoBehaviour {
         return hands.Length > 0 && hands[0] == leftHand;
     }
 
-    private void rightHold(InputAction.CallbackContext context) {
-        StartCoroutine(rightHoldCoroutine());
-    }
-
-    private IEnumerator rightHoldCoroutine() {
-        yield return 0;
-        yield return 0;
-
-        if (isRightHandHolding()) {
-            thermometer.transform.localRotation = Quaternion.Euler(51, 19, 96);
-        }
-    }
-
-    private void leftHold(InputAction.CallbackContext context) {
-        StartCoroutine(leftHoldCoroutine());
-    }
-
-    private IEnumerator leftHoldCoroutine() {
-        yield return 0;
-        yield return 0;
-
-        if (isLeftHandHolding()) {
-            thermometer.transform.localRotation = Quaternion.Euler(-42, -153, 64);
-        }
-    }
+    
     #pragma warning restore 0618
 }

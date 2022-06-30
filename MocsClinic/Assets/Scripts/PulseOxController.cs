@@ -5,14 +5,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
+using Autohand;
 
 public class PulseOxController : MonoBehaviour {
 #pragma warning disable 0618
     public InputActionReference aButton;
     public InputActionReference xButton;
-    public GameObject rightHand;
-    public GameObject leftHand;
+    public Hand rightHand;
+    public Hand leftHand;
     public GameObject pulseOx;
+    public Grabbable pulseOxGrabbable;
     public TMP_Text pulseOxHR;
     public TMP_Text pulseOxO2;
     private XRDirectInteractor rightInteractor;
@@ -69,11 +71,13 @@ public class PulseOxController : MonoBehaviour {
     }
 
     private bool isRightHandHolding() {
-        return rightInteractor.selectTarget != null && rightInteractor.selectTarget.name == "PulseOximeter";
+        Hand[] hands = pulseOxGrabbable.GetHeldBy().ToArray();
+        return hands.Length > 0 && hands[0] == rightHand;
     }
 
     private bool isLeftHandHolding() {
-        return leftInteractor.selectTarget != null && leftInteractor.selectTarget.name == "PulseOximeter";
+        Hand[] hands = pulseOxGrabbable.GetHeldBy().ToArray();
+        return hands.Length > 0 && hands[0] == leftHand;
     }
-    #pragma warning restore 0618
+#pragma warning restore 0618
 }

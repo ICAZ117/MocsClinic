@@ -9,6 +9,7 @@ using Autohand;
 
 public class PulseOxController : MonoBehaviour {
 #pragma warning disable 0618
+    public GameObject gameController;
     public InputActionReference aButton;
     public InputActionReference xButton;
     public Hand rightHand;
@@ -20,6 +21,8 @@ public class PulseOxController : MonoBehaviour {
     private XRDirectInteractor rightInteractor;
     private XRDirectInteractor leftInteractor;
     private bool pulseOxPower = false;
+    private int hr;
+    private int O2Sat;
 
     // Start is called before the first frame update
     void Start() {
@@ -27,12 +30,22 @@ public class PulseOxController : MonoBehaviour {
         xButton.action.started += togglePowerLeft;
         rightInteractor = rightHand.GetComponent<XRDirectInteractor>();
         leftInteractor = leftHand.GetComponent<XRDirectInteractor>();
+        StartCoroutine(init());
     }
 
     // Update is called once per frame
     void Update() {
 
     }
+
+    private IEnumerator init() {
+        yield return null;
+        hr = gameController.GetComponent<GameValues>().hr;
+        O2Sat = gameController.GetComponent<GameValues>().O2Sat;
+        yield return null;
+        Debug.Log(hr + " " + O2Sat);
+    }
+
 
     private void togglePowerRight(InputAction.CallbackContext context) {
         // Check if right hand is holding pulseOx
@@ -41,8 +54,8 @@ public class PulseOxController : MonoBehaviour {
             pulseOxPower = !pulseOxPower;
 
             if (pulseOxPower) {
-                pulseOxHR.text = "97";
-                pulseOxO2.text = "77";
+                pulseOxHR.text = hr.ToString();
+                pulseOxO2.text = O2Sat.ToString();
             }
             else {
                 pulseOxHR.text = "";
@@ -59,8 +72,8 @@ public class PulseOxController : MonoBehaviour {
             pulseOxPower = !pulseOxPower;
 
             if (pulseOxPower) {
-                pulseOxHR.text = "-";
-                pulseOxO2.text = "-";
+                pulseOxHR.text = hr.ToString();
+                pulseOxO2.text = O2Sat.ToString();
             }
             else {
                 pulseOxHR.text = "";

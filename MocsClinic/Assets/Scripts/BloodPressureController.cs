@@ -31,7 +31,8 @@ public class BloodPressureController : MonoBehaviour {
     public AudioSource pumpSound;
     public AudioSource releaseSound;
     private bool isPumpRunning = false;
-    private bool isNeedleRunning = false;
+    [HideInInspector]
+    public bool isNeedleRunning = false;
     private bool AButtonHeld = false;
     private bool XButtonHeld = false;
     private Coroutine resetCoroutine = null;
@@ -101,9 +102,9 @@ public class BloodPressureController : MonoBehaviour {
         System.Random rnd = new System.Random();
         if (isRightHandHolding() && isSleeveOn() && !isPumpRunning && !isNeedleRunning && needle.transform.localRotation.eulerAngles.z < 264) {
             isPumpRunning = true;
-            StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.5f));
+            StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.25f));
             isNeedleRunning = true;
-            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.5f)); 
+            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f)); 
         }
             
     }
@@ -112,9 +113,9 @@ public class BloodPressureController : MonoBehaviour {
         System.Random rnd = new System.Random();
         if (isLeftHandHolding() && isSleeveOn() && !isPumpRunning && !isNeedleRunning && needle.transform.localRotation.eulerAngles.z < 264) {
             isPumpRunning = true;
-            StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.5f));
+            StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.25f));
             isNeedleRunning = true;
-            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.5f)); 
+            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f)); 
         }
     }
 
@@ -151,7 +152,7 @@ public class BloodPressureController : MonoBehaviour {
     // Weird error where after deflating it requires a lot more pumps to inflate / won't inflate right away
     IEnumerator resetNeedle(Transform transform) {
         while (transform.localRotation.eulerAngles.z > 0.31f && transform.localRotation.eulerAngles.z < 266) {
-            transform.localRotation = Quaternion.Euler(0,0,transform.localRotation.eulerAngles.z - 0.3f);
+            transform.localRotation = Quaternion.Euler(0,0,transform.localRotation.eulerAngles.z - 0.1f);
             yield return null;
         }
         transform.localRotation = Quaternion.Euler(0,0,0);

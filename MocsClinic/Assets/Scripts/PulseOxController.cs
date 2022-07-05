@@ -43,7 +43,6 @@ public class PulseOxController : MonoBehaviour {
         hr = gameController.GetComponent<GameValues>().hr;
         O2Sat = gameController.GetComponent<GameValues>().O2Sat;
         yield return null;
-        Debug.Log(hr + " " + O2Sat);
     }
 
 

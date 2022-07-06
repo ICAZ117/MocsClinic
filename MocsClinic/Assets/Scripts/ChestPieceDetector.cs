@@ -37,11 +37,11 @@ public class ChestPieceDetector : MonoBehaviour {
                     Debug.Log("Enter Mitral");
                     gameController.GetComponent<StethoscopeController>().inMitralRegion = true;
                     break;
-                case "RightArmChestPiece":
+                case "RightLowerForearm":
                     Debug.Log("Enter RightArm");
                     gameController.GetComponent<StethoscopeController>().onRightArm = true;
                     break;
-                case "LeftArmChestPiece":
+                case "LeftLowerForearm":
                     Debug.Log("Enter LeftArm");
                     gameController.GetComponent<StethoscopeController>().onLeftArm = true;
                     break;
@@ -69,11 +69,11 @@ public class ChestPieceDetector : MonoBehaviour {
                     Debug.Log("Exit Mitral");
                     gameController.GetComponent<StethoscopeController>().inMitralRegion = false;
                     break;
-                case "RightArmChestPiece":
+                case "RightLowerForearm":
                     Debug.Log("Exit RightArm");
                     gameController.GetComponent<StethoscopeController>().onRightArm = false;
                     break;
-                case "LeftArmChestPiece":
+                case "LeftLowerForearm":
                     Debug.Log("Exit LeftArm");
                     gameController.GetComponent<StethoscopeController>().onLeftArm = false;
                     break;

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BabyMeshController : MonoBehaviour {
-    public SkinnedMeshRenderer meshRenderer;
-    public MeshCollider collider;
+    public GameObject pelvis;
+    public GameObject LeftHumerus;
+    public GameObject RightHumerus;
+    public GameObject LeftArm;
+    public GameObject RightArm;
 
     // Start is called before the first frame update
     void Start() {
-        Mesh colliderMesh = new Mesh();
-        meshRenderer.BakeMesh(colliderMesh);
-        collider.sharedMesh = null;
-        collider.sharedMesh = colliderMesh;
+        
     }
 
     // Update is called once per frame
     void Update() {
-
+        Debug.Log("Pelvis: " + pelvis.transform.localRotation.eulerAngles);
     }
 
 }

@@ -6431,6 +6431,7 @@ GameObject:
   - component: {fileID: 2125877878}
   - component: {fileID: 2125877877}
   - component: {fileID: 1324858046}
+  - component: {fileID: 2125877879}
   m_Layer: 6
   m_Name: Baby_bone_Pelvis
   m_TagString: Untagged
@@ -7167,8 +7168,6 @@ MonoBehaviour:
   pelvis: {fileID: 1324858045}
   LeftHumerus: {fileID: 1324858059}
   RightHumerus: {fileID: 1324857989}
-  LeftArm: {fileID: 1324858067}
-  RightArm: {fileID: 1324857997}
 --- !u!1 &1324858221
 GameObject:
   m_ObjectHideFlags: 0
@@ -9857,6 +9856,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2125877879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324858045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37eaeedb3fe258428a51d1085f83e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pelvis: {fileID: 1324858045}
+  LeftHumerus: {fileID: 1324858059}
+  RightHumerus: {fileID: 1324857989}
 --- !u!4 &543450652380818727
 Transform:
   m_ObjectHideFlags: 0

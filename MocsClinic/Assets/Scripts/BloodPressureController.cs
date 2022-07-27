@@ -51,6 +51,10 @@ public class BloodPressureController : MonoBehaviour {
     void Update() {
     }
 
+    //---------------------------------------------------------\\
+    //-------------------- BUTTON BOOLEANS --------------------\\
+    //---------------------------------------------------------\\
+    // Methods to toggle button booleans
     private void AButtonPress(InputAction.CallbackContext context) {
         AButtonHeld = true;
     }
@@ -67,6 +71,13 @@ public class BloodPressureController : MonoBehaviour {
         XButtonHeld = false;
     }
 
+
+    
+
+    //---------------------------------------------------------\\
+    //--------------------- START RELEASE ---------------------\\
+    //---------------------------------------------------------\\
+    // Wrapper and coroutine to START releasing air from the sleeve, triggered in Unity UI
     public void releaseWrapper() {
         // Bruh, this some 3380 garbage
         StartCoroutine(startRelease());
@@ -80,11 +91,18 @@ public class BloodPressureController : MonoBehaviour {
                 releaseSound.Play();
                 resetCoroutine = StartCoroutine(resetNeedle(needle.transform));
             }
-        }   
+        }
     }
 
-    // This is a wrapper, you can tell its a wrapper by the way that it is
+
+
+ 
+    //---------------------------------------------------------\\
+    //---------------------- END RELEASE ----------------------\\
+    //---------------------------------------------------------\\
+    // Wrapper and coroutine to STOP releasing air from the sleeve, triggered in Unity UI
     public void releaseWrapperTwo() {
+        // This is a wrapper, you can tell its a wrapper by the way that it is
         StartCoroutine(endRelease());
     }
 
@@ -98,15 +116,22 @@ public class BloodPressureController : MonoBehaviour {
         }
     }
 
+
+
+  
+    //---------------------------------------------------------\\
+    //------------------------- PUMP --------------------------\\
+    //---------------------------------------------------------\\
+    // Trigger methods to handle pumping from right and left hands, respectively
     private void pumpRight(InputAction.CallbackContext context) {
         System.Random rnd = new System.Random();
         if (isRightHandHolding() && isSleeveOn() && !isPumpRunning && !isNeedleRunning && needle.transform.localRotation.eulerAngles.z < 264) {
             isPumpRunning = true;
             StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.25f));
             isNeedleRunning = true;
-            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f)); 
+            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f));
         }
-            
+
     }
 
     private void pumpLeft(InputAction.CallbackContext context) {
@@ -115,10 +140,11 @@ public class BloodPressureController : MonoBehaviour {
             isPumpRunning = true;
             StartCoroutine(doPump(BPPump.transform, new Vector3(0.7f, 1.25f, 1.25f), 0.25f));
             isNeedleRunning = true;
-            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f)); 
+            StartCoroutine(rotateNeedle(needle.transform, (float)((rnd.NextDouble() * 10) + 40), 0.25f));
         }
     }
 
+    // Coroutine to squeeze and then release the pump GameObject
     IEnumerator doPump(Transform transform, Vector3 upScale, float duration) {
         Vector3 initialScale = transform.localScale;
         pumpSound.Play();
@@ -135,6 +161,13 @@ public class BloodPressureController : MonoBehaviour {
         isPumpRunning = false;
     }
 
+
+
+
+    //---------------------------------------------------------\\
+    //-------------------- NEEDLE ROTATION --------------------\\
+    //---------------------------------------------------------\\
+    // Coroutine to rotate the needle forward by a certain number of degrees over a certain duration
     IEnumerator rotateNeedle(Transform transform, float rotation, float duration) {
         Quaternion initialRotation = transform.localRotation;
         if (initialRotation.eulerAngles.z + rotation > 265) {
@@ -142,24 +175,29 @@ public class BloodPressureController : MonoBehaviour {
         }
         for (float time = 0; time < duration; time += Time.deltaTime) {
             float progress = Mathf.PingPong(time, duration);
-            transform.localRotation = Quaternion.Slerp(initialRotation, Quaternion.Euler(0,0,initialRotation.eulerAngles.z + rotation), progress);
+            transform.localRotation = Quaternion.Slerp(initialRotation, Quaternion.Euler(0, 0, initialRotation.eulerAngles.z + rotation), progress);
             yield return null;
         }
         isNeedleRunning = false;
     }
 
-    // Trying to get the needle to rotate the correct direction when deflating
-    // Weird error where after deflating it requires a lot more pumps to inflate / won't inflate right away
+    // Coroutine to reset the needle to its original position
     IEnumerator resetNeedle(Transform transform) {
         while (transform.localRotation.eulerAngles.z > 0.31f && transform.localRotation.eulerAngles.z < 266) {
-            transform.localRotation = Quaternion.Euler(0,0,transform.localRotation.eulerAngles.z - 0.1f);
+            transform.localRotation = Quaternion.Euler(0, 0, transform.localRotation.eulerAngles.z - 0.1f);
             yield return null;
         }
-        transform.localRotation = Quaternion.Euler(0,0,0);
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
         releaseSound.Stop();
         isNeedleRunning = false;
     }
 
+
+
+    
+    //---------------------------------------------------------\\
+    //--------------------- PREREQUISITES ---------------------\\
+    //---------------------------------------------------------\\
     private bool isSleeveOn() {
         return (rightArm.placedObject != null || leftArm.placedObject != null);
     }

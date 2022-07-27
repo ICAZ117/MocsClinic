@@ -25,8 +25,6 @@ public class BabyPoseController : MonoBehaviour {
         // Calculate current percentage of rotation
         float percentage = ((100 - pelvisRotation) / 90);
 
-        Debug.Log(percentage);
-
         // Calculate new x rotations for each joint
         float leftHumerusX = calcRotation(18, -31, percentage);
         float rightHumerusX = calcRotation(18, -31, percentage);
@@ -50,4 +48,5 @@ public class BabyPoseController : MonoBehaviour {
         return (start + (percentage * (end - start)));
     }
 
+    
 }

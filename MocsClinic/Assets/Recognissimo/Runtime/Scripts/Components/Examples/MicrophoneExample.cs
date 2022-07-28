@@ -7,11 +7,9 @@ using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
 
-namespace Recognissimo.Components.Examples
-{
+namespace Recognissimo.Components.Examples {
     [AddComponentMenu("Recognissimo/Examples/Microphone Example")]
-    public class MicrophoneExample : MonoBehaviour
-    {
+    public class MicrophoneExample : MonoBehaviour {
         private const string InitializationMessage = "Loading speech model and setup recognizer...";
         private const string GreetingMessage = "Press 'Space' or tap to start/stop recognition";
         private const string RecognitionStartedMessage = "Recognizing...";
@@ -27,24 +25,21 @@ namespace Recognissimo.Components.Examples
         [SerializeField] private SpeechRecognizer recognizer;
         [SerializeField] private Text text;
 
-        public SystemLanguage defaultLanguage = SystemLanguage.Unknown; 
-        
-        private void Awake()
-        {
+        public SystemLanguage defaultLanguage = SystemLanguage.Unknown;
+
+        private void Awake() {
             _language = defaultLanguage != SystemLanguage.Unknown
                 ? defaultLanguage
                 : Application.systemLanguage;
-            
+
             _recognizedText = new RecognizedText();
         }
-        
-        private async void Start()
-        {
+
+        private async void Start() {
             text.text = InitializationMessage;
-            
-            try
-            {
-                await InitPlatformPermissions();                
+
+            try {
+                await InitPlatformPermissions();
                 InitMicSource();
                 InitLanguage();
                 await InitModelProvider();
@@ -52,39 +47,32 @@ namespace Recognissimo.Components.Examples
                 InitRecognizer();
                 OnInitialized();
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 OnError(e.Message);
             }
         }
 
-        private void Update()
-        {
-            if (!_ready)
-            {
-                return;
-            }
-            
-            var spaceReleased = Input.GetKeyUp(KeyCode.Space);
-            var touchEnded = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
-            
-            if (!spaceReleased && !touchEnded)
-            {
+        private void Update() {
+            if (!_ready) {
                 return;
             }
 
-            if (recognizer.IsRecognizing)
-            {
+            var spaceReleased = true;
+            var touchEnded = true;
+
+            if (!spaceReleased && !touchEnded) {
+                return;
+            }
+
+            if (recognizer.IsRecognizing) {
                 OnStop();
             }
-            else
-            {
+            else {
                 OnStart();
             }
         }
 
-        private static async Task InitPlatformPermissions()
-        {
+        private static async Task InitPlatformPermissions() {
 #if UNITY_IOS
             await PlatformPermissions.RequestIOSPermissions();
 #elif UNITY_ANDROID
@@ -92,53 +80,46 @@ namespace Recognissimo.Components.Examples
 #endif
             await Task.CompletedTask;
         }
-        
-        private void InitMicSource()
-        {
+
+        private void InitMicSource() {
             micSource.microphoneSettings.deviceIndex = 0;
-            micSource.microphoneSettings.sampleRate = 16000;
+            micSource.microphoneSettings.sampleRate = 48000;
             micSource.StartMicrophone();
         }
-        
-        private void InitLanguage()
-        {
-            if (modelProvider.speechModels.Any(info => info.language == _language))
-            {
+
+        private void InitLanguage() {
+            if (modelProvider.speechModels.Any(info => info.language == _language)) {
                 return;
             }
-            
+
             const SystemLanguage fallbackLanguage = SystemLanguage.English;
 
             Debug.LogWarning($"Fallback from {_language.ToString()} to {fallbackLanguage}");
 
             _language = fallbackLanguage;
         }
-        
-        private async Task InitModelProvider()
-        {
+
+        private async Task InitModelProvider() {
             await modelProvider.InitializeAsync();
             await modelProvider.LoadLanguageModelAsync(_language);
         }
 
-        private void InitLanguageDropdown()
-        {
+        private void InitLanguageDropdown() {
             languageDropdown.options = modelProvider.speechModels
-                .Select(info => new Dropdown.OptionData {text = info.language.ToString()})
+                .Select(info => new Dropdown.OptionData { text = info.language.ToString() })
                 .ToList();
 
             languageDropdown.value =
                 languageDropdown.options.FindIndex(option => option.text == _language.ToString());
 
-            languageDropdown.onValueChanged.AddListener(index =>
-            {
+            languageDropdown.onValueChanged.AddListener(index => {
                 var optionText = languageDropdown.options[index].text;
-                var selectedLanguage = (SystemLanguage) Enum.Parse(typeof(SystemLanguage), optionText);
+                var selectedLanguage = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), optionText);
                 OnLanguageChanged(selectedLanguage);
             });
         }
 
-        private void InitRecognizer()
-        {
+        private void InitRecognizer() {
             recognizer.speechSource = micSource;
             recognizer.modelProvider = modelProvider;
             recognizer.partialResultReady.AddListener(OnPartialResultReady);
@@ -146,55 +127,45 @@ namespace Recognissimo.Components.Examples
             recognizer.crashed.AddListener(OnCrashed);
         }
 
-        private void UpdateUiText()
-        {
+        private void UpdateUiText() {
             text.text = _recognizedText.CurrentText;
         }
 
-        private void OnStart()
-        {
+        private void OnStart() {
             _recognizedText.Clear();
 
             text.text = RecognitionStartedMessage;
             recognizer.modelProvider = modelProvider;
 
-            try
-            {
+            try {
                 recognizer.StartRecognition();
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 text.text = e.Message;
             }
         }
 
-        private void OnStop()
-        {
+        private void OnStop() {
             text.text = GreetingMessage;
             recognizer.StopRecognition();
         }
 
-        private void OnInitialized()
-        {
+        private void OnInitialized() {
             text.text = GreetingMessage;
             _ready = true;
         }
 
-        private void OnError(string error)
-        {
-            if (text != null)
-            {
+        private void OnError(string error) {
+            if (text != null) {
                 text.text = error;
             }
         }
 
-        private void OnCrashed()
-        {
+        private void OnCrashed() {
             OnError(RecognizerCrashedMessage);
         }
 
-        private async void OnLanguageChanged(SystemLanguage language)
-        {
+        private async void OnLanguageChanged(SystemLanguage language) {
             _ready = false;
 
             recognizer.StopRecognition();
@@ -203,57 +174,46 @@ namespace Recognissimo.Components.Examples
             OnInitialized();
         }
 
-        private void OnResultReady(Result result)
-        {
+        private void OnResultReady(Result result) {
             _recognizedText.Add(result);
             UpdateUiText();
         }
 
-        private void OnPartialResultReady(PartialResult partialResult)
-        {
+        private void OnPartialResultReady(PartialResult partialResult) {
             _recognizedText.Add(partialResult);
             UpdateUiText();
         }
 
-        private class RecognizedText
-        {
+        private class RecognizedText {
             private string _changingText;
             private string _stableText;
 
             public string CurrentText => $"{_stableText} <color=grey>{_changingText}</color>";
 
-            public void Add(Result result)
-            {
+            public void Add(Result result) {
                 _changingText = "";
                 _stableText = $"{_stableText} {result.text}";
             }
 
-            public void Add(PartialResult partialResult)
-            {
+            public void Add(PartialResult partialResult) {
                 _changingText = partialResult.partial;
             }
 
-            public void Clear()
-            {
+            public void Clear() {
                 _changingText = "";
                 _stableText = "";
             }
         }
 
-        private static class PlatformPermissions
-        {
-            public static async Task RequestIOSPermissions()
-            {
+        private static class PlatformPermissions {
+            public static async Task RequestIOSPermissions() {
                 var result = Application.RequestUserAuthorization(UserAuthorization.Microphone);
                 var isComplete = new TaskCompletionSource<bool>();
-                result.completed += operation =>
-                {
-                    if (operation.isDone)
-                    {
+                result.completed += operation => {
+                    if (operation.isDone) {
                         isComplete.SetResult(operation.isDone);
                     }
-                    else
-                    {
+                    else {
                         isComplete.SetException(new InvalidOperationException("Microphone access denied"));
                     }
                 };
@@ -261,8 +221,7 @@ namespace Recognissimo.Components.Examples
                 await isComplete.Task;
             }
 
-            public static void RequestAndroidPermissions()
-            {
+            public static void RequestAndroidPermissions() {
                 var requestedPermissions = new List<string>
                     {Permission.Microphone, Permission.ExternalStorageWrite, Permission.ExternalStorageRead};
 
@@ -271,8 +230,7 @@ namespace Recognissimo.Components.Examples
 
                 FindMissingPermissions().ForEach(Permission.RequestUserPermission);
 
-                if (FindMissingPermissions().Count > 0)
-                {
+                if (FindMissingPermissions().Count > 0) {
                     throw new InvalidOperationException("Permission request failed");
                 }
             }

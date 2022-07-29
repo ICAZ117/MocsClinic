@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07980883, g: 0.10320754, b: 0.14529672, a: 1}
+  m_IndirectSpecularColor: {r: 0.07980086, g: 0.10320063, b: 0.14529516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -893,8 +893,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8a569d63f69ad459c3ca87822bff84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voiceControl: {fileID: 1083054342}
   currentQuestion: 0
+  head: {fileID: 1179480112}
+  audioClipOne: {fileID: 8300000, guid: cba0ac07b8e379f4aa3ecad8298b2d95, type: 3}
+  audioClipTwo: {fileID: 8300000, guid: 02c2119a5fb955a4aa021f5a1e84bdbd, type: 3}
+  audioClipThree: {fileID: 8300000, guid: c5c7371304a5eb0479d8d444b64ee06c, type: 3}
+  audioClipFour: {fileID: 8300000, guid: 8f0a26f34a833f34bb23f5b6b36a08ec, type: 3}
+  audioClipFive: {fileID: 8300000, guid: 1c082c9094488654685ba52e8ae43e8f, type: 3}
+  audioClipSix: {fileID: 8300000, guid: 353f20bc60bf6f9429c4269f40fa3daa, type: 3}
+  audioClipSeven: {fileID: 8300000, guid: 0ebb90bc6510d2345890c861b6745000, type: 3}
+  audioClipEight: {fileID: 8300000, guid: 26a5fb5c1a0e86b419cdd4d4f5304a84, type: 3}
+  responseNumber: 01000000020000000300000004000000050000000600000007000000070000000800000007000000070000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000700000008000000070000000700000007000000
 --- !u!1001 &211377573
 PrefabInstance:
   m_ObjectHideFlags: 0

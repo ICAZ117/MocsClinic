@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Response {
+    public string description;
+    [SerializeField]
+    public AudioClip[] audioClips;
+}
+
 public class CommunicationController : MonoBehaviour {
     [HideInInspector]
     public int currentQuestion;
 
     public GameObject head;
     private AudioSource audioSource;
-    public AudioClip audioClipOne;
-    public AudioClip audioClipTwo;
-    public AudioClip audioClipThree;
-    public AudioClip audioClipFour;
-    public AudioClip audioClipFive;
-    public AudioClip audioClipSix;
-    public AudioClip audioClipSeven;
-    public AudioClip audioClipEight;
-    public int[] responseNumber = {1, 2, 3, 4, 5, 6, 7, 7, 8, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 8, 7, 7, 7};
+
+    public List<Response> responses;
+    
+    public int[] defaultResponses;
 
     // Start is called before the first frame update
     void Start() {
@@ -29,55 +31,45 @@ public class CommunicationController : MonoBehaviour {
 
     }
 
-    public void questionDetected(int questionNumber) {
+    public void questionDetected(string question) {
+        // Initialize variables
+        int questionNumber = -1, responseNumber = -1;
+
+        // Extract the question number from the string
+        int.TryParse(question.Split(' ')[0], out questionNumber);
+
+        // If there is a response number, extract it as well
+        if (question.Split(' ').Length > 1) {
+            int.TryParse(question.Split(' ')[1], out responseNumber);
+        }
+
+        // If the question number matches the current question, launch the response sequence
         if (questionNumber == currentQuestion) {
+            // Log question detection to console
             Debug.Log("Question " + currentQuestion + " detected");
 
             // Make question appear on tablet
-            
-            StartCoroutine(respond(questionNumber));
+
+            // Launch coroutine to play response audio
+            StartCoroutine(respond(questionNumber, responseNumber));
         }
     }
 
-    private IEnumerator respond(int questionNumber) {
+    private IEnumerator respond(int questionNumber, int responseNumber) {
         // Save current question
         int temp = currentQuestion;
 
         // Prevent user from triggering next question until this response is finished
         currentQuestion = -1;
 
-        // Wait a second for realism
-        yield return new WaitForSeconds(1);
-
-        switch (responseNumber[temp]) {
-            case 1:
-                audioSource.clip = audioClipOne;
-                break;
-            case 2:
-                audioSource.clip = audioClipTwo;
-                break;
-            case 3:
-                audioSource.clip = audioClipThree;
-                break;
-            case 4:
-                audioSource.clip = audioClipFour;
-                break;
-            case 5:
-                audioSource.clip = audioClipFive;
-                break;
-            case 6:
-                audioSource.clip = audioClipSix;
-                break;
-            case 7:
-                audioSource.clip = audioClipSeven;
-                break;
-            case 8:
-                audioSource.clip = audioClipEight;
-                break;
-            default:
-                Debug.Log("Invalid question number");
-                break;
+        // If not response was provided, use the default response for the current question
+        if (responseNumber == -1) {
+            responseNumber = defaultResponses[temp];
         }
+
+        // Set the audio clip to a random clip from the specified response category
+        audioSource.clip = responses[responseNumber].audioClips[Random.Range(0, responses[responseNumber].audioClips.Length)];
+
         // Play audio
         audioSource.Play();
 
@@ -87,3 +79,5 @@ public class CommunicationController : MonoBehaviour {
         currentQuestion = ++temp;
     }
 }
+
+

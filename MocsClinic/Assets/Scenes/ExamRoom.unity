@@ -895,15 +895,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentQuestion: 0
   head: {fileID: 1179480112}
-  audioClipOne: {fileID: 8300000, guid: cba0ac07b8e379f4aa3ecad8298b2d95, type: 3}
-  audioClipTwo: {fileID: 8300000, guid: 02c2119a5fb955a4aa021f5a1e84bdbd, type: 3}
-  audioClipThree: {fileID: 8300000, guid: c5c7371304a5eb0479d8d444b64ee06c, type: 3}
-  audioClipFour: {fileID: 8300000, guid: 8f0a26f34a833f34bb23f5b6b36a08ec, type: 3}
-  audioClipFive: {fileID: 8300000, guid: 1c082c9094488654685ba52e8ae43e8f, type: 3}
-  audioClipSix: {fileID: 8300000, guid: 353f20bc60bf6f9429c4269f40fa3daa, type: 3}
-  audioClipSeven: {fileID: 8300000, guid: 0ebb90bc6510d2345890c861b6745000, type: 3}
-  audioClipEight: {fileID: 8300000, guid: 26a5fb5c1a0e86b419cdd4d4f5304a84, type: 3}
-  responseNumber: 01000000020000000300000004000000050000000600000007000000070000000800000007000000070000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000700000008000000070000000700000007000000
+  responses:
+  - description: 0. Hi, my name is Mary Smith
+    audioClips:
+    - {fileID: 8300000, guid: 81a76b5a27d571b429c881efcab4b668, type: 3}
+    - {fileID: 8300000, guid: 7716435d35bfac344ab8b515aecb1f43, type: 3}
+    - {fileID: 8300000, guid: 6206f9a22e69fd049892f66e2256e20a, type: 3}
+    - {fileID: 8300000, guid: 4422fba96c57ffe40ad6fbd398ebbc14, type: 3}
+    - {fileID: 8300000, guid: 55e94eccba02e204282d80ac562fcf42, type: 3}
+  - description: 1. You can call me Mary
+    audioClips:
+    - {fileID: 8300000, guid: 446721a36ca4c9044b2e8774bf94c930, type: 3}
+    - {fileID: 8300000, guid: abdb890289f12dd4bac7e0cc070cc756, type: 3}
+    - {fileID: 8300000, guid: 14514d45d40d3bd4e85b8766f1b39587, type: 3}
+    - {fileID: 8300000, guid: 4c33f0176f3969d4f90abdc91ea15bae, type: 3}
+    - {fileID: 8300000, guid: 38eaa135a545ef14b95994579f8934c6, type: 3}
+    - {fileID: 8300000, guid: 8cf0e1455ccdbb54e9906c2d66d2d2eb, type: 3}
+  - description: 2. This is my baby, Bobby
+    audioClips:
+    - {fileID: 8300000, guid: 139b7402c9d084b41b0597005d05ead2, type: 3}
+    - {fileID: 8300000, guid: 6c65eab3fa8bdbc46a2769d68c80d50c, type: 3}
+    - {fileID: 8300000, guid: 6bc08b6374ea60b48b67cf54a8bea8ae, type: 3}
+    - {fileID: 8300000, guid: ae380e7ab97e08c418f6651bbd827130, type: 3}
+    - {fileID: 8300000, guid: 603579a2c3517e741acca11b173973b8, type: 3}
+    - {fileID: 8300000, guid: 4fe4faa1ee1adaf45a626436b6749693, type: 3}
+    - {fileID: 8300000, guid: 9a0c88d4689c3064b827edb55e2bd9e9, type: 3}
+    - {fileID: 8300000, guid: b7f66b8ef105889468b6b079a9e72552, type: 3}
+  - description: 3. She/her is fine
+    audioClips:
+    - {fileID: 8300000, guid: 60c21fe98fe3c2e4292f0d2ebebc9177, type: 3}
+    - {fileID: 8300000, guid: 70d03166f8c63b148aee25ecae91acd2, type: 3}
+    - {fileID: 8300000, guid: ef0b5f9f7a4c1aa49aa1f5a9f0375c29, type: 3}
+    - {fileID: 8300000, guid: f381883cc328ba949a1aa5b5414800c5, type: 3}
+    - {fileID: 8300000, guid: 841e87df3fc058745b6749f94080976f, type: 3}
+  - description: 4. Sounds good
+    audioClips:
+    - {fileID: 8300000, guid: ba54226963c6fdc488d398aca93450c5, type: 3}
+    - {fileID: 8300000, guid: 0bedc4d2fbd044243b6ea4d6f78f151f, type: 3}
+    - {fileID: 8300000, guid: 1099215053fb0304ab269776d660ea4b, type: 3}
+    - {fileID: 8300000, guid: ac09e7e6b0d0da740be14e504a948f3d, type: 3}
+  - description: 5. Routine checkup
+    audioClips:
+    - {fileID: 8300000, guid: 3565e2fad107d154880e17aec958e8f8, type: 3}
+    - {fileID: 8300000, guid: 6d635b5dcb541a54fae590f86e9e0ab7, type: 3}
+    - {fileID: 8300000, guid: 763d25ee861af694ba86e79d6cbf0bf9, type: 3}
+    - {fileID: 8300000, guid: 8b5ad3dc8f5941440aa280e7dbcf52e2, type: 3}
+    - {fileID: 8300000, guid: 9eb80efb3d0a990488e1534c8859e48f, type: 3}
+    - {fileID: 8300000, guid: 80cb67d78787cb0499ea4a5392ee676b, type: 3}
+    - {fileID: 8300000, guid: b8ca9a36d69c6af4ba592ba8940472b3, type: 3}
+    - {fileID: 8300000, guid: 4c97e2aa20bca2d4ba085b057d02e32b, type: 3}
+    - {fileID: 8300000, guid: c7d5d6d3a56f97d4db5bf79f883b5d25, type: 3}
+  - description: 6. No
+    audioClips:
+    - {fileID: 8300000, guid: 0ee568bee762a5d43842a975d4f672f6, type: 3}
+    - {fileID: 8300000, guid: 0b291540f88174e4cbd3431115cf084c, type: 3}
+    - {fileID: 8300000, guid: 04f2330e815df9f439676448aad854c3, type: 3}
+    - {fileID: 8300000, guid: 1e945c9b3b150b64593f5f0cea17d3c5, type: 3}
+    - {fileID: 8300000, guid: eb0eebaba659794498d9d10ed53407e4, type: 3}
+    - {fileID: 8300000, guid: 632c945070e527648bb8b0a681985553, type: 3}
+    - {fileID: 8300000, guid: e29f35947a04d9a49bd3725bf6eb897c, type: 3}
+    - {fileID: 8300000, guid: c5579b954a2cce145807c6c4d0ab03f8, type: 3}
+    - {fileID: 8300000, guid: 0be7e188bf7be3d4e9c5a0d0e6179ed2, type: 3}
+    - {fileID: 8300000, guid: 014e2d23fc23dba4c9d3f261db9f6556, type: 3}
+    - {fileID: 8300000, guid: dd3057d579ebfe44f9af23bb9c2f2143, type: 3}
+    - {fileID: 8300000, guid: 8d32c37fe8f5378458635b843f39a307, type: 3}
+    - {fileID: 8300000, guid: 0c0ed754947ab3b4ca9449fd73eb3287, type: 3}
+  - description: 7. No he doesn't
+    audioClips:
+    - {fileID: 8300000, guid: dd2f7edfec3a19a4e91f8d8901c13e06, type: 3}
+    - {fileID: 8300000, guid: ae50ad86598d22d4cb795b23e69da600, type: 3}
+  - description: 8. No they aren't
+    audioClips:
+    - {fileID: 8300000, guid: f0ba80560721bcf47837bb606957470f, type: 3}
+    - {fileID: 8300000, guid: ca65e3e43ea62334d91bb61f4bc31e83, type: 3}
+    - {fileID: 8300000, guid: 9f46ba681d24bb441a037bd5cf1d2872, type: 3}
+    - {fileID: 8300000, guid: 61aa563de2c1e9a4082d2ba1e3e893ee, type: 3}
+    - {fileID: 8300000, guid: 9a740243e19a96a46ba49c16e8aeb7cf, type: 3}
+    - {fileID: 8300000, guid: ad91b0198f3b70f4fa4f5bccbda195cb, type: 3}
+  - description: 9. No we don't
+    audioClips:
+    - {fileID: 8300000, guid: b6a1aa78ba7a27244ac0a049e0839d22, type: 3}
+    - {fileID: 8300000, guid: a8fd6c8346e4f9f4dbe5df13e78f693d, type: 3}
+    - {fileID: 8300000, guid: 4e4c7cad7b9771c4384e6fc92cc98b5d, type: 3}
+    - {fileID: 8300000, guid: 21af47c7a1cb4094ea22a58df760da0a, type: 3}
+    - {fileID: 8300000, guid: f217fca1a782e0343a7936cbfc3dfcc6, type: 3}
+  - description: 10. No thank you
+    audioClips:
+    - {fileID: 8300000, guid: 43ec0494f79a46646be6d841342c24e8, type: 3}
+  - description: 11. Yes
+    audioClips:
+    - {fileID: 8300000, guid: 574fdd8974af65542b3e8cccea6da1eb, type: 3}
+    - {fileID: 8300000, guid: f35d0a3444f5e744181d2b3510ae558e, type: 3}
+    - {fileID: 8300000, guid: f021ccbb7c50b284987b02200a21e3c3, type: 3}
+    - {fileID: 8300000, guid: c0492ef4086e04f47a23b6171b5831cf, type: 3}
+    - {fileID: 8300000, guid: fea2a40e9ee8f82408b1981c6d65d62b, type: 3}
+    - {fileID: 8300000, guid: 4bd3a85dd10fe9a4e84bb87f00d0e36e, type: 3}
+    - {fileID: 8300000, guid: aab46c73d9c06f945ad7312ccc65efe6, type: 3}
+    - {fileID: 8300000, guid: 5d503b7e09948f34d9a5b84e7eeb8563, type: 3}
+    - {fileID: 8300000, guid: 2fab819d90ffa574480a5c90fde61171, type: 3}
+    - {fileID: 8300000, guid: ef6765f79740ddf41b7717501c5abf1b, type: 3}
+    - {fileID: 8300000, guid: 1e07008c39196ae4789a56e5eea0a7d7, type: 3}
+  - description: 12. Yes he does
+    audioClips:
+    - {fileID: 8300000, guid: 2ddded7578b02fb4fa0e02e98996d475, type: 3}
+    - {fileID: 8300000, guid: 5d3484192573810489bed6b715bcf16e, type: 3}
+    - {fileID: 8300000, guid: d8fa957c826531941a18fe9b64fbcf79, type: 3}
+  - description: 13. Yes they are
+    audioClips:
+    - {fileID: 8300000, guid: 0e11b28d256489847ab539db742ef411, type: 3}
+    - {fileID: 8300000, guid: 47265b8a71232384ba84e9f3d5e760c4, type: 3}
+    - {fileID: 8300000, guid: b335fb6925be1fc40a763c8c0c08c377, type: 3}
+    - {fileID: 8300000, guid: b737eb01322927745af3de9b3425fef5, type: 3}
+  - description: 14. Yes we do
+    audioClips:
+    - {fileID: 8300000, guid: 711426237393c2941921da82ce1a38dc, type: 3}
+    - {fileID: 8300000, guid: 1b84b29fd792c234f834d78c6577ca62, type: 3}
+    - {fileID: 8300000, guid: 2d3543c97a1d3b94ba16be8066fcc81b, type: 3}
+  - description: 15. Enfamil vitamins for babies
+    audioClips:
+    - {fileID: 8300000, guid: 3732056cf11e98b4db6054f88930ce46, type: 3}
+    - {fileID: 8300000, guid: 20a4f8b95a11a1f46af62a55dfdd05ee, type: 3}
+    - {fileID: 8300000, guid: b32536f16f17cd342b635e7edcb4b5a3, type: 3}
+    - {fileID: 8300000, guid: b71da6a56613ec748af630dd81707ce4, type: 3}
+    - {fileID: 8300000, guid: 2187ef12adbab444d9e0365a22abb16f, type: 3}
+    - {fileID: 8300000, guid: 01db49e5d68155d4b8147c83e075adab, type: 3}
+  - description: 16. I don't know
+    audioClips:
+    - {fileID: 8300000, guid: 90c71c83cb1edfe4c9ad5e320784b7a5, type: 3}
+    - {fileID: 8300000, guid: 963d11a4d56ba224d8e30d459ec27947, type: 3}
+  - description: 17. Thank you
+    audioClips:
+    - {fileID: 8300000, guid: 97ffdc70c5f6fc842972d9dcee90d849, type: 3}
+    - {fileID: 8300000, guid: 9aadba57b5feb114cabbc4c82720c482, type: 3}
+  defaultResponses: 00000000010000000200000003000000040000000500000006000000060000000c00000007000000060000000c0000000b0000000b0000000b0000000c0000000b0000000b0000000b0000000c0000000b0000000b0000000b0000000b0000000c0000000c00000006000000060000000b000000060000000600000006000000060000000b000000060000000b0000000b000000060000000b0000000b00000006000000060000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000b0000000f000000060000000600000006000000
 --- !u!1001 &211377573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4204,7 +4328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commands:
   - phrases:
-    - Mary Smith
     - your name
     - name
     onSpoken:
@@ -4213,13 +4336,30 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 0
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - Mary Smith
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 0 11
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4231,13 +4371,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 1
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4245,19 +4385,20 @@ MonoBehaviour:
     - baby
     - baby name
     - name
+    - adorable baby
     onSpoken:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 2
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 2
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4270,13 +4411,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 3
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 3
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4291,13 +4432,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 4
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 4
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4313,13 +4454,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 5
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 5
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4335,13 +4476,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 6
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 6
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4357,13 +4498,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 7
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 7
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4377,13 +4518,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 8
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 8
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4396,13 +4537,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 9
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 9
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4416,13 +4557,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 10
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 10
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4433,13 +4574,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 11
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 11
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4450,13 +4591,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 12
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 12
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4470,13 +4611,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 13
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 13
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4489,13 +4630,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 14
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 14
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4517,13 +4658,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 15
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 15
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4543,13 +4684,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 16
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 16
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4562,13 +4703,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 17
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 17
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4581,13 +4722,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 18
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 18
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4600,13 +4741,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 19
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 19
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4625,13 +4766,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 20
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 20
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4644,13 +4785,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 21
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 21
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4663,13 +4804,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 22
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 22
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4683,13 +4824,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 23
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 23
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4703,13 +4844,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 24
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 24
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4723,60 +4864,773 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 25
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
-    - specialty
-    - emergency
-    - new
-    - provider
-    - providers
+    - baby hears
+    - hearing
+    - baby's hearing
+    - hears
     onSpoken:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 26
+            m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 26
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - lead
+    - lead hazard
+    - built before
+    - before 1960
+    - poor repair
+    - renovated
+    - past six months
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 27
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - primary water source
+    - primary water
+    - water source
+    - fluoride
+    - contain fluoride
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 28
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - baby's vision
+    - baby sees
+    - vision
+    - sees
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 29
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - eyes
+    - unusual
+    - cross
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 30
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - eyelids drop
+    - eyelid tend to close
+    - eyelid
+    - tend to close
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 31
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - eyes ever been injured
+    - been injured
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 32
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - feel safe
+    - in your home
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 33
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - your partner
+    - significant person
+    - hit
+    - kicked
+    - shoved
+    - physically hurt
+    - you or your baby
+    - you or the baby
+    - you or bobby
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 34
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - developed routines
+    - other ways
+    - take care of yourself
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 35
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - regular bedtime routine
+    - bedtime routine
+    - bedtime
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 36
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - during the night
+    - bedtime
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 37
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - learning
+    - new things
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 38
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - tell you
+    - telling you
+    - what he wants
+    - what he needs
+    - wants and needs
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 39
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - on in the background
+    - in the background
+    - while your baby
+    - in the room
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 40
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - watch tv
+    - play on a tablet
+    - tablet or smartphone
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 41
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - watch tv
+    - play on a tablet
+    - tablet or smartphone
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 42
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - family media
+    - use plan
+    - balance media
+    - family activities
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 43
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - you and your partner
+    - agree on how
+    - handle
+    - baby's behavior
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 44
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - limit the use
+    - limit the word
+    - most important
+    - most important issues
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 45
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - feed himself
+    - feed
+    - himself
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 46
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - drink from a cup
+    - drink
+    - from a cup
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 47
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - let your baby decide
+    - 'what '
+    - how much
+    - to eat
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 48
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - different textures
+    - textures
+    - pureed
+    - blended
+    - chopped
+    - lumps
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 49
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - breastfeeding
+    - continuing
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 50
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - fastened
+    - 'rear-facing '
+    - car safety
+    - car safety seat
+    - safety seat
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 51
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - habits
+    - reminders
+    - leave
+    - leaving
+    - in the car
+    - in your car
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 52
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - stove
+    - fireplace
+    - heaters
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 53
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - stove
+    - fireplace
+    - heaters
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 54
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - cleaners
+    - medicines
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 55
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - arm's reach
+    - bathtub
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 56
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - furniture
+    - window guards
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 57
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - gate
+    - stairs
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 58
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - gun
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 59
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - unloaded
+    - locked up
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 60
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - ammunition
+    - seperately from the gun
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 61
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - specialty or emergency
+    - specialty
+    - emergency
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 62
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrases:
+    - new providers
+    - new provider
+    onSpoken:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 206124711}
+          m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
+          m_MethodName: questionDetected
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 25
+            m_FloatArgument: 0
+            m_StringArgument: 63
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
     - medications
     - supplements
-    - medicines
-    - vitamins
     onSpoken:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 27
+            m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 64
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
-    - allergies to medications
-    - food
-    - the environment
+    - medications food
     - latex
     onSpoken:
       m_PersistentCalls:
@@ -4784,31 +5638,30 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 28
+            m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 65
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
-    - anyone in the family
-    - been sick
+    - sick
     onSpoken:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 29
+            m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 66
             m_BoolArgument: 0
           m_CallState: 2
   - phrases:
@@ -4820,13 +5673,13 @@ MonoBehaviour:
         - m_Target: {fileID: 206124711}
           m_TargetAssemblyTypeName: CommunicationController, Assembly-CSharp
           m_MethodName: questionDetected
-          m_Mode: 3
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 30
+            m_IntArgument: 25
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: 67
             m_BoolArgument: 0
           m_CallState: 2
   recognizer: {fileID: 446129752}
@@ -23831,6 +24684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: showAdvanced
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423485602138191223, guid: 330022ba83b2ac54299eed27df10ee36,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3493803445632894685, guid: 330022ba83b2ac54299eed27df10ee36,
         type: 3}

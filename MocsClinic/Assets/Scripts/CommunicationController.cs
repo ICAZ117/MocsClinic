@@ -49,6 +49,7 @@ public class CommunicationController : MonoBehaviour {
             Debug.Log("Question " + currentQuestion + " detected");
 
             // Make question appear on tablet
+            
 
             // Launch coroutine to play response audio
             StartCoroutine(respond(questionNumber, responseNumber));

@@ -152,7 +152,7 @@ namespace Autohand {
 
             EditorGUILayout.BeginHorizontal();
 
-            if(grabbablePose.leftPoseSet)
+            if(grabbablePose.leftPoseSet || (grabbablePose.poseScriptable != null && grabbablePose.poseScriptable.leftSaved))
                 GUI.backgroundColor = Color.green;
             else
                 GUI.backgroundColor = Color.red;
@@ -166,7 +166,7 @@ namespace Autohand {
             }
 
 
-            if(grabbablePose.rightPoseSet)
+            if(grabbablePose.rightPoseSet || (grabbablePose.poseScriptable != null && grabbablePose.poseScriptable.rightSaved))
                 GUI.backgroundColor = Color.green;
             else
                 GUI.backgroundColor = Color.red;

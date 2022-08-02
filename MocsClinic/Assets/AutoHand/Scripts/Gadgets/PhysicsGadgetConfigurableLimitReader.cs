@@ -16,7 +16,7 @@ namespace Autohand{
         float value;
         Vector3 limitAxis;
 
-        protected void Start(){
+        protected virtual void Start(){
             joint = GetComponent<ConfigurableJoint>();
             limitAxis = new Vector3(joint.xMotion == ConfigurableJointMotion.Locked ? 0 : 1, joint.yMotion == ConfigurableJointMotion.Locked ? 0 : 1, joint.zMotion == ConfigurableJointMotion.Locked ? 0 : 1);
             axisPos = Vector3.Scale(transform.localPosition, limitAxis);
@@ -41,5 +41,7 @@ namespace Autohand{
                 value = 0;
             return Mathf.Clamp(value, -1f, 1f);
         }
+
+        public ConfigurableJoint GetJoint() => joint;
     }
 }

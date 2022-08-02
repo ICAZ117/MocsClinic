@@ -21,6 +21,13 @@ namespace Autohand{
                 poses.Add(pose);
         }
 
+        private void OnDestroy()
+        {
+            for (int i = poses.Count - 1; i >= 0; i--)
+            {
+                Destroy(poses[i]);
+            }
+        }
 
         public GrabbablePose GetClosestPose(Hand hand){
             List<GrabbablePose> possiblePoses = new List<GrabbablePose>();

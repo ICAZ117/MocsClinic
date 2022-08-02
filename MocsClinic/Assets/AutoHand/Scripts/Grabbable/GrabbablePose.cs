@@ -60,7 +60,15 @@ namespace Autohand{
 
 
         protected virtual void Awake() {
-            for(int i = 0; i < linkedPoses.Length; i++)
+            if (poseScriptable != null)
+            {
+                if (poseScriptable.leftSaved)
+                    leftPoseSet = true;
+                if (poseScriptable.rightSaved)
+                    rightPoseSet = true;
+            }
+
+            for (int i = 0; i < linkedPoses.Length; i++)
                 linkedPoses[i].poseEnabled = false;
         }
 
@@ -183,6 +191,7 @@ namespace Autohand{
                 Debug.Log("Editor Hand must be assigned");
         }
 
+        [ContextMenu("OVERWRITE SCRIPTABLE")]
         public void SaveScriptable(){
             if (poseScriptable != null){
                 if (rightPoseSet)

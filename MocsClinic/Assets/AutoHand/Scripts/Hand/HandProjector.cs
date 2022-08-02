@@ -24,16 +24,16 @@ namespace Autohand {
         [Tooltip("Should the projection interpolate between the hand pose and the projected grab pose based on the grip input axis")]
         public bool useGrabTransition;
         [EnableIf("useGrabTransition")]
-        [Tooltip("The Object(s) under your Hand that contain the MeshRenderer Component(s)")]
+        [Tooltip("This offsets the grab transistion by this percent when active [0-1 range]")]
         public float grabTransitionOffset = 0;
         [EnableIf("useGrabTransition")]
-        [Tooltip("The Object(s) under your Hand that contain the MeshRenderer Component(s)")]
+        [Tooltip("This sets the position of the hand based on its [(gripAxis + grabTransitionOffset) * grabDistanceMultiplyer] -> gripAxis is set on the HandControllerLink component on the main hand")]
         public float grabDistanceMultiplyer = 2f;
-        [Tooltip("The Object(s) under your Hand that contain the MeshRenderer Component(s)")]
+        [Tooltip("This sets the pose of the hand based on its [(gripAxis + grabTransitionOffset) * grabDistanceMultiplyer] -> gripAxis is set on the HandControllerLink component on the main hand")]
         [EnableIf("useGrabTransition")]
         public float grabTransitionMultiplyer = 2f;
         [DisableIf("useGrabTransition")]
-        [Tooltip("The Object(s) under your Hand that contain the MeshRenderer Component(s)")]
+        [Tooltip("This offsets the highlight by this percent when active [0-1 range]")]
         public float grabPercent = 1f;
 
 
@@ -140,6 +140,7 @@ namespace Autohand {
         void LateUpdate() {
             if(tryingGrab && hand.GetTriggerAxis() < 0.35f)
                 tryingGrab = false;
+            
 
             SetTarget(hand.lookingAtObj);
             ShowProjection(IsProjectionActive());
@@ -192,7 +193,8 @@ namespace Autohand {
                         grabPose.SetHandPose(handProjection, true);
                     }
                     else {
-                        handProjection.transform.localPosition -= handProjection.palmTransform.forward * 0.08f;
+                        handProjection.transform.position -= handProjection.palmTransform.forward * 0.08f;
+                        handProjection.body.position = handProjection.transform.position;
                         handProjection.AutoPose(targetHit, target);
                     }
                     newProjectionPose = handProjection.GetHandPose();
@@ -282,6 +284,7 @@ namespace Autohand {
                 OnProjectionStart(handProjection, target);
             }
         }
+
 
 
         bool IsProjectionActive() {

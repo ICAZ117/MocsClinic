@@ -11,7 +11,7 @@ namespace Autohand
         private PointerEventData[] eventDatas;
 
         AutoInputModule _instance;
-        private bool _isDestroyed;
+        private bool _isDestroyed = false;
 
         public AutoInputModule Instance
         {
@@ -27,6 +27,34 @@ namespace Autohand
                         _instance = new GameObject().AddComponent<AutoInputModule>();
                         _instance.transform.parent = AutoHandExtensions.transformParent;
                     }
+
+
+
+                    EventSystem[] system = null;
+                    BaseInputModule[] inputModule;
+
+                    inputModule = FindObjectsOfType<BaseInputModule>();
+                    if (inputModule.Length > 1)
+                    {
+                        for (int i = inputModule.Length - 1; i >= 0; i--)
+                        {
+                            if (!inputModule[i].gameObject.GetComponent<AutoInputModule>())
+                                Destroy(inputModule[i]);
+                            Debug.LogWarning("AUTO HAND:  REMOVING ADDITIONAL EVENT SYSTEMS FROM THE SCENE");
+                        }
+                    }
+
+                    system = FindObjectsOfType<EventSystem>();
+                    if (system.Length > 1)
+                    {
+                        for (int i = system.Length - 1; i >= 0; i--)
+                        {
+                            if (!system[i].gameObject.GetComponent<AutoInputModule>())
+                                Destroy(system[i]);
+                            Debug.LogWarning("AUTO HAND:  REMOVING ADDITIONAL EVENT SYSTEMS FROM THE SCENE");
+                        }
+                    }
+
                 }
 
                 return _instance;

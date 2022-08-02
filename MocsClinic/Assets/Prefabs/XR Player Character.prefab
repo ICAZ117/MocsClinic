@@ -3322,6 +3322,7 @@ MonoBehaviour:
   follow: {fileID: 0}
   maxFollowDistance: 0.75
   throwPower: 2
+  enableInterpolation: 1
   advancedFollowSettings: 1
   enableIK: 0
   swayStrength: 0
@@ -3361,9 +3362,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  smoothReturnSpeed: 1
+  gentleGrabSpeed: 1
   poseIndex: 0
   ignoreMe1: 0
+  copyFromHand: {fileID: 0}
 --- !u!1 &4461207641031294730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,6 +3475,7 @@ MonoBehaviour:
   follow: {fileID: 0}
   maxFollowDistance: 0.75
   throwPower: 2
+  enableInterpolation: 1
   advancedFollowSettings: 1
   enableIK: 0
   swayStrength: 0
@@ -3512,9 +3515,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  smoothReturnSpeed: 1
+  gentleGrabSpeed: 1
   poseIndex: 0
   ignoreMe1: 0
+  copyFromHand: {fileID: 0}
 --- !u!1 &4461207641529683316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3628,7 @@ MonoBehaviour:
   follow: {fileID: 0}
   maxFollowDistance: 0.75
   throwPower: 2
+  enableInterpolation: 1
   advancedFollowSettings: 1
   enableIK: 0
   swayStrength: 0
@@ -3663,9 +3668,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  smoothReturnSpeed: 1
+  gentleGrabSpeed: 1
   poseIndex: 0
   ignoreMe1: 0
+  copyFromHand: {fileID: 0}
 --- !u!1 &4461207642648072403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +3781,7 @@ MonoBehaviour:
   follow: {fileID: 0}
   maxFollowDistance: 0.75
   throwPower: 2
+  enableInterpolation: 1
   advancedFollowSettings: 1
   enableIK: 0
   swayStrength: 0
@@ -3814,9 +3821,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  smoothReturnSpeed: 1
+  gentleGrabSpeed: 1
   poseIndex: 0
   ignoreMe1: 0
+  copyFromHand: {fileID: 0}
 --- !u!1 &4496255524532090005
 GameObject:
   m_ObjectHideFlags: 0

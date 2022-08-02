@@ -7,7 +7,7 @@ using NaughtyAttributes;
 using UnityEngine.Serialization;
 
 namespace Autohand {
-    [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(CapsuleCollider)), DefaultExecutionOrder(-3)]
+    [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(CapsuleCollider)), DefaultExecutionOrder(-30)]
     [HelpURL("https://earnestrobot.notion.site/Auto-Move-Player-02d91305a4294e039049bd45cacc5b90")]
     public class AutoHandPlayer : MonoBehaviour {
 
@@ -26,6 +26,7 @@ namespace Autohand {
         }
 
 
+
         [AutoHeader("Auto Hand Player")]
         public bool ignoreMe;
 
@@ -38,6 +39,7 @@ namespace Autohand {
         public Hand handRight;
         public Hand handLeft;
 
+
         [AutoToggleHeader("Movement")]
         public bool useMovement = true;
         [EnableIf("useMovement"), FormerlySerializedAs("moveSpeed")]
@@ -49,8 +51,6 @@ namespace Autohand {
         [EnableIf("useMovement")]
         [Tooltip("Movement acceleration when isGrounded")]
         public float groundedDrag = 4f;
-        [EnableIf("useMovement")]
-        public float heightSmoothSpeed = 20f;
 
         [AutoToggleHeader("Snap Turning")]
         [Tooltip("Whether or not to use snap turning or smooth turning"), Min(0)]
@@ -61,24 +61,26 @@ namespace Autohand {
         [HideIf("snapTurning")]
         public float smoothTurnSpeed = 10f;
 
-        [AutoToggleHeader("Height")]
-        public bool ignoreMe2 = true;
 
-        [ShowIf("ignoreMe2")]
+        [AutoToggleHeader("Height")]
+        public bool showHeight = true;
+        [ShowIf("showHeight")]
+        public float heightSmoothSpeed = 20f;
+        [ShowIf("showHeight")]
         public float heightOffset = 0f;
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         public bool crouching = false;
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         public float crouchHeight = 0.6f;
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         [Tooltip("Whether or not the capsule height should be adjusted to match the headCamera height")]
         public bool autoAdjustColliderHeight = true;
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         [Tooltip("Minimum and maximum auto adjusted height, to adjust height without auto adjustment change capsule collider height instead")]
         public Vector2 minMaxHeight = new Vector2(0.5f, 2.5f);
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         public bool useHeadCollision = true;
-        [ShowIf("ignoreMe2")]
+        [ShowIf("showHeight")]
         public float headRadius = 0.15f;
 
 
@@ -102,6 +104,8 @@ namespace Autohand {
         public Vector3 climbingStrength = new Vector3(20f, 20f, 20f);
         public float climbingAcceleration = 30f;
         public float climbingDrag = 5f;
+        [Tooltip("Inscreases the step height while climbing up to make it easier to step up onto a surface")]
+        public float climbUpStepHeightMultiplier = 1;
 
         [AutoToggleHeader("Enable Pushing")]
         [Tooltip("Whether or not the player can use Pushable objects (Objects with the Pushable component)")]
@@ -111,12 +115,16 @@ namespace Autohand {
         public Vector3 pushingStrength = new Vector3(10f, 10f, 10f);
         public float pushingAcceleration = 10f;
         public float pushingDrag = 3f;
+        [Tooltip("Inscreases the step height while pushing up to make it easier to step up onto a surface")]
+        public float pushUpStepHeightMultiplier = 1;
 
         [AutoToggleHeader("Enable Platforming")]
         [Tooltip("Platforms will move the player with them. A platform is an object with the Transform component on it")]
         public bool allowPlatforms = true;
+        [EnableIf("useGrounding"), Tooltip("The layers that platforming will be enabled on, will not work with layers that the HandPlayer can't collide with")]
+        public LayerMask platformingLayerMask = ~0;
 
-        [AutoToggleHeader("Use Input Deadzone")]
+
         float movementDeadzone = 0.1f;
         float turnDeadzone = 0.4f;
 
@@ -124,12 +132,18 @@ namespace Autohand {
         public const string HandPlayerLayer = "HandPlayer";
         const int groundRayCount = 21;
 
+        public CapsuleCollider bodyCollider { get { return bodyCapsule; } }
+
         public Rigidbody body { get; private set; }
 
+        //DELETEME
+        public float speed;
+        public float fixedDeltaTime;
 
         float turnResetzone = 0.3f;
         float groundedOffset = 0.05f;
 
+        bool tempDisableGrounding = false;
         HeadPhysicsFollower headPhysicsFollower;
         CapsuleCollider bodyCapsule;
         Vector3 moveDirection;
@@ -165,6 +179,7 @@ namespace Autohand {
 
 
         public virtual void Start() {
+
             startRot = headCamera.transform.rotation;
             lastUpdatePosition = transform.position;
 
@@ -310,13 +325,21 @@ namespace Autohand {
             if(headPhysicsFollower != null)
                 grab?.IgnoreColliders(headPhysicsFollower.headCollider);
         }
-        void OnHandRelease(Hand hand, Grabbable grab) {
-            grab?.IgnoreColliders(bodyCapsule, false);
-            if(headPhysicsFollower != null)
-                grab?.IgnoreColliders(headPhysicsFollower.headCollider, false);
 
-            if(grab && grab.parentOnGrab)
-                grab.body.velocity += body.velocity / 2f;
+        void OnHandRelease(Hand hand, Grabbable grab) {
+            if(grab != null && grab.HeldCount() == 0) {
+                grab?.IgnoreColliders(bodyCapsule, false);
+                if(headPhysicsFollower != null)
+                    grab?.IgnoreColliders(headPhysicsFollower.headCollider, false);
+
+                if(grab && grab.parentOnGrab && grab.body != null)
+                    grab.body.velocity += body.velocity / 2f;
+            }
+        }
+
+        public void IgnoreCollider(Collider col, bool ignore) {
+            Physics.IgnoreCollision(bodyCapsule, col, ignore);
+            Physics.IgnoreCollision(headPhysicsFollower.headCollider, col, ignore);
         }
 
 
@@ -335,8 +358,8 @@ namespace Autohand {
 
         private void Update() {
             if(useMovement) {
-                InterpolateMovement();
                 UpdatePlatform(false);
+                InterpolateMovement();
                 UpdateTurn(Time.deltaTime);
             }
         }
@@ -349,8 +372,8 @@ namespace Autohand {
                 ApplyPushingForce();
                 ApplyClimbingForce();
                 Ground();
-                UpdatePlatform(true);
                 UpdateRigidbody(moveDirection);
+                UpdatePlatform(true);
                 UpdateTurn(Time.fixedDeltaTime);
             }
         }
@@ -363,13 +386,13 @@ namespace Autohand {
             //1. Moves velocity towards desired push direction
             if(pushAxis != Vector3.zero) {
                 body.velocity = Vector3.MoveTowards(body.velocity, pushAxis, pushingAcceleration * Time.fixedDeltaTime);
-                body.velocity = Vector3.MoveTowards(body.velocity, Vector3.zero, pushingDrag * Time.fixedDeltaTime);
+                body.velocity *= 1 - pushingDrag * Time.fixedDeltaTime;
             }
 
             //2. Moves velocity towards desired climb direction
             if(climbAxis != Vector3.zero) {
                 body.velocity = Vector3.MoveTowards(body.velocity, climbAxis, climbingAcceleration * Time.fixedDeltaTime);
-                body.velocity = Vector3.MoveTowards(body.velocity, Vector3.zero, climbingDrag * Time.fixedDeltaTime);
+                body.velocity *= 1 - climbingDrag * Time.fixedDeltaTime;
             }
 
             //3. Moves velocity towards desired movement direction
@@ -378,13 +401,12 @@ namespace Autohand {
             }
 
             //4. This creates extra drag when grounded to simulate foot strength, or if flying greats drag in every direction when not moving
-            if(isGrounded && move.magnitude <= movementDeadzone)
-                body.velocity = Vector3.MoveTowards(body.velocity, transform.rotation * new Vector3(0, body.velocity.y, 0), groundedDrag * Time.fixedDeltaTime);
-            else if(!useGrounding && move.magnitude < 0.2f)
-                body.velocity = Vector3.MoveTowards(body.velocity, transform.rotation * Vector3.zero, groundedDrag * Time.fixedDeltaTime);
+            if (move.magnitude <= movementDeadzone && isGrounded)
+                body.velocity *= (1 - groundedDrag * (Time.realtimeSinceStartup - lastUpdateTime));
+
 
             //5. Checks if gravity should be turned off
-            if(IsClimbing() || pushAxis.y > 0)
+            if (IsClimbing() || pushAxis.y > 0)
                 body.useGravity = false;
 
             //6. This will keep velocity if consistent when moving while falling
@@ -403,37 +425,36 @@ namespace Autohand {
         void SyncBodyHead() {
             var delta = 50f * Time.fixedDeltaTime;
             float scale = transform.lossyScale.x > transform.lossyScale.z ? transform.lossyScale.x : transform.lossyScale.z;
-            bool found = false;
-            if((headCamera.transform.position - transform.position).magnitude > 0.15f) {
-                for(int i = 0; i < 5; i++) {
-                    var direction = headCamera.transform.position - transform.position; direction.y = 0;
-                    Debug.DrawLine(transform.position, transform.position + direction.normalized * 0.03f, Color.yellow);
 
-                    if(!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
-                    direction, 0.03f * delta, handPlayerMask)) {
-                        offset = direction * 0.03f * delta;
-                        transform.position += offset;
-                        targetTrackedPos -= offset;
-                        found = true;
-                    }
-                    else {
-                        for(int y = -75; y <= 75; y += 15) {
-                            var newDirection = Quaternion.Euler(0, y, 0) * direction;
-                            Debug.DrawLine(transform.position, transform.position + newDirection.normalized * 0.1f, Color.yellow);
+            if((headCamera.transform.position - transform.position).magnitude > 0.1f* delta) {
+                var direction = headCamera.transform.position - transform.position; direction.y = 0;
+                Debug.DrawLine(transform.position, transform.position + direction.normalized * 0.03f, Color.yellow);
 
-                            if(!Physics.CapsuleCast(scale * transform.position + Vector3.up * scale * bodyCapsule.radius, transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, scale * bodyCapsule.radius,
-                            newDirection, 0.03f * delta, handPlayerMask)) {
-                                offset = newDirection * 0.03f * delta;
+                if(!Physics.CheckCapsule(
+                direction * 0.1f * delta + scale * transform.position + Vector3.up * scale * bodyCapsule.radius,
+                direction * 0.1f * delta + transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height,
+                scale * bodyCapsule.radius,
+                handPlayerMask, QueryTriggerInteraction.Ignore)) {
+                    offset = direction * 0.1f * delta;
+                    transform.position += offset;
+                    targetTrackedPos -= offset;
+                }
+                else {
+                    for(int y = -80; y <= 80; y += 40) {
+                        var newDirection = Quaternion.Euler(0, y, 0) * direction;
+                        Debug.DrawLine(transform.position, transform.position + newDirection.normalized * 0.1f, Color.yellow);
+
+                        if(!Physics.CheckCapsule(
+                            newDirection * 0.1f * delta + scale * transform.position + Vector3.up * scale * bodyCapsule.radius,
+                            newDirection * 0.1f * delta + transform.position - scale * Vector3.up * bodyCapsule.radius + scale * Vector3.up * bodyCapsule.height, 
+                            scale * bodyCapsule.radius,
+                            handPlayerMask, QueryTriggerInteraction.Ignore)) {
+                                offset = newDirection * 0.1f * delta;
                                 transform.position += offset;
                                 targetTrackedPos -= offset;
-                                found = true;
                                 break;
-                            }
                         }
                     }
-
-                    if(!found)
-                        break;
                 }
             }
         }
@@ -445,11 +466,24 @@ namespace Autohand {
         protected virtual void InterpolateMovement() {
             var deltaTime = (Time.realtimeSinceStartup - lastUpdateTime);
             var startRightHandPos = handRight.transform.position;
-            var startLeftHandPos = handLeft.transform.position;
+            var startLeftHandPos = handLeft.transform.position;            
+            
+            if(body.drag > 0)
+                body.velocity *= (1 - body.drag * deltaTime);
 
+            var move = AlterDirection(moveDirection);
+            if (move.magnitude <= movementDeadzone && isGrounded)
+                body.velocity *= (1 - groundedDrag * deltaTime);
+
+            var yVel = body.velocity.y;
             //Smooth moves body based on velocity
             body.position = Vector3.MoveTowards(body.position, body.position + body.velocity, body.velocity.magnitude * deltaTime);
-            body.velocity = Vector3.MoveTowards(body.velocity, Vector3.zero, body.velocity.magnitude * deltaTime);
+
+
+            //6. This will keep velocity if consistent when moving while falling
+            if (body.useGravity)
+                body.velocity = new Vector3(body.velocity.x, yVel, body.velocity.z);
+
             transform.position = body.position;
 
             if(!ignoreIterpolationFrame) {
@@ -459,14 +493,18 @@ namespace Autohand {
                 trackingContainer.position = flatPos;
 
                 //This slow moves the head + controllers on the Y-axis so it doesn't jump when stepping up
-                trackingContainer.position = Vector3.MoveTowards(trackingContainer.position, targetTrackedPos + Vector3.up * heightOffset, (Mathf.Abs(trackingContainer.position.y - targetTrackedPos.y) + 0.1f) * Time.deltaTime * heightSmoothSpeed);
+                if (isGrounded)
+                    trackingContainer.position = Vector3.MoveTowards(trackingContainer.position, targetTrackedPos + Vector3.up * heightOffset, (Mathf.Abs(trackingContainer.position.y - targetTrackedPos.y) + 0.1f) * Time.deltaTime * heightSmoothSpeed);
+                else
+                    trackingContainer.position = targetTrackedPos + Vector3.up * heightOffset;
+
 
                 //This code will move the tracking objects to match the body collider position when moving
                 var targetPos = transform.position - headCamera.transform.position; targetPos.y = 0;
-                targetPosOffset = Vector3.MoveTowards(targetPosOffset, targetPos, body.velocity.magnitude * deltaTime * 2);
+                targetPosOffset = Vector3.MoveTowards(targetPosOffset, targetPos, body.velocity.magnitude * Time.deltaTime * 2);
                 trackingContainer.position += targetPosOffset;
 
-                if(headPhysicsFollower != null) {
+                if(headPhysicsFollower != null && isGrounded) {
                     //Keeps the head down when colliding something above it and manages bouncing back up when not
                     if(Vector3.Distance(headCamera.transform.position, headPhysicsFollower.transform.position) > headPhysicsFollower.headCollider.radius / 1.5f) {
                         var idealPos = headPhysicsFollower.transform.position + (headCamera.transform.position - headPhysicsFollower.transform.position).normalized * headPhysicsFollower.headCollider.radius / 1.5f;
@@ -514,19 +552,22 @@ namespace Autohand {
                         headPhysicsFollower.transform.position += targetPos;
                         headPhysicsFollower.body.position = headPhysicsFollower.transform.position;
                     }
-                    lastUpdatePosition = transform.position;
+                    lastUpdatePosition = new Vector3(transform.position.x, lastUpdatePosition.y, transform.position.z);
 
                     trackingContainer.RotateAround(transform.position, Vector3.up, angle);
 
                     targetPosOffset = Vector3.zero;
                     targetTrackedPos = new Vector3(trackingContainer.position.x, targetTrackedPos.y, trackingContainer.position.z);
 
+                    handRight.body.position = handRight.transform.position;
+                    handLeft.body.position = handLeft.transform.position;
+                    handRight.SetHandLocation(handRight.transform.position);
+                    handLeft.SetHandLocation(handLeft.transform.position);
 
                     axisReset = false;
                 }
             }
             else if(Mathf.Abs(turningAxis) > turnDeadzone) {
-
 
                 var targetPos = transform.position - headCamera.transform.position; targetPos.y = 0;
 
@@ -535,13 +576,12 @@ namespace Autohand {
                     headPhysicsFollower.transform.position += targetPos;
                     headPhysicsFollower.body.position = headPhysicsFollower.transform.position;
                 }
-                lastUpdatePosition = transform.position;
+                lastUpdatePosition = new Vector3(transform.position.x, lastUpdatePosition.y, transform.position.z);
 
-                trackingContainer.RotateAround(headCamera.transform.position, Vector3.up, smoothTurnSpeed * (turningAxis - turnDeadzone) * deltaTime);
+                trackingContainer.RotateAround(transform.position, Vector3.up, smoothTurnSpeed * (Mathf.MoveTowards(turningAxis, 0, turnDeadzone)) * deltaTime);
 
                 targetPosOffset = Vector3.zero;
                 targetTrackedPos = new Vector3(trackingContainer.position.x, targetTrackedPos.y, trackingContainer.position.z);
-
 
                 axisReset = false;
             }
@@ -558,7 +598,7 @@ namespace Autohand {
 
             isGrounded = false;
             newClosestHit = new RaycastHit();
-            if(useGrounding && !IsClimbing() && !(pushAxis.y > 0)) {
+            if(!tempDisableGrounding && useGrounding && !IsClimbing() && !(pushAxis.y > 0)) {
                 highestPoint = -1;
                 CheckGroundRadius(2, 0);
                 CheckGroundRadius(groundRayCount, 1);
@@ -583,9 +623,13 @@ namespace Autohand {
                     Vector3 stepPos;
 
                     for(int i = 0; i < groundRayCount; i++) {
+                        var maxStepHeight = this.maxStepHeight;
+                        maxStepHeight *= climbAxis.y > 0 ? climbUpStepHeightMultiplier : 1;
+                        maxStepHeight *= pushAxis.y > 0 ? pushUpStepHeightMultiplier : 1;
+
                         stepPos = transform.position;
-                        stepPos.x += Mathf.Cos(i * Mathf.PI / (groundRayCount / 2)) * (scale * radius + 0.04f) * multi;
-                        stepPos.z += Mathf.Sin(i * Mathf.PI / (groundRayCount / 2)) * (scale * radius + 0.04f) * multi;
+                        stepPos.x += Mathf.Cos(i * Mathf.PI / (groundRayCount / 2)) * (scale * radius + 0.15f) * multi;
+                        stepPos.z += Mathf.Sin(i * Mathf.PI / (groundRayCount / 2)) * (scale * radius + 0.15f) * multi;
                         stepPos.y += maxStepHeight;
                         Debug.DrawRay(stepPos, -Vector3.up * (maxStepHeight + groundedOffset), Color.red, Time.fixedDeltaTime);
 
@@ -632,29 +676,27 @@ namespace Autohand {
         }
 
 
-        protected void UpdatePlatform(bool isFixedUpdate) {
-            if((!ignoreIterpolationFrame || isFixedUpdate) && isGrounded && newClosestHit.transform != null) {
-                if(newClosestHit.transform != closestHit.transform) {
+        protected void UpdatePlatform(bool isFixedUpdate)
+        {
+            if ((!ignoreIterpolationFrame || isFixedUpdate) && isGrounded && newClosestHit.transform != null && (platformingLayerMask == (platformingLayerMask | (1 << newClosestHit.collider.gameObject.layer)))) {
+
+                if (newClosestHit.transform != closestHit.transform) {
                     closestHit = newClosestHit;
                     lastPlatformPosition = closestHit.transform.position;
                     lastPlatformRotation = closestHit.transform.rotation;
                 }
-                else if(newClosestHit.transform == closestHit.transform) {
-                    if(closestHit.transform.position != lastPlatformPosition) {
+                else if(newClosestHit.transform == closestHit.transform)
+                {
+                    if (closestHit.transform.position != lastPlatformPosition || closestHit.transform.rotation != lastPlatformRotation) {
                         closestHit = newClosestHit;
                         transform.position += closestHit.transform.position - lastPlatformPosition;
-                        body.position = transform.position;
 
-                        var deltaRot = (closestHit.transform.rotation * Quaternion.Inverse(lastPlatformRotation)).eulerAngles;
-                        transform.RotateAround(closestHit.transform.position, Vector3.up, deltaRot.y);
-                        //transform.RotateAround(closestHit.transform.position, Vector3.right, deltaRot.x);
-                        //transform.RotateAround(closestHit.transform.position, Vector3.forward, deltaRot.z);
+                        var deltaRot = (closestHit.transform.rotation * Quaternion.Inverse(lastPlatformRotation));
+                        transform.RotateAround(closestHit.transform.position, Vector3.up, deltaRot.eulerAngles.y);
                         body.position = transform.position;
                         body.rotation = transform.rotation;
 
-                        trackingContainer.RotateAround(closestHit.transform.position, Vector3.up, deltaRot.y);
-                        //trackingContainer.RotateAround(closestHit.transform.position, Vector3.right, deltaRot.x);
-                        //trackingContainer.RotateAround(closestHit.transform.position, Vector3.forward, deltaRot.z);
+                        trackingContainer.rotation *= deltaRot;
 
                         lastPlatformPosition = closestHit.transform.position;
                         lastPlatformRotation = closestHit.transform.rotation;
@@ -667,7 +709,8 @@ namespace Autohand {
         public void Jump(float jumpPower = 1) {
             if(isGrounded) {
                 DisableGrounding(0.1f);
-                body.velocity += Vector3.up * jumpPower;
+                body.useGravity = true;
+                body.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
             }
         }
 
@@ -680,9 +723,10 @@ namespace Autohand {
 
         Coroutine disableGroundingRoutine;
         IEnumerator DisableGroundingSecondsRoutine(float seconds) {
-            useGrounding = false;
+            tempDisableGrounding = true;
+            isGrounded = false;
             yield return new WaitForSeconds(seconds);
-            useGrounding = true;
+            tempDisableGrounding = false;
 
         }
 
@@ -841,6 +885,9 @@ namespace Autohand {
                     pushLeftCount.Clear();
                 }
 
+                if(climbing.Count == 0)
+                    body.velocity /= 4f;
+
                 climbing.Add(hand, climbbable);
             }
         }
@@ -851,6 +898,9 @@ namespace Autohand {
 
             if(climbing.ContainsKey(hand))
                 climbing.Remove(hand);
+
+            foreach(var climb in climbing)
+                climb.Key.ResetGrabOffset();
         }
 
         protected virtual void ApplyClimbingForce() {
@@ -894,6 +944,11 @@ namespace Autohand {
                 headPhysicsFollower.body.position = headPhysicsFollower.transform.position;
             }
 
+            handRight.body.position = handRight.transform.position;
+            handLeft.body.position = handLeft.transform.position;
+            handRight.SetHandLocation(handRight.transform.position);
+            handLeft.SetHandLocation(handLeft.transform.position);
+
             var deltaRot = rotation * Quaternion.Inverse(headCamera.transform.rotation);
             trackingContainer.RotateAround(headCamera.transform.position, Vector3.up, deltaRot.eulerAngles.y);
             //trackingContainer.RotateAround(headCamera.transform.position, Vector3.right, deltaRot.eulerAngles.x);
@@ -912,8 +967,6 @@ namespace Autohand {
 
             var deltaRot = rotation * Quaternion.Inverse(headCamera.transform.rotation);
             trackingContainer.RotateAround(headCamera.transform.position, Vector3.up, deltaRot.eulerAngles.y);
-            //trackingContainer.RotateAround(headCamera.transform.position, Vector3.right, deltaRot.eulerAngles.x);
-            //trackingContainer.RotateAround(headCamera.transform.position, Vector3.forward, deltaRot.eulerAngles.z);
 
             targetPosOffset = Vector3.zero;
             targetTrackedPos = new Vector3(trackingContainer.position.x, targetTrackedPos.y, trackingContainer.position.z);

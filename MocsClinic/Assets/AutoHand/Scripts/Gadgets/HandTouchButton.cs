@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AutoHand {
+namespace Autohand {
     public class HandTouchButton : MonoBehaviour {
         [NaughtyAttributes.HideIf("startUnpress")]
         public bool startPress = false;

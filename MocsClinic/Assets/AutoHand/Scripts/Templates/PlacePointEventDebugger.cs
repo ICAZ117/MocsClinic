@@ -11,19 +11,19 @@ public class PlacePointEventDebugger : MonoBehaviour
     void OnEnable()
     {
         placePoint = GetComponent<PlacePoint>();
-        placePoint.OnPlaceEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Place"); };
-        placePoint.OnRemoveEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Remove"); };
-        placePoint.OnHighlightEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Highlight"); };
-        placePoint.OnStopHighlightEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Stop Highlight"); };
+        placePoint.OnPlaceEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Place: " + Time.time); };
+        placePoint.OnRemoveEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Remove: " + Time.time); };
+        placePoint.OnHighlightEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Highlight: " + Time.time); };
+        placePoint.OnStopHighlightEvent += (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Stop Highlight: " + Time.time); };
     }
 
 
     void OnDisable()
     {
         placePoint = GetComponent<PlacePoint>();
-        placePoint.OnPlaceEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Place"); };
-        placePoint.OnRemoveEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Remove"); };
-        placePoint.OnHighlightEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Highlight"); };
-        placePoint.OnStopHighlightEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Stop Highlight"); };
+        placePoint.OnPlaceEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Place: " + Time.time); };
+        placePoint.OnRemoveEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Remove: " + Time.time); };
+        placePoint.OnHighlightEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Highlight: " + Time.time); };
+        placePoint.OnStopHighlightEvent -= (PlacePoint point, Grabbable grabbable) => { Debug.Log("On Stop Highlight: " + Time.time); };
     }
 }

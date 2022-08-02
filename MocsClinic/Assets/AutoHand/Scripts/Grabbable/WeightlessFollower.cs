@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Autohand {
-    [RequireComponent(typeof(Rigidbody)), DefaultExecutionOrder(1)]
+    [DefaultExecutionOrder(1)]
     public class WeightlessFollower : MonoBehaviour {
         [HideInInspector]
         public Transform follow;
@@ -79,13 +79,13 @@ namespace Autohand {
                 startAngleDrag = body.angularDrag;
             }
 
+            body.drag = hand.body.drag;
+            body.angularDrag = hand.body.angularDrag;
+
             if(follow == null)
                 follow = heldMoveTo[hand];
             else if(follow1 == null)
                 follow1 = heldMoveTo[hand];
-
-            body.drag = hand.body.drag;
-            body.angularDrag = hand.body.angularDrag;
 
             followPositionStrength = hand.followPositionStrength;
             followRotationStrength = hand.followRotationStrength;
@@ -132,7 +132,7 @@ namespace Autohand {
 
         /// <summary>Moves the hand to the controller position using physics movement</summary>
         protected virtual void MoveTo() {
-            if(followPositionStrength <= 0)
+            if(followPositionStrength <= 0 || body == null)
                 return;
 
             SetMoveTo();
@@ -161,6 +161,9 @@ namespace Autohand {
 
         /// <summary>Rotates the hand to the controller rotation using physics movement</summary>
         protected virtual void TorqueTo() {
+            if(body == null)
+                return;
+
             var delta = (moveTo.rotation * Quaternion.Inverse(body.rotation));
             delta.ToAngleAxis(out float angle, out Vector3 axis);
             if(float.IsInfinity(axis.x))
@@ -205,13 +208,18 @@ namespace Autohand {
             }
         }
 
-        private void OnDestroy() {
-            body.mass = startMass;
-            body.drag = startDrag;
-            body.angularDrag = startAngleDrag;
+        private void OnDestroy()
+        {
             Destroy(moveTo.gameObject);
             foreach(var transform in heldMoveTo)
                 Destroy(transform.Value.gameObject);
+
+            if (body != null)
+            {
+                body.mass = startMass;
+                body.drag = startDrag;
+                body.angularDrag = startAngleDrag;
+            }
         }
     }
 

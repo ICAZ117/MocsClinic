@@ -312,18 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c56339d32c943d4b965a5e3991821fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &95689327 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1921678026308248074, guid: 8f1da2c098c536246883b01f8a35ecf5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1921678026386634853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &97102936
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1160,18 +1148,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4920456094241804624}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &280970460 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3208182120030013388, guid: 8d654480636fe0d4994ffb5e44278981,
-    type: 3}
-  m_PrefabInstance: {fileID: 3208182119769129744}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &285869283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,23 +2012,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 95689327}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 164013838}
   placeRadius: 2
+  parentOnPlace: 0
   forcePlace: 1
   forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 164013838}
-  parentOnPlace: 0
-  heldPlaceOnly: 0
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 0
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -2090,6 +2073,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &461017910
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2423,18 +2407,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1921678026386634853}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &679516582 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 679516582, guid: e707b7494b07563479231ce210621d01,
-    type: 3}
-  m_PrefabInstance: {fileID: 985513776423333591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &679516583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 985513776012326772, guid: e707b7494b07563479231ce210621d01,
@@ -3024,27 +2996,27 @@ MonoBehaviour:
   hightlightMaterial: {fileID: 0}
   isGrabbable: 1
   CopySettings: {fileID: 0}
+  grabType: 2
+  handType: 1
   singleHandOnly: 1
   allowHeldSwapping: 0
   instantGrab: 1
-  ignoreWeight: 1
+  useGentleGrab: 1
   maintainGrabOffset: 0
+  ignoreWeight: 1
   parentOnGrab: 1
   throwPower: 1
   jointBreakForce: 3500
   showAdvancedSettings: 1
-  handType: 1
-  grabType: 2
-  useGentleGrab: 1
   makeChildrenGrabbable: 1
-  pullApartBreakOnly: 0
-  customGrabJoint: {fileID: 0}
-  ignoreReleaseTime: 0.5
   grabPriorityWeight: 1
+  ignoreReleaseTime: 0.5
   heldPositionOffset: {x: 0, y: 0, z: 0}
   heldRotationOffset: {x: 0, y: 0, z: 0}
+  customGrabJoint: {fileID: 0}
   jointedBodies: []
   heldIgnoreColliders: []
+  pullApartBreakOnly: 0
   showEvents: 1
   onGrab:
     m_PersistentCalls:
@@ -3052,7 +3024,6 @@ MonoBehaviour:
   onRelease:
     m_PersistentCalls:
       m_Calls: []
-  showAdvancedEvents: 0
   onSqueeze:
     m_PersistentCalls:
       m_Calls: []
@@ -3967,23 +3938,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 679516582}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 1501871558}
   placeRadius: 0.5
+  parentOnPlace: 1
   forcePlace: 0
   forceHandRelease: 0
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 1501871558}
-  parentOnPlace: 1
-  heldPlaceOnly: 0
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 0
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -4009,6 +3987,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &1018178446
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6626,23 +6605,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 280970460}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 1571302814}
   placeRadius: 0.075
+  parentOnPlace: 1
   forcePlace: 1
   forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 1571302814}
-  parentOnPlace: 1
-  heldPlaceOnly: 1
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 1
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -6680,6 +6666,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &1189223089
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9948,23 +9935,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 841653297}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 892688787}
   placeRadius: 0.5
+  parentOnPlace: 1
   forcePlace: 0
   forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 892688787}
-  parentOnPlace: 1
-  heldPlaceOnly: 1
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 1
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -9978,6 +9972,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &1463934638
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10510,23 +10505,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 95689327}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 1739607075}
   placeRadius: 2
+  parentOnPlace: 1
   forcePlace: 1
   forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 1739607075}
-  parentOnPlace: 1
-  heldPlaceOnly: 0
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 0
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -10564,6 +10566,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &1542615321
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11218,23 +11221,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 679516582}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 347002633}
   placeRadius: 0.5
+  parentOnPlace: 1
   forcePlace: 0
   forceHandRelease: 0
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 347002633}
-  parentOnPlace: 1
-  heldPlaceOnly: 0
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 0
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -11248,6 +11258,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &1748511440
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11956,23 +11967,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreMe: 0
-  matchTarget: {fileID: 841653297}
-  placeNames: []
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 1488248630}
   placeRadius: 0.5
+  parentOnPlace: 1
   forcePlace: 0
   forceHandRelease: 1
-  disableGrabOnPlace: 0
-  disableObjectOnPlace: 0
   destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
   makePlacedKinematic: 1
   placedJointLink: {fileID: 0}
   jointBreakForce: 1000
-  showAdvanced: 1
-  startPlaced: {fileID: 0}
-  placedOffset: {fileID: 1488248630}
-  parentOnPlace: 1
-  heldPlaceOnly: 1
+  showPlaceRequirements: 1
+  nameCompareType: 0
+  placeNames: []
   blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  heldPlaceOnly: 1
   showEvents: 1
   OnPlace:
     m_PersistentCalls:
@@ -11986,6 +12004,7 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+  radiusOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &2035342238
 SphereCollider:
   m_ObjectHideFlags: 0

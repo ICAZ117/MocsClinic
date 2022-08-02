@@ -14,13 +14,32 @@ namespace Autohand{
         [Tooltip("This index must match the sticky object to stick")]
         public int stickIndex = 0;
 
+
         [Header("Event")]
         public UnityEvent OnStick;
         public UnityEvent EndStick;
-    
+
+        Sticky stickSource;
+
         private void OnDrawGizmosSelected() {
             if(!body && GetComponent<Rigidbody>())
                 body = GetComponent<Rigidbody>();
+        }
+
+        public void Stick(Sticky source) {
+            stickSource = source;
+            OnStick?.Invoke();
+        }
+
+
+        public void Unstick(Sticky source) {
+            stickSource = null;
+            EndStick?.Invoke();
+
+        }
+
+        public void ForceReleaseStick() {
+            stickSource?.ForceRelease(this);
         }
     }
 }

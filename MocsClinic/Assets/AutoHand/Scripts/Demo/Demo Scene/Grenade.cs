@@ -101,6 +101,7 @@ namespace Autohand.Demo {
 
         private void OnDrawGizmosSelected() {
             Gizmos.color = Color.red;
+            if(grenade != null)
             Gizmos.DrawWireSphere(grenade.transform.position, explosionRadius);
         }
     }

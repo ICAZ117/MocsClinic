@@ -211,29 +211,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreMe: 0
   body: {fileID: 0}
-  heldPositionOffset: {x: 0, y: 0, z: 0}
-  heldRotationOffset: {x: 35, y: 0, z: 0}
-  handType: 0
-  ignoreWeight: 0
+  hightlightMaterial: {fileID: 0}
   isGrabbable: 1
+  CopySettings: {fileID: 0}
   singleHandOnly: 1
   allowHeldSwapping: 1
   instantGrab: 0
+  ignoreWeight: 0
   maintainGrabOffset: 0
-  makeChildrenGrabbable: 1
   parentOnGrab: 1
-  lockHandOnGrab: 0
-  grabDistancePriority: 1
-  jointedBodies: []
-  throwMultiplyer: 1
-  throwAngleMultiplyer: 1
-  releaseOnTeleport: 0
-  ignoreReleaseTime: 0.25
-  lookAssistMultiplyer: 1
-  hightlightMaterial: {fileID: 0}
+  throwPower: 1
   jointBreakForce: 2000
-  jointBreakTorque: 1000
+  showAdvancedSettings: 0
+  handType: 0
+  grabType: 0
+  useGentleGrab: 1
+  makeChildrenGrabbable: 1
+  pullApartBreakOnly: 1
+  customGrabJoint: {fileID: 0}
+  ignoreReleaseTime: 0.25
+  grabPriorityWeight: 1
+  heldPositionOffset: {x: 0, y: 0, z: 0}
+  heldRotationOffset: {x: 35, y: 0, z: 0}
+  jointedBodies: []
+  heldIgnoreColliders: []
   showEvents: 1
   onGrab:
     m_PersistentCalls:
@@ -241,6 +244,7 @@ MonoBehaviour:
   onRelease:
     m_PersistentCalls:
       m_Calls: []
+  showAdvancedEvents: 0
   onSqueeze:
     m_PersistentCalls:
       m_Calls: []
@@ -253,10 +257,10 @@ MonoBehaviour:
   onUnhighlight:
     m_PersistentCalls:
       m_Calls: []
-  pullApartBreakOnly: 1
   OnJointBreak:
     m_PersistentCalls:
       m_Calls: []
+  lockHandOnGrab: 0
 --- !u!114 &8698463979443240712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +418,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  volumeAmp: 0.8
+  velocityAmp: 0.5
+  soundRepeatDelay: 0.2
 --- !u!114 &5754687948666846973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,10 +433,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49b27d5a0e0d4dd8ab20e2bed42e835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreMe: 0
+  poseEnabled: 1
   poseName: 
   poseIndex: 0
+  singleHanded: 0
+  showAdvanced: 1
+  positionWeight: 1
+  rotationWeight: 1
+  linkedPoses: []
+  showEditorTools: 1
+  poseScriptable: {fileID: 0}
   editorHand: {fileID: 0}
-  useEditorAutoGrab: 1
   rightPose:
     handOffset: {x: -0.05359952, y: 0.00013367584, z: 0.018133452}
     rotationOffset: {x: 0, y: 0, z: 0}
@@ -526,13 +541,13 @@ MonoBehaviour:
   leftPoseSet: 1
   centerObject: {fileID: 6818401202820753897}
   up: {x: 1, y: 0, z: 0}
+  useInvertPose: 0
   minAngle: 0
   maxAngle: 360
   maxRange: 0.05
   minRange: -0.07
   testAngle: 0
   testRange: 0
-  showGizmos: 1
 --- !u!114 &8798839959378918752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,10 +560,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49b27d5a0e0d4dd8ab20e2bed42e835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreMe: 0
+  poseEnabled: 1
   poseName: 
   poseIndex: 1
+  singleHanded: 0
+  showAdvanced: 1
+  positionWeight: 1
+  rotationWeight: 1
+  linkedPoses: []
+  showEditorTools: 1
+  poseScriptable: {fileID: 0}
   editorHand: {fileID: 0}
-  useEditorAutoGrab: 0
   rightPose:
     handOffset: {x: -0.023933034, y: 0.026533637, z: -0.0073332875}
     rotationOffset: {x: 0, y: 0, z: 0}
@@ -645,13 +668,13 @@ MonoBehaviour:
   leftPoseSet: 1
   centerObject: {fileID: 6818401202820753897}
   up: {x: 1, y: 0, z: 0}
+  useInvertPose: 0
   minAngle: 0
   maxAngle: 360
   maxRange: 0.05
   minRange: -0.07
   testAngle: 0
   testRange: 0
-  showGizmos: 1
 --- !u!114 &5918632680256529945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,8 +687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac82bc3766612f34da61b06da6008fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionWeight: 0
-  rotationWeight: 1
   poses:
   - {fileID: 8798839959378918752}
   - {fileID: 5754687948666846973}

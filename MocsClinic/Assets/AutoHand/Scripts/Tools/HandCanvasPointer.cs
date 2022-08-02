@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 namespace Autohand
 {
+    [Serializable]
+    public class UnityCanvasPointerEvent : UnityEvent<Vector3, GameObject> { }
     public class HandCanvasPointer : MonoBehaviour
     {
         [Header("References")]
@@ -21,41 +23,63 @@ namespace Autohand
 
 
         [Header("Events")]
-        public UnityEvent StartSelect;
-        public UnityEvent StopSelect;
-        public UnityEvent StartPoint;
-        public UnityEvent StopPoint;
+        public UnityCanvasPointerEvent StartSelect;
+        public UnityCanvasPointerEvent StopSelect;
+        public UnityCanvasPointerEvent StartPoint;
+        public UnityCanvasPointerEvent StopPoint;
+
+
+
+        public GameObject _currTarget;
+        public GameObject currTarget
+        {
+            get { return _currTarget; }
+        }
+
+
+        public RaycastHit lastHit { get; private set; }
 
         // Internal variables
         private bool hover = false;
         AutoInputModule inputModule = null;
-
         float lineSegements = 10f;
-        static Camera cam;
 
+        static Camera cam = null;
+        public static Camera UICamera
+        {
+            get
+            {
+                if (cam == null)
+                {
+                    cam = new GameObject("Camera Canvas Pointer (I AM CREATED AT RUNTIME FOR UI CANVAS INTERACTION, I AM NOT RENDERING ANYTHING, I AM NOT CREATING ADDITIONAL OVERHEAD)").AddComponent<Camera>();
+                    cam.clearFlags = CameraClearFlags.Nothing;
+                    cam.stereoTargetEye = StereoTargetEyeMask.None;
+                    cam.orthographic = true;
+                    cam.orthographicSize = 0.001f;
+                    cam.cullingMask = 0;
+                    cam.nearClipPlane = 0.01f;
+                    cam.depth = 0f;
+                    cam.allowHDR = false;
+                    cam.enabled = false;
+                    cam.fieldOfView = 0.00001f;
+                    cam.transform.parent = AutoHandExtensions.transformParent;
+
+#if (UNITY_2020_3_OR_NEWER)
+                    var canvases = FindObjectsOfType<Canvas>(true);
+#else
+                    var canvases = FindObjectsOfType<Canvas>();
+#endif
+                    foreach (var canvas in canvases)
+                        if (canvas.renderMode == RenderMode.WorldSpace)
+                            canvas.worldCamera = cam;
+                }
+                return cam;
+            }
+        }
         int pointerIndex;
 
         void OnEnable()
         {
-            if (cam == null)
-            {
-                cam = new GameObject("Camera Canvas Pointer (I AM CREATED AT RUNTIME FOR UI CANVAS INTERACTION, I AM NOT RENDERING ANYTHING, I AM NOT CREATING ADDITIONAL OVERHEAD)").AddComponent<Camera>();
-                cam.clearFlags = CameraClearFlags.Nothing;
-                cam.stereoTargetEye = StereoTargetEyeMask.None;
-                cam.orthographic = true;
-                cam.orthographicSize = 0.001f;
-                cam.cullingMask = 0;
-                cam.nearClipPlane = 0.01f;
-                cam.depth = 0f;
-                cam.allowHDR = false;
-                cam.enabled = false;
-                cam.fieldOfView = 0.00001f;
-                cam.transform.parent = AutoHandExtensions.transformParent;
-
-                foreach (var canvas in FindObjectsOfType<Canvas>(true))
-                    if(canvas.renderMode == RenderMode.WorldSpace)
-                        canvas.worldCamera = cam;
-            }
 
             lineRenderer.positionCount = (int)lineSegements;
             if (inputModule.Instance != null)
@@ -74,8 +98,8 @@ namespace Autohand
 
         internal void Preprocess()
         {
-            cam.transform.position = transform.position;
-            cam.transform.forward = transform.forward;
+            UICamera.transform.position = transform.position;
+            UICamera.transform.forward = transform.forward;
         }
 
         public void Press()
@@ -86,8 +110,17 @@ namespace Autohand
             // Show the ray when they attemp to press
             if (!autoShowTarget && hover) ShowRay(true);
 
-            // Fire the Unity event
-            StartSelect?.Invoke();
+            if (lastHit.collider != null)
+            {
+                // Fire the Unity event
+                StartSelect?.Invoke(lastHit.point, lastHit.transform.gameObject);
+            }
+            else
+            {
+                PointerEventData data = inputModule.GetData(pointerIndex);
+                float targetLength = data.pointerCurrentRaycast.distance == 0 ? raycastLength : data.pointerCurrentRaycast.distance;
+                StartSelect?.Invoke(transform.position + (transform.forward * targetLength), null);
+            }
         }
 
         public void Release()
@@ -95,8 +128,18 @@ namespace Autohand
             // Handle the UI events
             if(inputModule) inputModule.ProcessRelease(pointerIndex);
 
-            // Fire the Unity event
-            StopSelect?.Invoke();
+            if (lastHit.collider != null)
+            {
+                // Fire the Unity event
+                StopSelect?.Invoke(lastHit.point, lastHit.transform.gameObject);
+            }
+            else
+            {
+                PointerEventData data = inputModule.GetData(pointerIndex);
+                float targetLength = data.pointerCurrentRaycast.distance == 0 ? raycastLength : data.pointerCurrentRaycast.distance;
+                StopSelect?.Invoke(transform.position + (transform.forward * targetLength), null);
+            }
+
         }
 
         private void Awake()
@@ -133,10 +176,23 @@ namespace Autohand
             PointerEventData data = inputModule.GetData(pointerIndex);
             float targetLength = data.pointerCurrentRaycast.distance == 0 ? raycastLength : data.pointerCurrentRaycast.distance;
 
+            if (targetLength > 0)
+                _currTarget = data.pointerCurrentRaycast.gameObject;
+            else
+                _currTarget = null;
+
             if (data.pointerCurrentRaycast.distance != 0 && !hover)
             {
-                // Fire the Unity event
-                StartPoint?.Invoke();
+                lastHit = CreateRaycast(targetLength);
+                Vector3 endPosition = transform.position + (transform.forward * targetLength);
+                if (lastHit.collider) endPosition = lastHit.point;
+
+
+                if (lastHit.collider != null)
+                    StartPoint?.Invoke(lastHit.point, lastHit.transform.gameObject);
+                else
+                    StartPoint?.Invoke(endPosition, null);
+
 
                 // Show the ray if autoShowTarget is on when they enter the canvas
                 if (autoShowTarget) ShowRay(true);
@@ -145,8 +201,14 @@ namespace Autohand
             }
             else if (data.pointerCurrentRaycast.distance == 0 && hover)
             {
-                // Fire the Unity event
-                StopPoint?.Invoke();
+                lastHit = CreateRaycast(targetLength);
+                Vector3 endPosition = transform.position + (transform.forward * targetLength);
+                if (lastHit.collider) endPosition = lastHit.point;
+
+                if (lastHit.collider != null)
+                    StopPoint?.Invoke(lastHit.point, lastHit.transform.gameObject);
+                else
+                    StopPoint?.Invoke(endPosition, null);
 
                 // Hide the ray when they leave the canvas
                 ShowRay(false);
@@ -155,18 +217,18 @@ namespace Autohand
             }
 
             if(hover) {
-                RaycastHit hit = CreateRaycast(targetLength);
+                lastHit = CreateRaycast(targetLength);
 
                 Vector3 endPosition = transform.position + (transform.forward * targetLength);
 
-                if(hit.collider) endPosition = hit.point;
+                if(lastHit.collider) endPosition = lastHit.point;
 
                 //Handle the hitmarker
                 hitPointMarker.transform.position = endPosition;
                 hitPointMarker.transform.forward = data.pointerCurrentRaycast.worldNormal;
 
-                if(hit.collider) {
-                    hitPointMarker.transform.forward = hit.collider.transform.forward;
+                if(lastHit.collider) {
+                    hitPointMarker.transform.forward = lastHit.collider.transform.forward;
                     hitPointMarker.transform.position = endPosition + hitPointMarker.transform.forward * 0.002f;
                 }
 

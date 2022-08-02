@@ -51,11 +51,15 @@ namespace Autohand{
             joint.enableCollision = false;
             joint.enablePreprocessing = true;
 
-            sticker.OnStick?.Invoke();
+            sticker.Stick(this);
             OnStick?.Invoke();
 
             joints.Add(joint);
             stickers.Add(sticker);
+        }
+
+        public void ForceRelease(Stickable stuck) {
+            Destroy(joints[stickers.IndexOf(stuck)]);
         }
 
         void OnJointBreak(float breakForce) {

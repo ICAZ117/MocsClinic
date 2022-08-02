@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8834320319295017361}
   - component: {fileID: 8834320319295017360}
   - component: {fileID: 8834320319295017372}
-  - component: {fileID: 1353770478086423825}
   m_Layer: 0
   m_Name: Auto Hand Player
   m_TagString: Untagged
@@ -85,14 +84,14 @@ MonoBehaviour:
   handRight: {fileID: 0}
   handLeft: {fileID: 0}
   useMovement: 1
-  maxMoveSpeed: 0
-  moveAcceleration: 15
-  groundedDrag: 10
-  heightSmoothSpeed: 30
+  maxMoveSpeed: 2
+  moveAcceleration: 100
+  groundedDrag: 100
   snapTurning: 1
   snapTurnAngle: 30
-  smoothTurnSpeed: 10
-  ignoreMe2: 0
+  smoothTurnSpeed: 50
+  showHeight: 1
+  heightSmoothSpeed: 30
   heightOffset: 0
   crouching: 0
   crouchHeight: 0.6
@@ -101,21 +100,28 @@ MonoBehaviour:
   useHeadCollision: 1
   headRadius: 0.15
   useGrounding: 1
-  maxStepHeight: 0
-  maxStepAngle: 0
+  maxStepHeight: 0.3
+  maxStepAngle: 30
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  allowClimbing: 0
+  allowClimbing: 1
   allowClimbingMovement: 1
   climbingStrength: {x: 20, y: 20, z: 20}
   climbingAcceleration: 30
   climbingDrag: 5
+  climbUpStepHeightMultiplier: 3
   allowBodyPushing: 1
   pushingStrength: {x: 10, y: 20, z: 10}
   pushingAcceleration: 10
   pushingDrag: 1
-  allowPlatforms: 0
+  pushUpStepHeightMultiplier: 3
+  allowPlatforms: 1
+  platformingLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  speed: 0
+  fixedDeltaTime: 0
 --- !u!135 &8834320319295017372
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -125,60 +131,7 @@ SphereCollider:
   m_GameObject: {fileID: 8834320319295017362}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1353770478086423825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8834320319295017362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c2299af165ef2148b128cb7c00383bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8834320319295017360}
-  moveAxis:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Move Axis
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: d3d76a6c-9306-4d99-9c03-04a87b7c1fa6
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 2c06d4ce-8668-463d-bb7a-c283ba38f481
-        m_Path: <XRController>{LeftHand}/thumbstick
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Move Axis
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  turnAxis:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Turn Axis
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e4b206ab-e05f-4905-8b5a-1a4a826b6cda
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 663407a9-8a2b-40e6-9305-52ce6f595fb3
-        m_Path: <XRController>{RightHand}/thumbstick
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Turn Axis
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}

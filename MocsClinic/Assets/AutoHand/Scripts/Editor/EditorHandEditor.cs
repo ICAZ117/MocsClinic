@@ -81,6 +81,7 @@ namespace Autohand {
                 var scale = hand.transform.parent.localScale;
                 scale.x = -scale.x;
                 hand.transform.parent.localScale = scale;
+                hand.left = !hand.left;
             }
 
             GUILayout.BeginHorizontal();

@@ -266,6 +266,24 @@ namespace Autohand{
                 fingerJoints[point] = joint;
             }
         }
+
+
+        public void CopyPose(Finger finger)
+        {
+            maxGripPosPose = new Vector3[finger.maxGripPosPose.Length];
+            finger.maxGripPosPose.CopyTo(maxGripPosPose, 0);
+            maxGripRotPose = new Quaternion[finger.maxGripRotPose.Length];
+            finger.maxGripRotPose.CopyTo(maxGripRotPose, 0);
+
+            minGripPosPose = new Vector3[finger.minGripPosPose.Length];
+            finger.minGripPosPose.CopyTo(minGripPosPose, 0);
+            minGripRotPose = new Quaternion[finger.minGripRotPose.Length];
+            finger.minGripRotPose.CopyTo(minGripRotPose, 0);
+
+            fingerJoints = new Transform[finger.fingerJoints.Length];
+            finger.fingerJoints.CopyTo(fingerJoints, 0);
+
+        }
         
         public bool IsMinPoseSaved()
         {

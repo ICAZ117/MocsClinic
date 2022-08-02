@@ -32,7 +32,6 @@ namespace Autohand {
             }
 
             if(grabbablePose.gameObject != null && PrefabStageUtility.GetPrefabStage(grabbablePose.gameObject) == null) {
-                EditorUtility.SetDirty(grabbablePose);
                 grabbablePose.showEditorTools = DrawAutoToggleHeader("Show Editor Tools", grabbablePose.showEditorTools);
 
                 if(grabbablePose.showEditorTools) {
@@ -60,11 +59,12 @@ namespace Autohand {
             grabbablePose.poseScriptable = (HandPoseScriptable)EditorGUILayout.ObjectField(new GUIContent("Pose Scriptable", "Allows you to save the pose to a scriptable pose, create scriptable pose by right clicking in project [Create > Auto hand > Custom Pose]"), grabbablePose.poseScriptable, typeof(HandPoseScriptable), true);
 
             if(grabbablePose.poseScriptable != null) {
-                EditorUtility.SetDirty(grabbablePose.poseScriptable);
                 var rect = EditorGUILayout.GetControlRect();
 
-                if(GUI.Button(rect, "Save Scriptable"))
+                if(GUI.Button(rect, "Overwrite Scriptable")) {
+                    EditorUtility.SetDirty(grabbablePose.poseScriptable);
                     grabbablePose.SaveScriptable();
+                }
 
                 EditorGUILayout.Space();
             }
@@ -80,19 +80,25 @@ namespace Autohand {
                 else
                     Debug.LogError("Not a copy - Will not delete");
             }
-            if(GUILayout.Button("Clear Saved Poses"))
+            if(GUILayout.Button("Clear Saved Poses")) {
+                EditorUtility.SetDirty(grabbablePose);
                 grabbablePose.EditorClearPoses();
+            }
 
         }
 
         public void ShowHandEditorHand() {
             grabbablePose.editorHand = (Hand)EditorGUILayout.ObjectField(new GUIContent("Editor Hand", "This will be used as a reference to create a hand copy that can be used to model your new pose"), grabbablePose.editorHand, typeof(Hand), true);
 
-            if(GUILayout.Button("Create Hand Copy"))
+            if(GUILayout.Button("Create Hand Copy")) {
+                EditorUtility.SetDirty(grabbablePose);
                 grabbablePose.EditorCreateCopySetPose(grabbablePose.editorHand, grabbablePose.transform);
+            }
 
-            if(GUILayout.Button("Select Hand Copy"))
+            if(GUILayout.Button("Select Hand Copy")) {
+                EditorUtility.SetDirty(grabbablePose);
                 Selection.activeGameObject = grabbablePose.editorHand.gameObject;
+            }
         }
 
         public void DrawHorizontalLine() {
@@ -153,13 +159,14 @@ namespace Autohand {
 
             EditorGUILayout.BeginHorizontal();
 
-            if(grabbablePose.leftPoseSet)
+            if(grabbablePose.leftPoseSet || (grabbablePose.poseScriptable != null && grabbablePose.poseScriptable.leftSaved))
                 GUI.backgroundColor = Color.green;
             else
                 GUI.backgroundColor = Color.red;
 
 
             if(GUILayout.Button("Save Left")) {
+                EditorUtility.SetDirty(grabbablePose);
                 if(grabbablePose.poseIndex != grabbablePose.editorHand.poseIndex)
                     Debug.LogError("CANNOT SAVE: Your hand's \"Pose Index\" value does not match the local \"Pose Index\" value");
                 else
@@ -167,13 +174,14 @@ namespace Autohand {
             }
 
 
-            if(grabbablePose.rightPoseSet)
+            if(grabbablePose.rightPoseSet || (grabbablePose.poseScriptable != null && grabbablePose.poseScriptable.rightSaved))
                 GUI.backgroundColor = Color.green;
             else
                 GUI.backgroundColor = Color.red;
 
 
             if(GUILayout.Button("Save Right")) {
+                EditorUtility.SetDirty(grabbablePose);
                 if(grabbablePose.poseIndex != grabbablePose.editorHand.poseIndex)
                     Debug.LogError("CANNOT SAVE: Your hand's \"Pose Index\" value does not match the local \"Pose Index\" value");
                 else

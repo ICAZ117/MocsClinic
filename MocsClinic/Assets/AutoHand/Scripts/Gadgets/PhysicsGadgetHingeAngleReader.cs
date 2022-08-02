@@ -14,7 +14,7 @@ namespace Autohand{
         Quaternion startRot;
         Quaternion deltaParentRotation;
 
-        protected void Start(){
+        protected virtual void Start(){
             joint = GetComponent<HingeJoint>(); 
             startRot = transform.localRotation;
         }
@@ -27,5 +27,7 @@ namespace Autohand{
                 value = 0;
             return Mathf.Clamp(value, -1, 1);
         }
+
+        public HingeJoint GetJoint() => joint;
     }
 }

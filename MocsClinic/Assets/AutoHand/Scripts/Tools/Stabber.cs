@@ -131,7 +131,7 @@ namespace Autohand {
 
             point1 = stabCapsule.bounds.center + stabCapsule.transform.rotation * capsuleAxis * (height);
             point2 = stabCapsule.bounds.center - stabCapsule.transform.rotation * capsuleAxis * (height);
-            Physics.OverlapCapsuleNonAlloc(point1, point2, radius, resultsNonAlloc, stabbableLayers);
+            Physics.OverlapCapsuleNonAlloc(point1, point2, radius, resultsNonAlloc, stabbableLayers, QueryTriggerInteraction.Ignore);
 
             List<Stabbable> newStabbed = new List<Stabbable>();
 

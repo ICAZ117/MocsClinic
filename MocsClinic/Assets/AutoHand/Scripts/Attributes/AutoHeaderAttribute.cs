@@ -52,8 +52,21 @@ namespace Autohand
         const float padding = 2f;
         const float margin = -20f;
 
+        static Texture autohandlogo = null;
+        static Font _labelFont = null;
+        static Font labelFont
+        {
+            get
+            {
+                if (_labelFont == null)
+                    _labelFont = Resources.Load<Font>("Righteous-Big");
+                return _labelFont;
+            }
+        }
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+
             position.yMax += position.height;
 
             var attr = (attribute as AutoHeaderAttribute);
@@ -67,10 +80,11 @@ namespace Autohand
             EditorGUI.DrawRect(headerRect, Constants.BackgroundColor);
 
             var labelStyle = Constants.HeaderStyle;
-            labelStyle.font = Resources.Load<Font>("Righteous-Big");
+            labelStyle.font = labelFont;
 
-
-            EditorGUI.LabelField(headerRect, new GUIContent(" " + attr.label, Resources.Load<Texture>("AutoHandLogo"), attr.tooltip), labelStyle);
+            if (autohandlogo == null)
+                autohandlogo = Resources.Load<Texture>("AutoHandLogo");
+            EditorGUI.LabelField(headerRect, new GUIContent(" " + attr.label, autohandlogo, attr.tooltip), labelStyle);
 
 
             EditorGUILayout.Space();

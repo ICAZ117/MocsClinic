@@ -52,8 +52,19 @@ namespace Autohand
         const float padding = 2f;
         const float margin = -20f;
 
+        static Font _labelFont = null;
+        static Font labelFont
+        {
+            get {
+                if(_labelFont == null)
+                    _labelFont = Resources.Load<Font>("Righteous-Regular");
+                return _labelFont;
+            }
+        }
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+
             EditorGUILayout.Space();
             position.y += 14f;
             position.yMax += position.height/1.8f;
@@ -78,7 +89,7 @@ namespace Autohand
             }
 
             var labelStyle = Constants.LabelStyle;
-            labelStyle.font = Resources.Load<Font>("Righteous-Regular");
+            labelStyle.font = labelFont;
 
 
             EditorGUI.LabelField(headerRect, new GUIContent(" " + attr.label, attr.tooltip), labelStyle);

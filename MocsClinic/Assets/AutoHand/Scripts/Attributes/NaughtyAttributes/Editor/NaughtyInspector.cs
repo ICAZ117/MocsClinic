@@ -10,6 +10,7 @@ namespace NaughtyAttributes.Editor
 	[CustomEditor(typeof(UnityEngine.Object), true)]
 	public class NaughtyInspector : UnityEditor.Editor
 	{
+
 		private List<SerializedProperty> _serializedProperties = new List<SerializedProperty>();
 		private IEnumerable<FieldInfo> _nonSerializedFields;
 		private IEnumerable<PropertyInfo> _nativeProperties;
@@ -33,23 +34,25 @@ namespace NaughtyAttributes.Editor
 			ReorderableListPropertyDrawer.Instance.ClearCache();
 		}
 
+		double lastUpdateTime;
 		public override void OnInspectorGUI()
 		{
-			GetSerializedProperties(ref _serializedProperties);
+				GetSerializedProperties(ref _serializedProperties);
 
-			bool anyNaughtyAttribute = _serializedProperties.Any(p => PropertyUtility.GetAttribute<INaughtyAttribute>(p) != null);
-			if (!anyNaughtyAttribute)
-			{
-				DrawDefaultInspector();
-			}
-			else
-			{
-				DrawSerializedProperties();
-			}
+				bool anyNaughtyAttribute = _serializedProperties.Any(p => PropertyUtility.GetAttribute<INaughtyAttribute>(p) != null);
+				if (!anyNaughtyAttribute)
+				{
+					DrawDefaultInspector();
+				}
+				else
+				{
+					DrawSerializedProperties();
+				}
 
-			DrawNonSerializedFields();
-			DrawNativeProperties();
-			DrawButtons();
+				DrawNativeProperties();
+				DrawNonSerializedFields();
+				DrawButtons();
+
 		}
 
 		protected void GetSerializedProperties(ref List<SerializedProperty> outSerializedProperties)
@@ -68,14 +71,17 @@ namespace NaughtyAttributes.Editor
 			}
 		}
 
+		const string SCRIPT_NAME = "m_Script";
 		protected void DrawSerializedProperties()
 		{
 			serializedObject.Update();
 
+
+			var nongroups = GetNonGroupedProperties(_serializedProperties);
 			// Draw non-grouped serialized properties
-			foreach (var property in GetNonGroupedProperties(_serializedProperties))
+			foreach (var property in nongroups)
 			{
-				if (property.name.Equals("m_Script", System.StringComparison.Ordinal))
+				if (property.name.Equals(SCRIPT_NAME, System.StringComparison.Ordinal))
 				{
 					using (new EditorGUI.DisabledScope(disabled: true))
 					{
@@ -87,11 +93,13 @@ namespace NaughtyAttributes.Editor
 					NaughtyEditorGUI.PropertyField_Layout(property, includeChildren: true);
 				}
 			}
-
+			
+			IEnumerable<SerializedProperty> visibleProperties;
+			var groups = GetGroupedProperties(_serializedProperties);
 			// Draw grouped serialized properties
-			foreach (var group in GetGroupedProperties(_serializedProperties))
+			foreach (var group in groups)
 			{
-				IEnumerable<SerializedProperty> visibleProperties = group.Where(p => PropertyUtility.IsVisible(p));
+				visibleProperties = group.Where(p => PropertyUtility.IsVisible(p));
 				if (!visibleProperties.Any())
 				{
 					continue;
@@ -106,10 +114,12 @@ namespace NaughtyAttributes.Editor
 				NaughtyEditorGUI.EndBoxGroup_Layout();
 			}
 
+
+			var foldGroups = GetFoldoutProperties(_serializedProperties);
 			// Draw foldout serialized properties
-			foreach (var group in GetFoldoutProperties(_serializedProperties))
+			foreach (var group in foldGroups)
 			{
-				IEnumerable<SerializedProperty> visibleProperties = group.Where(p => PropertyUtility.IsVisible(p));
+				visibleProperties = group.Where(p => PropertyUtility.IsVisible(p));
 				if (!visibleProperties.Any())
 				{
 					continue;
@@ -173,7 +183,7 @@ namespace NaughtyAttributes.Editor
 
 		protected void DrawButtons(bool drawHeader = false)
 		{
-			if (_methods.Any())
+			if (_methods.Count() > 0)
 			{
 				if (drawHeader)
 				{

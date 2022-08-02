@@ -47,8 +47,6 @@ namespace Autohand {
     [Serializable]
     public class UnityHandEvent : UnityEvent<Hand> { }
     [Serializable]
-
-
     [RequireComponent(typeof(Rigidbody)), DefaultExecutionOrder(-10)]
     /// <summary>This is the base of the Auto Hand hand class, used for organizational purposes</summary>
     public class HandBase : MonoBehaviour {
@@ -87,6 +85,9 @@ namespace Autohand {
         [EnableIf("enableMovement"), Tooltip("Amplifier for applied velocity on released object"), Min(0)]
         public float throwPower = 1f;
 
+        [EnableIf("enableMovement"), Tooltip("Applies position interpolation to the hands to make the hands look smoother when the FPS is higher than the fixed timestep")]
+        public bool enableInterpolation = true;
+
         [HideInInspector]
         public bool advancedFollowSettings = true;
 
@@ -107,25 +108,24 @@ namespace Autohand {
 
         //HIDDEN ADVANCED SETTINGS
         [NonSerialized, Tooltip("The maximum allowed velocity of the hand"), Min(0)]
-        public float maxVelocity = 8f;
+        public float maxVelocity = 10f;
 
         [NonSerialized, Tooltip("Follow target speed (Can cause jittering if turned too high - recommend increasing drag with speed)"), Min(0)]
         public float followPositionStrength = 80;
 
         [HideInInspector, NonSerialized, Tooltip("Follow target rotation speed (Can cause jittering if turned too high - recommend increasing angular drag with speed)"), Min(0)]
-        public float followRotationStrength = 80;
+        public float followRotationStrength = 100;
 
         [HideInInspector, NonSerialized, Tooltip("After this many seconds velocity data within a 'throw window' will be tossed out. (This allows you to get only use acceeleration data from the last 'x' seconds of the throw.)")]
-        public float throwVelocityExpireTime = 0.15f;
+        public float throwVelocityExpireTime = 0.125f;
+        [HideInInspector, NonSerialized, Tooltip("After this many seconds velocity data within a 'throw window' will be tossed out. (This allows you to get only use acceeleration data from the last 'x' seconds of the throw.)")]
+        public float throwAngularVelocityExpireTime = 0.25f;
 
         [HideInInspector, NonSerialized, Tooltip("Increase for closer finger tip results / Decrease for less physics checks - The number of steps the fingers take when bending to grab something")]
         public int fingerBendSteps = 100;
 
         [HideInInspector, NonSerialized]
         public float sphereCastRadius = 0.04f;
-
-        [HideInInspector, NonSerialized]
-        public float maxCollisionDistance = 0.3f;
 
         [HideInInspector]
         public bool usingPoseAreas = true;
@@ -242,7 +242,7 @@ namespace Autohand {
             get {
                 if(!gameObject.activeInHierarchy)
                     _grabPosition = null;
-                else if(_grabPosition == null) {
+                else if(gameObject.activeInHierarchy && _grabPosition == null) {
                     _grabPosition = new GameObject().transform;
                     _grabPosition.name = "grabPosition";
                     _grabPosition.parent = transform;
@@ -270,6 +270,8 @@ namespace Autohand {
         Vector3[] handRays = new Vector3[0];
         RaycastHit[] rayHits = new RaycastHit[0];
 
+        Vector3[] updatePositionTracked = new Vector3[3];
+
         List<RaycastHit> closestHits = new List<RaycastHit>();
         List<Grabbable> closestGrabs = new List<Grabbable>();
         int tryMaxDistanceCount;
@@ -287,6 +289,8 @@ namespace Autohand {
             body.interpolation = RigidbodyInterpolation.None;
             body.useGravity = false;
             body.maxDepenetrationVelocity = 2f;
+            body.solverIterations = 200;
+            body.solverVelocityIterations = 200;
 
             if(palmCollider == null) {
                 palmCollider = palmTransform.gameObject.AddComponent<BoxCollider>();
@@ -301,7 +305,12 @@ namespace Autohand {
                 SetPalmRays();
             }
 
-            foreach(var cam in FindObjectsOfType<Camera>(true))
+#if (UNITY_2020_3_OR_NEWER)
+            var cams = FindObjectsOfType<Camera>(true);
+#else
+            var cams = FindObjectsOfType<Camera>();
+#endif
+            foreach (var cam in cams)
                 cam.gameObject.AddComponent<HandStabilizer>().hand = this;
             
             if(velocityTracker == null)
@@ -325,13 +334,13 @@ namespace Autohand {
                 Destroy(moveTo.gameObject);
         }
 
-        protected Vector3 lastFixedPosition;
         protected virtual void FixedUpdate() {
             if(!IsGrabbing() && enableMovement && follow != null && !body.isKinematic) {
                 MoveTo();
                 TorqueTo();
-                velocityTracker.UpdateThrowing();
             }
+
+            velocityTracker.UpdateThrowing();
 
 
             if(ignoreMoveFrame) {
@@ -346,77 +355,129 @@ namespace Autohand {
                 lastFollowRotation = follow.rotation.eulerAngles;
             }
 
+
+
+            lastUpdateTime = Time.fixedTime;
             ignoreMoveFrame = false;
-            lastUpdateTime = Time.realtimeSinceStartup;
-            lastFixedPosition = body.position;
-            UpdateFingers();
         }
 
 
-        float lastUpdateTime; 
-        protected virtual void Update() {
-            if(CollisionCount() == 0 && enableMovement && follow != null && !body.isKinematic && !IsGrabbing()) {
-                var deltaTime = (Time.realtimeSinceStartup - lastUpdateTime);
+        float lastUpdateTime;
+        protected virtual void Update()
+        {
+            bool shouldInterpolate =
+                CollisionCount() == 0
+                && enableMovement
+                && follow != null
+                && !body.isKinematic
+                && !IsGrabbing();
+
+            if (shouldInterpolate && enableInterpolation)
+            {
+                var deltaTime = (Time.time - lastUpdateTime);
                 var startHandPos = transform.position;
 
-                if(holdingObj == null) {
-
+                if (holdingObj == null)
+                {
                     MoveTo();
                     transform.position = Vector3.MoveTowards(transform.position, moveTo.position, body.velocity.magnitude * deltaTime);
-                    body.velocity = Vector3.MoveTowards(body.velocity, Vector3.zero, body.drag * deltaTime);
+                    body.velocity *= (1 - body.drag * deltaTime);
                     body.position = transform.position;
 
                     TorqueTo();
                     transform.rotation = Quaternion.Euler(Vector3.MoveTowards(transform.rotation.eulerAngles, moveTo.rotation.eulerAngles, body.angularVelocity.magnitude * deltaTime));
-                    body.angularVelocity = Vector3.MoveTowards(body.angularVelocity, Vector3.zero, body.angularDrag * deltaTime);
+                    body.angularVelocity *= (1 - body.angularDrag * deltaTime);
                     body.rotation = transform.rotation;
-                }
-                UpdateFingers();
 
-                var deltaHandPos = transform.position - startHandPos; 
-                if(transform.position != startHandPos)
-                    if(body.SweepTest(deltaHandPos, out var hit, deltaHandPos.magnitude)) {
-                        transform.position -= deltaHandPos;
-                        body.position = transform.position;
+                    var deltaHandPos = transform.position - startHandPos;
+                    if (transform.position != startHandPos)
+                    {
+                        if (body.SweepTest(deltaHandPos, out var hit, deltaHandPos.magnitude))
+                        {
+                            transform.position -= deltaHandPos;
+                            body.position = transform.position;
+                        }
                     }
+                }
+                else if (holdingObj.ShouldInterpolate())
+                {
+                    var startGrabPosition = grabPosition.position;
+                    var startGrabRotation = grabPosition.rotation;
+
+                    MoveTo();
+                    transform.position = Vector3.MoveTowards(transform.position, moveTo.position, body.velocity.magnitude * deltaTime);
+                    body.velocity *= (1 - body.drag * deltaTime);
+                    body.position = transform.position;
+
+                    TorqueTo();
+                    transform.rotation = Quaternion.Euler(Vector3.MoveTowards(transform.rotation.eulerAngles, moveTo.rotation.eulerAngles, body.angularVelocity.magnitude * deltaTime));
+                    body.angularVelocity *= (1 - body.angularDrag * deltaTime);
+                    body.rotation = transform.rotation;
+
+                    var deltaHandPos = transform.position - startHandPos;
+                    var deltaHeldPos = grabPosition.position - startGrabPosition;
+                    if (transform.position != startHandPos)
+                    {
+                        bool didHit = false;
+                        RaycastHit hit = new RaycastHit();
+                        var sweepTest = holdingObj.body.SweepTestAll(deltaHeldPos, deltaHeldPos.magnitude);
+                        for (int i = 0; i < sweepTest.Length; i++)
+                        {
+                            if (sweepTest[i].rigidbody != holdingObj.body && sweepTest[i].rigidbody != body)
+                            {
+                                didHit = true;
+                                hit = sweepTest[i];
+                            }
+                        }
+                        if (didHit)
+                        {
+                            transform.position -= deltaHandPos;
+                            body.position = transform.position;
+                        }
+                        else
+                        {
+                            sweepTest = holdingObj.body.SweepTestAll(deltaHeldPos, deltaHeldPos.magnitude);
+                            for (int i = 0; i < sweepTest.Length; i++)
+                            {
+                                if (sweepTest[i].rigidbody != holdingObj.body && sweepTest[i].rigidbody != body)
+                                {
+                                    didHit = true;
+                                    hit = sweepTest[i];
+                                }
+                            }
+
+                        }
+                        
+                        if (didHit)
+                        {
+                            transform.position -= transform.position - startHandPos;
+                            body.position = transform.position;
+                        }
+                        else
+                        {
+                            holdingObj.body.transform.position += grabPosition.position - startGrabPosition;
+                            holdingObj.body.transform.rotation *= (grabPosition.rotation * Quaternion.Inverse(startGrabRotation));
+                            holdingObj.body.position = holdingObj.body.transform.position;
+                            holdingObj.body.rotation = holdingObj.body.transform.rotation;
+                        }
+                    }
+                }
             }
 
-            lastUpdateTime = Time.realtimeSinceStartup;
+            if (!IsGrabbing())
+                UpdateFingers(Time.deltaTime);
+
+
+            for (int i = 1; i < updatePositionTracked.Length; i++)
+                updatePositionTracked[i] = updatePositionTracked[i-1];
+            updatePositionTracked[0] = transform.localPosition;
+
+            lastUpdateTime = Time.time;
         }
 
 
         //This is used to force the hand to always look like its where it should be even when physics is being weird
         public virtual void OnPreRender() {
-            if(CollisionCount() == 0 && enableMovement && follow != null && !body.isKinematic && !IsGrabbing()) {
-                var deltaTime = (Time.realtimeSinceStartup - lastUpdateTime);
-                var startHandPos = transform.position;
-
-                if(holdingObj == null) {
-
-                    MoveTo();
-                    transform.position = Vector3.MoveTowards(transform.position, moveTo.position, body.velocity.magnitude * deltaTime);
-                    body.velocity = Vector3.MoveTowards(body.velocity, Vector3.zero, body.drag * deltaTime);
-                    body.position = transform.position;
-
-                    TorqueTo();
-                    transform.rotation = Quaternion.Euler(Vector3.MoveTowards(transform.rotation.eulerAngles, moveTo.rotation.eulerAngles, body.angularVelocity.magnitude * deltaTime));
-                    body.angularVelocity = Vector3.MoveTowards(body.angularVelocity, Vector3.zero, body.angularDrag * deltaTime);
-                    body.rotation = transform.rotation;
-                }
-
-                var deltaHandPos = transform.position - startHandPos;
-                if(transform.position != startHandPos)
-                    if(body.SweepTest(deltaHandPos, out var hit, deltaHandPos.magnitude)) {
-                        transform.position -= deltaHandPos;
-                        body.position = transform.position;
-                    }
-
-            }
-
-
-            lastUpdateTime = Time.realtimeSinceStartup;
-
-
             preRenderPos = transform.position;
             preRenderRot = transform.rotation;
 
@@ -501,7 +562,7 @@ namespace Autohand {
                 tryMaxDistanceCount--;
 
             if(holdingObj && holdingObj.HeldCount() > 1)
-                distance = Mathf.Clamp(distance, 0, 0.05f);
+                distance = Mathf.Clamp(distance, 0, 0.04f);
 
             if(CollisionCount() > 0) {
                 Vector3 vel;
@@ -513,7 +574,7 @@ namespace Autohand {
 
                 //If not holding an object with more than one hand
                 if(!(holdingObj && holdingObj.HeldCount() > 1))
-                    vel = Vector3.MoveTowards(body.velocity, vel, 0.5f + body.velocity.magnitude / (velocityClamp));
+                    vel = Vector3.MoveTowards(body.velocity, vel, 0.6f + body.velocity.magnitude / (velocityClamp) * (60f/Time.fixedDeltaTime));
 
 
                 body.velocity = vel;
@@ -526,14 +587,20 @@ namespace Autohand {
                 vel.z = Mathf.Clamp(vel.z, -velocityClamp, velocityClamp);
                 body.velocity = vel;
             }
+
+            //body.velocity *= 1f-positionStiffness;
+            //transform.position = Vector3.Lerp(transform.position, moveTo.position, positionStiffness);
+            //body.position = transform.position;
         }
 
         /// <summary>Rotates the hand to the controller rotation using physics movement</summary>
         protected virtual void TorqueTo() {
             var delta = (moveTo.rotation * Quaternion.Inverse(body.rotation));
             delta.ToAngleAxis(out float angle, out Vector3 axis);
-            if(float.IsInfinity(axis.x))
+            if (float.IsInfinity(axis.x))
+            {
                 return;
+            }
 
             if(angle > 180f)
                 angle -= 360f;
@@ -541,27 +608,31 @@ namespace Autohand {
             Vector3 angular = (Mathf.Deg2Rad * angle * followRotationStrength) * axis.normalized;
 
             if(CollisionCount() > 0)
-                body.angularVelocity = Vector3.Lerp(body.angularVelocity, angular, 0.5f);
+                body.angularVelocity = Vector3.Lerp(body.angularVelocity, angular, 0.65f);
             else
-                body.angularVelocity = Vector3.Lerp(body.angularVelocity, angular, 0.95f);
+                body.angularVelocity = Vector3.Lerp(body.angularVelocity, angular, 0.8f);
+
+            //body.angularVelocity *= 1f - rotationStiffness;
+            //transform.rotation = Quaternion.Lerp(transform.rotation, moveTo.rotation, rotationStiffness);
+            //body.rotation = transform.rotation;
         }
 
         ///<summary>Moves the hand and whatever it might be holding (if teleport allowed) to given pos/rot</summary>
         public virtual void SetHandLocation(Vector3 pos, Quaternion rot) {
             if(holdingObj && holdingObj.parentOnGrab) {
-
+                holdingObj.IgnoreInterpolationForOneFixedUpdate();
                 ignoreMoveFrame = true;
-                var deltaPos = pos - body.position;
-                var deltaRot = rot * Quaternion.Inverse(body.rotation);
+                var deltaPos = pos - transform.position;
+                var deltaRot = rot * Quaternion.Inverse(transform.rotation);
 
                 transform.position = pos;
                 transform.rotation = rot;
                 body.position = transform.position;
                 body.rotation = transform.rotation;
 
-                var fromHoldingRot = holdingObj.transform.rotation;
-                holdingObj.transform.position += deltaPos;
-                holdingObj.transform.RotateAround(transform, deltaRot);
+                var fromHoldingRot = holdingObj.body.transform.rotation;
+                holdingObj.body.transform.position += deltaPos;
+                holdingObj.body.transform.RotateAround(transform, deltaRot);
                 holdingObj.body.position = holdingObj.body.transform.position;
                 holdingObj.body.rotation = holdingObj.body.transform.rotation;
 
@@ -579,6 +650,7 @@ namespace Autohand {
                 velocityTracker.ClearThrow();
             }
             else {
+                ignoreMoveFrame = true;
                 holdingObj?.ForceHandRelease(this as Hand);
                 transform.position = pos;
                 transform.rotation = rot;
@@ -594,7 +666,7 @@ namespace Autohand {
         ///<summary>Moves the hand and keeps the local rotation</summary>
         public virtual void SetHandLocation(Vector3 pos) {
             SetMoveTo();
-            SetHandLocation(pos, moveTo.transform.rotation);
+            SetHandLocation(pos, transform.rotation);
         }
 
         /// <summary>Resets the hand location to the follow</summary>
@@ -654,9 +726,9 @@ namespace Autohand {
             closestHits.Clear();
 
             for(int i = 0; i < handRays.Length; i++) {
-                Debug.DrawRay(palmPosition - palmForward * sphereCastRadius, palmRotation * handRays[i] * dist, Color.red, Time.fixedUnscaledDeltaTime * 2f);
+                //Debug.DrawRay(palmPosition - palmForward * sphereCastRadius, palmRotation * handRays[i] * dist, Color.red, Time.fixedUnscaledDeltaTime * 2f);
                 if(Physics.SphereCast(palmPosition - palmForward * sphereCastRadius, sphereCastRadius, palmRotation * handRays[i], out rayHits[i], dist, layerMask, queryTriggerInteraction)) {
-                    if(palmTransform.InverseTransformPoint(rayHits[i].point).z > 0) {
+                    if((queryTriggerInteraction == QueryTriggerInteraction.Collide || !rayHits[i].collider.isTrigger) && palmTransform.InverseTransformPoint(rayHits[i].point).z > 0) {
 
                         rayHitObject = rayHits[i].collider.gameObject;
                         if(closestGrabs.Count > 0)
@@ -715,17 +787,49 @@ namespace Autohand {
 
         float fingerSwayVel;
         /// <summary>Determines how the hand should look/move based on its flags</summary>
-        protected virtual void UpdateFingers() {
+        protected virtual void UpdateFingers(float deltaTime) {
             //Responsable for movement finger sway
-            if(!grabbing && !disableIK && !IsPosing() && !holdingObj) {
-                float vel = 0;//-palmTransform.InverseTransformDirection(body.velocity).z;
-                if(CollisionCount() > 0) vel = 0;
-                //fingerSwayVel = Mathf.MoveTowards(fingerSwayVel, vel, deltaTime*5);
+            //if(!grabbing && !disableIK && !IsPosing() && !holdingObj) {
+            //    float vel = -palmTransform.InverseTransformDirection(body.velocity).z;
+            //    if (collisionTracker.collisionObjects.Count > 0)
+            //        vel = 0;
+            //    float grip = triggerPoint + gripOffset + swayStrength * (vel / 8f);
 
-                float grip = gripOffset + swayStrength * vel;
+            //    bool less = (currGrip < grip) ? true : false;
+            //    currGrip += ((currGrip < grip) ? Time.deltaTime : -Time.deltaTime) * (Mathf.Abs(currGrip - grip) * 25);
+            //    if (less && currGrip > grip)
+            //        currGrip = grip;
+
+            //    else if (!less && currGrip < grip)
+            //        currGrip = grip;
+
+            //    foreach (var finger in fingers) {
+            //        finger.UpdateFinger(currGrip);
+            //    }
+            //}
+
+            var averageVel = Vector3.zero;
+            for (int i = 1; i < updatePositionTracked.Length; i++)
+            {
+                averageVel += updatePositionTracked[i] - updatePositionTracked[i - 1];
+            }
+            averageVel /= updatePositionTracked.Length;
+
+            //Responsable for movement finger sway
+            if (!grabbing && !disableIK && !IsPosing() && !holdingObj)
+            {
+                float vel = -(averageVel*60).x;
+                if (left)
+                    vel *= -1;
+
+                if (CollisionCount() > 0) vel = 0;
+                fingerSwayVel = Mathf.MoveTowards(fingerSwayVel, vel, deltaTime * (Mathf.Abs((fingerSwayVel-vel) * 25f)));
+
+                float grip = gripOffset + swayStrength * fingerSwayVel;
                 currGrip = grip;
 
-                foreach(var finger in fingers) {
+                foreach (var finger in fingers)
+                {
                     finger.UpdateFinger(grip);
                 }
             }

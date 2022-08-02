@@ -1,3 +1,45 @@
+V3.1.2
+Bug Fixes
+- Fixed broken prefab link in the Oculus Integration Hand Tracking package
+- Fixed bug with rotationg platforms
+- Fixed hand offsets for OpenXR demo
+
+V3.1.1
+Bug Fixes
+- Fixed broken prefab links in the Oculus Integration package
+- Fixed broken/outdated documenation link
+
+V3.1
+New Features
+- Improved documentation and moved it to a better website
+- Added Magnetic Force Components and (New Demo)
+- Added stepping options to the slider and lever gadgets (New Demo)
+- Improvements to place points (New Demo)
+- "Destroy Object on Place"
+- "Disable Rigidbody on Place"
+- "Disable Grab on Place"
+- "Disable Place Point on Place"
+- Added compare by tag option on Place Points
+- Added additional parameters to the place point unity events (will NOT affect backward compatibility)
+- Made the process for setting up VRIK + Auto Hand simpler
+- Added "IgnoreHandPlayerCollision" component
+- Added force release function to sticky and stickables
+- Added platforming layermask to AutoHandPlayer
+- Improved UI pointer with new events and values
+
+Bug Fixes
+- Fixed issues with place points not working properly under some setup conditions
+- Fixed bugs with jumping
+- Fixed issue with the player "tilting over" from stepping on dynamic objects
+- Fixed bug with hands or held object sometimes flickering during snap turning
+- Fixed performance bug when leaning head over surfaces
+- Fixed issues with smooth turning and snap turning not working properly for some setups
+- Fixed issue with highlight projection being incorrect based on local player body rotation
+- Fixed bug where climbing would sometimes fling you (also recommend using gentle grab on climbable grabbables)
+- UI System will now automatically disable other UI event systems in the scene the will prevent it from running
+
+
+
 3.0: MAKE SURE TO DOWNLOAD AND TRY THE LATEST DEMO SCENE
  - Hand Projection System
 	- Includes highlight projection option, which can be used to project the grab pose of the hand onto the grabbable while highlighting

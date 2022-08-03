@@ -13,11 +13,12 @@ public class CommunicationController : MonoBehaviour {
     [HideInInspector]
     public int currentQuestion;
 
+    public GameObject gameController;
     public GameObject head;
     private AudioSource audioSource;
 
     public List<Response> responses;
-    
+
     public int[] defaultResponses;
 
     // Start is called before the first frame update
@@ -29,6 +30,10 @@ public class CommunicationController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void showNextQuestion() {
+        gameController.GetComponent<TabletController>().addQuestion(currentQuestion - 3);
     }
 
     public void questionDetected(string question) {
@@ -49,8 +54,10 @@ public class CommunicationController : MonoBehaviour {
             Debug.Log("Question " + currentQuestion + " detected");
 
             // Make question appear on tablet
+            if (questionNumber >= 3) {
+                gameController.GetComponent<TabletController>().addQuestion(questionNumber - 3);
+            }
             
-
             // Launch coroutine to play response audio
             StartCoroutine(respond(questionNumber, responseNumber));
         }

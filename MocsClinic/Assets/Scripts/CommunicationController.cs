@@ -33,7 +33,8 @@ public class CommunicationController : MonoBehaviour {
     }
 
     public void showNextQuestion() {
-        gameController.GetComponent<TabletController>().addQuestion(currentQuestion - 3);
+        gameController.GetComponent<TabletController>().addQuestion(currentQuestion);
+        gameController.GetComponent<GradeController>().decrementSubjectiveGrade();
     }
 
     public void questionDetected(string question) {
@@ -54,10 +55,8 @@ public class CommunicationController : MonoBehaviour {
             Debug.Log("Question " + currentQuestion + " detected");
 
             // Make question appear on tablet
-            if (questionNumber >= 3) {
-                gameController.GetComponent<TabletController>().addQuestion(questionNumber - 3);
-            }
-            
+            gameController.GetComponent<TabletController>().addQuestion(questionNumber);
+
             // Launch coroutine to play response audio
             StartCoroutine(respond(questionNumber, responseNumber));
         }

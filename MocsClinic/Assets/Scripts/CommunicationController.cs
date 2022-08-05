@@ -10,21 +10,28 @@ public class Response {
 }
 
 public class CommunicationController : MonoBehaviour {
-    [HideInInspector]
-    public int currentQuestion;
+    
 
     public GameObject gameController;
     public GameObject head;
-    private AudioSource audioSource;
-
+    public GameObject nextQuestionBtn;
+    public GameObject submitBtn;
     public List<Response> responses;
-
     public int[] defaultResponses;
+
+    [HideInInspector]
+    public int currentQuestion;
+    
+    private AudioSource audioSource;
+    private int numQuestions;
 
     // Start is called before the first frame update
     void Start() {
         currentQuestion = 0;
         audioSource = head.GetComponent<AudioSource>();
+        nextQuestionBtn.SetActive(true);
+        submitBtn.SetActive(false);
+        numQuestions = gameController.GetComponent<TabletController>().questions.Count;
     }
 
     // Update is called once per frame
@@ -84,6 +91,11 @@ public class CommunicationController : MonoBehaviour {
         yield return new WaitForSeconds(audioSource.clip.length + 1);
 
         currentQuestion = ++temp;
+
+        if (currentQuestion >= numQuestions) {
+            nextQuestionBtn.SetActive(false);
+            submitBtn.SetActive(true);
+        }
     }
 }
 

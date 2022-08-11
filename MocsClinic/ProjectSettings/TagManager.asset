@@ -32,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - IgnorePlayer
   - HandPlayer
   - Hand
   - Grabbable

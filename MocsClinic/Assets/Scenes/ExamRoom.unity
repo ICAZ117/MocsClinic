@@ -1956,6 +1956,8 @@ MonoBehaviour:
   pelvis: {fileID: 1549211842}
   leftHumerus: {fileID: 1579304104}
   rightHumerus: {fileID: 982782585}
+  leftFemur: {fileID: 1571428190}
+  rightFemur: {fileID: 1242374448}
   placedBaby: {fileID: 427394476}
   carriedBaby: {fileID: 1672192462}
 --- !u!1 &208428102
@@ -21062,10 +21064,10 @@ MonoBehaviour:
   placedOffset: {fileID: 2097942346}
   placeRadius: 0.7
   parentOnPlace: 1
-  forcePlace: 0
+  forcePlace: 1
   forceHandRelease: 1
   destroyObjectOnPlace: 0
-  disableRigidbodyOnPlace: 0
+  disableRigidbodyOnPlace: 1
   disableGrabOnPlace: 0
   disablePlacePointOnPlace: 0
   makePlacedKinematic: 1

@@ -14,6 +14,7 @@ public class GameValues : MonoBehaviour {
     public int O2Sat;
     public int systolic;
     public int diastolic;
+    public int respiratoryRate;
     public int heartSound;
     public bool generateRandomValues;
     public AudioSource regularNSR;

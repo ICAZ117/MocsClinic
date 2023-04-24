@@ -19,11 +19,14 @@ public class BabyPoseController : MonoBehaviour {
     public void placeBaby() {
         placedBaby.SetActive(true);
         carriedBaby.SetActive(false);
+
+        Debug.Log("PLACE");
     }
 
     public void carryBaby() {
         placedBaby.SetActive(false);
         carriedBaby.SetActive(true);
+        Debug.Log("CARRY");
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class BabyPoseController : MonoBehaviour {
         float percentage = (pelvisRotation / 90);
 
 
-        Debug.Log(pelvisRotation);
+        //Debug.Log(pelvisRotation);
 
         // Calculate new x rotations for each joint
         float leftHumerusX = calcRotation(18, -31, percentage);

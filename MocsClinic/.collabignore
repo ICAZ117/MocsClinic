@@ -1,33 +1,3 @@
-# ===========================
-# Default Collab Ignore Rules
-# ===========================
-
-# OS Generated
-# ============
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-[Tt]humbs.db
-[Dd]esktop.ini
-
-# Visual Studio / MonoDevelop generated
-# =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
-
-# Unity generated
-# ===============
-[Oo]bj/
-[Bb]uild
-sysinfo.txt
-*.stackdump
+version https://git-lfs.github.com/spec/v1
+oid sha256:70c5feee39948531b56904091e33383a6f54ea209bc06f5089accf21aa8b672c
+size 486

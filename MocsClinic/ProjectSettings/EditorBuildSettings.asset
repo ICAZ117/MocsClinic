@@ -1,19 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/ExamRoom.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c14dc6cc6e665c243ba18837a5a20266,
-      type: 2}
-    com.unity.input.settings: {fileID: 11400000, guid: b3cee5037ae1e4f4bbcbc40c6b8c0299,
-      type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 32faf46b6b77be84cb0785be0bca63e0,
-      type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 459976777b397384b9264a31485088c3,
-      type: 2}
+version https://git-lfs.github.com/spec/v1
+oid sha256:80c7f40dbc75d41d1997cee3a622d3bf4d15f3b2a83a68b27061913e75e8e3a7
+size 687
